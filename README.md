@@ -44,14 +44,23 @@ All data files are YAML (`.yaml`). Each one starts with a comment explaining its
 
 ## Latest Moral Revolution posts
 
-The Writing & Podcast page shows the three newest posts from the Moral Revolution Substack as cards.
-`sites/laura/src/_data/substack.js` reads the RSS feed (`<substack address>/feed`, taken from `shared/data/profile.yaml`)
-**when the site is built**, so a new post only appears after the next build (on Netlify: the next deploy).
+The Writing & Podcast page shows the three newest posts from the Moral Revolution Substack as cards. It works in
+three pieces:
 
-If the feed can't be reached (offline, Substack down, 10-second timeout) the build does not fail. It uses the posts from
-the last successful fetch, saved in `sites/laura/cache/substack.json`. Commit that file when it changes. With no saved
-copy either, the cards section is simply left out. To test the fallback:
-`SUBSTACK_FEED=https://feed.invalid/feed npm run build:laura`.
+- `npm run fetch:substack` (`scripts/fetch-substack.js`) reads the RSS feed (`<substack address>/feed`, from
+  `shared/data/profile.yaml`) and writes the latest posts to `sites/laura/src/_data/substack.yaml`. The file is only
+  rewritten when the posts changed. Don't edit it by hand: the next fetch overwrites it.
+- `sites/laura/src/_includes/partials/substack-posts.njk` renders the cards. A page includes it with
+  `{% set substackCount = 3 %}{% include "partials/substack-posts.njk" %}`.
+- The build itself only reads `substack.yaml`, so it never needs the network.
+
+**On your Mac:** run `npm run fetch:substack` to pick up new posts, then commit `substack.yaml`.
+**On Netlify:** the build command runs the fetch first, so every deploy shows the latest posts. A new post only appears
+after a deploy.
+
+If the feed can't be reached (offline, Substack down, 10-second timeout), the fetch leaves `substack.yaml` untouched and
+the build carries on with the committed posts. With no `substack.yaml` at all, the cards section is left out. To test the
+fallback: `SUBSTACK_FEED=https://feed.invalid/feed npm run fetch:substack`.
 
 ## Commands
 
