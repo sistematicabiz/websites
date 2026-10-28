@@ -1,15 +1,9 @@
 ---
 layout: layouts/base.njk
 ---
-<header class="page-header">
-  <div class="wrap">
-    {% if eyebrow and eyebrow != title %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
-    <h1>{{ title }}</h1>
-    {% if abstract %}<p class="lede">{{ abstract }}</p>{% endif %}
-  </div>
+<header class="wrap page-head">
+  <span class="kicker terra">{{ kicker or nav_label }}</span>
+  <h1>{{ title }}</h1>
+  {% if descr %}<p class="descr">{{ descr }}</p>{% endif %}
 </header>
-<div class="section">
-  <div class="wrap prose">
-    {{ content | safe }}
-  </div>
-</div>
+{{ content | safe }}

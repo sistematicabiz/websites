@@ -13,6 +13,7 @@ export default function sharedConfig(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "shared/img": "img" });
   eleventyConfig.addPassthroughCopy({ "shared/js": "js" });
 
+  eleventyConfig.addFilter("withChip", (roles) => roles.filter((r) => r.chip));
   eleventyConfig.addFilter("year", () => new Date().getFullYear());
   eleventyConfig.addFilter("byOrder", (items) =>
     [...items].sort((a, b) => (a.data.order ?? 0) - (b.data.order ?? 0))

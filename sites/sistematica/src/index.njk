@@ -1,96 +1,103 @@
 ---
 layout: layouts/base.njk
 ---
-<section class="hero">
-  <div class="wrap flow">
-    <p class="eyebrow">Placeholder eyebrow</p>
-    <h1>Placeholder headline for Sistem(at)ica</h1>
-    <p class="lede">Placeholder sub-headline: who this is for and what changes for them.</p>
-    <p><a class="button" href="#contact">Start a conversation</a></p>
+<div class="wrap hero">
+  <div class="copy">
+    <span class="kicker">Sistem(at)ica Research &amp; Advisory</span>
+    <h1>Systematic insight, <em class="i">systems thinking.</em></h1>
+    <p class="lead">Independent research and advisory for organizations working at the intersection of finance, social and ecological systems, and long-term value creation.</p>
+    <p>I combine rigorous analysis grounded in data with a systems thinking perspective, helping clients navigate complex questions with intellectual clarity and practical purpose.</p>
+    <div class="actions"><a class="btn" href="#contact">Start a conversation</a><a class="btn line" href="#what">What I do</a></div>
   </div>
-</section>
+  <figure class="frame">
+    <canvas data-tessera data-seed="21" data-size="28" aria-hidden="true"></canvas>
+    <img src="{{ profile.headshot.src }}" alt="{{ profile.headshot.alt }}" width="{{ profile.headshot.width }}" height="{{ profile.headshot.height }}">
+    <figcaption class="cap">Laura Segafredo, PhD · Founder</figcaption>
+  </figure>
+</div>
+<canvas class="pat" data-tessera data-seed="5" data-size="22" data-density=".55" aria-hidden="true"></canvas>
 
-<section class="section section--tint" id="what" aria-labelledby="what-heading">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">What I do</p>
-      <h2 id="what-heading">Three areas of work</h2>
-    </div>
-    <div class="tiles tiles--three">
-      {%- for s in services %}
-      <article class="tile tile--{{ s.tile }}">
-        <h3>{{ s.title }}</h3>
-        <p>{{ s.summary }}</p>
-        <ul class="engagements">
-          {%- for e in s.engagements %}<li>{{ e }}</li>{% endfor %}
-        </ul>
-      </article>
-      {%- endfor %}
-    </div>
+<section id="what" class="band"><div class="wrap">
+  <div class="head"><span class="kicker terra">What I do</span><h2>Research, insight, and the conversations that move ideas</h2></div>
+  <div class="tiles">
+    {%- for area in practice %}
+    <article class="tile"><span class="n">{{ area.n }}</span><h3>{{ area.title }}</h3>
+      {%- for para in area.paragraphs %}<p>{{ para }}</p>{% endfor %}
+    </article>
+    {%- endfor %}
   </div>
-</section>
+  <h3 class="eng-title">Sample engagements</h3>
+  <ul class="eng">
+    {%- for item in engagements %}
+    <li>{{ item }}</li>
+    {%- endfor %}
+  </ul>
+</div></section>
 
-<section class="section" id="why" aria-labelledby="why-heading">
-  <div class="wrap prose">
-    <p class="eyebrow">Why Sistem(at)ica</p>
-    <h2 id="why-heading">Placeholder heading</h2>
-    <p>Placeholder paragraph explaining the name and the approach: systemic thinking, applied systematically.</p>
-  </div>
-</section>
-
-<section class="section section--tint" id="collaborations" aria-labelledby="collab-heading">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow">Selected collaborations</p>
-      <h2 id="collab-heading">Who I've worked with</h2>
-    </div>
-    <div class="card-grid">
-      {%- for c in collaborations %}
-      <div class="card">
-        <h3>{% if c.url %}<a href="{{ c.url }}">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}</h3>
-        <p>{{ c.note }}</p>
+<section class="band indigo why" aria-labelledby="why-heading"><div class="wrap">
+  <div class="why-grid">
+    <div><span class="kicker saffron" id="why-heading">Why Sistem(at)ica</span><div class="bigname" aria-hidden="true">Sistem<span class="p">(at)</span>ica</div></div>
+    <div>
+      <p class="lead">Sistem(at)ica brings together two commitments.</p>
+      <div class="why-cols">
+        <div><h3>Systematic</h3><p>The first is systematic: disciplined research, analytical clarity, intellectual honesty, and attention to evidence. Complex questions deserve more than fashionable language or easy conclusions.</p></div>
+        <div><h3>Systems thinking</h3><p>The second is systems thinking: an understanding that financial, social, ecological, and political outcomes are interconnected. The most consequential challenges cannot be understood—or addressed—one variable at a time.</p></div>
       </div>
-      {%- endfor %}
+      <div class="after">
+        <p>The name also carries an Italian flair. Sistematica evokes both method and sensibility: rigor without reductionism; coherence without rigidity; analysis attentive to the wider whole.</p>
+        <p>This is the approach behind the work: rigorous enough for decision-making, expansive enough for the realities clients are trying to navigate.</p>
+      </div>
     </div>
   </div>
-</section>
+</div></section>
 
-<section class="section" id="about" aria-labelledby="about-heading">
-  <div class="wrap about-grid">
-    <img src="{{ profile.headshot }}" alt="{{ profile.headshotAlt }}" width="320" height="320">
-    <div class="prose">
-      <p class="eyebrow">About</p>
-      <h2 id="about-heading">{{ profile.name }}</h2>
-      <p>Placeholder first paragraph about Laura.</p>
-      <p>Placeholder second paragraph about Laura.</p>
+<section id="collaborations" class="band ivory2"><div class="wrap">
+  <div class="head">
+    <span class="kicker terra">Selected collaborations</span>
+    <h2>Rigor, ecological intelligence, and moral clarity in finance</h2>
+    <p>I collaborate with organizations working to bring greater analytical rigor, ecological intelligence, and moral clarity to finance and investment decision-making.</p>
+  </div>
+  <div class="collab">
+    {%- for c in collaborations %}
+    <article class="card"><canvas data-tessera data-seed="{{ c.seed }}" data-size="16" data-colors="{{ c.colors }}" aria-hidden="true"></canvas><div class="body">
+      <span class="kicker {{ c.kickerClass }}">{{ c.kicker }}</span><h3>{{ c.name }}</h3>
+      <p>{{ c.text }}</p>
+      <div class="links">{% for l in c.links %}<a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }} ↗</a>{% endfor %}</div>
+    </div></article>
+    {%- endfor %}
+  </div>
+</div></section>
+
+<section id="about" class="band"><div class="wrap">
+  <div class="about">
+    <div class="head" style="margin:0"><span class="kicker terra">About Laura Segafredo</span><h2>Laura Segafredo, PhD</h2><p class="display-italic">Economist, climate-finance leader, researcher, and educator.</p></div>
+    <div class="text">
+      <p>Laura Segafredo, PhD, is an economist, climate-finance leader, researcher, and educator with more than two decades of experience spanning energy, sustainable investing, philanthropy, academia, and advisory work in the United States and Europe. She works at the intersection of finance, ethics, political economy, and ecological transition.</p>
+      <p>Her career has included senior leadership in sustainable-investment research and index investing at BlackRock, as well as work across climate and environmental organizations, academic institutions, and mission-driven ventures. She is currently an Adjunct Professor of International and Public Affairs at Columbia University’s School of International and Public Affairs.</p>
       <ul class="chips">
-        {%- for role in roles %}<li class="chip">{{ role.label }}{% if role.org %}, {{ role.org }}{% endif %}</li>{% endfor %}
+        {%- for role in roles | withChip %}<li>{{ role.chip }}</li>{% endfor %}
       </ul>
+      <div class="actions"><a class="btn line" href="{{ profile.sites.laura }}/about/">Read Laura’s full profile</a><a class="btn line" href="{{ profile.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a></div>
     </div>
   </div>
-</section>
+  <blockquote class="quote">“{{ testimonial.quote }}”<cite>{{ testimonial.cite }}</cite></blockquote>
+</div></section>
 
-<section class="section section--tint" aria-label="Testimonial">
-  <div class="wrap">
-    <blockquote class="quote">
-      <p>&ldquo;{{ testimonial.quote }}&rdquo;</p>
-      <footer>{{ testimonial.author }}, {{ testimonial.role }}</footer>
-    </blockquote>
+<section id="contact" class="band indigo"><div class="wrap">
+  <div class="head">
+    <span class="kicker saffron">Contact</span><h2>Start a conversation</h2>
+    <p>I am open to working with organizations and collaborators seeking rigorous thinking on sustainable finance, ecological and social resilience, long-term value creation, and systems-level questions.</p>
+    <p>For research, advisory, speaking, workshop, or collaboration inquiries, use the form below.</p>
   </div>
-</section>
-
-<section class="section" id="contact" aria-labelledby="contact-heading">
-  <div class="wrap flow">
-    <p class="eyebrow">Contact</p>
-    <h2 id="contact-heading">Let's talk</h2>
-    <form class="form" name="contact-sistematica" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company">
-      <input type="hidden" name="form-name" value="contact-sistematica">
-      <p class="hidden"><label>Leave this empty <input name="company"></label></p>
-      <label>Name <input name="name" autocomplete="name" required></label>
-      <label>Email <input type="email" name="email" autocomplete="email" required></label>
-      <label>Organisation <input name="organisation" autocomplete="organization"></label>
-      <label>Message <textarea name="message" required></textarea></label>
-      <p><button class="button" type="submit">Send message</button></p>
-    </form>
-  </div>
-</section>
+  <form class="contact" name="contact-sistematica" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company">
+    <input type="hidden" name="form-name" value="contact-sistematica">
+    <p class="hp"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
+    <div class="f"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+    <div class="f"><label for="f-org">Organization</label><input id="f-org" name="organization" autocomplete="organization"></div>
+    <div class="f"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+    <div class="f"><label for="f-time">Timeline (optional)</label><select id="f-time" name="timeline"><option>No fixed timeline</option><option>Within a month</option><option>Next quarter</option><option>Later this year</option></select></div>
+    <div class="f full"><label for="f-msg">What would you like to discuss?</label><textarea id="f-msg" name="message" required></textarea></div>
+    <div><button class="btn" type="submit">Send inquiry</button></div>
+  </form>
+</div></section>
+<canvas class="pat" data-tessera data-seed="9" data-size="22" data-density=".55" aria-hidden="true"></canvas>

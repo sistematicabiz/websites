@@ -1,8 +1,0 @@
-/* sistematica.biz — site-specific tweaks on top of Tessera. */
-:root { --accent: var(--slate); }
-.section-head { display: grid; gap: var(--space-xs); margin-bottom: var(--space-l); }
-.engagements { list-style: none; padding: 0; margin-top: var(--space-s); font-size: var(--step--1); }
-.engagements li::before { content: "— "; }
-.about-grid { display: grid; gap: var(--space-l); align-items: start; }
-.about-grid img { max-width: 16rem; border-radius: var(--radius); }
-@media (min-width: 48rem) { .about-grid { grid-template-columns: 16rem 1fr; } }

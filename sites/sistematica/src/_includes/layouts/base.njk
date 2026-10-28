@@ -2,41 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ site.title }}{% if title %}: {{ title }}{% endif %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{% if title %}{{ title }} · {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ site.description }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=Jost:wght@400;500&display=swap">
   <link rel="stylesheet" href="/css/shared/tessera.css">
-  <link rel="stylesheet" href="/css/site.css">
-  <script src="/js/nav.js" defer></script>
+  <script src="/js/tessera.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap site-header__inner">
-      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>{{ site.title }}</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>Menu</button>
-      <nav class="site-nav" id="site-nav" aria-label="Main">
-        <ul>
-          <li><a href="/#what">What I do</a></li>
-          <li><a href="/#why">Why Sistem(at)ica</a></li>
-          <li><a href="/#collaborations">Collaborations</a></li>
-          <li><a href="/#about">About</a></li>
-          <li><a href="/#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <header class="site"><div class="wrap">
+    <a class="brand" href="/" aria-label="Sistem(at)ica home">
+      <img class="logo" src="/img/logo-header.jpg" alt="Sistem(at)ica" width="520" height="200">
+    </a>
+    <nav class="main" aria-label="Main"><ul>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#what">What We Do</a></li>
+      <li><a href="/#collaborations">Selected Collaborations</a></li>
+      <li><a href="/#contact">Contact</a></li>
+    </ul></nav>
+  </div></header>
 
   <main id="main">
     {{ content | safe }}
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap site-footer__inner">
-      <span>&copy; {{ "" | year }} {{ site.title }} · {{ profile.name }}</span>
-      <a href="{{ profile.linkedin }}" rel="me noopener">LinkedIn</a>
-    </div>
-  </footer>
+  <footer class="site"><div class="wrap">
+    <span>&copy; {{ "" | year }} Sistem(at)ica Research &amp; Advisory · New York</span>
+    <a href="{{ profile.sites.laura }}">Writing, teaching and public work at laurasegafredo.com</a>
+  </div></footer>
 </body>
 </html>

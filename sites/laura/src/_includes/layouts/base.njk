@@ -2,41 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if title and page.url != "/" %}{{ title }} — {% endif %}{{ site.title }}</title>
-  <meta name="description" content="{{ description or abstract or site.description }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{% if title and page.url != "/" %}{{ title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ description or site.description }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;1,6..96,500&family=Jost:wght@400;500&display=swap">
   <link rel="stylesheet" href="/css/shared/tessera.css">
-  <link rel="stylesheet" href="/css/site.css">
+  <script src="/js/tessera.js" defer></script>
   <script src="/js/nav.js" defer></script>
 </head>
-<body>
+<body class="personal">
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="wrap site-header__inner">
-      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>{{ site.title }}</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>Menu</button>
-      <nav class="site-nav" id="site-nav" aria-label="Main">
-        <ul>
-          {%- for item in nav %}
-          <li><a href="{{ item.url }}"{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
-          {%- endfor %}
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <header class="site"><div class="wrap">
+    <a class="brand" href="/"><span class="wordmark">Laura Segafredo</span></a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" hidden>Menu</button>
+    <nav class="main collapsible" id="site-nav" aria-label="Main"><ul>
+      {%- for item in nav %}
+      <li><a href="{{ item.url }}"{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+      {%- endfor %}
+    </ul></nav>
+  </div></header>
 
   <main id="main">
     {{ content | safe }}
+    {% if page.url != "/contact/" and page.url != "/contact/thanks/" %}
+    <section class="band indigo"><div class="wrap">
+      <div class="head" style="margin-bottom:24px"><span class="kicker saffron">Get in touch</span><h2>Talks, interviews and collaborations</h2></div>
+      <a class="btn" href="/contact/">Get in touch</a>
+    </div></section>
+    {% endif %}
   </main>
 
-  {% include "partials/contact-strip.njk" %}
-
-  <footer class="site-footer">
-    <div class="wrap site-footer__inner">
-      <span>&copy; {{ "" | year }} {{ profile.name }}</span>
-      <a href="{{ profile.linkedin }}" rel="me noopener">LinkedIn</a>
-    </div>
-  </footer>
+  <footer class="site"><div class="wrap">
+    <span>Laura Segafredo · New York City</span>
+    <span><a href="{{ profile.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a> · <a href="{{ profile.sites.sistematica }}">Advisory at Sistem(at)ica</a></span>
+  </div></footer>
 </body>
 </html>

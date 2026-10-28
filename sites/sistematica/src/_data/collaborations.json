@@ -1,6 +1,26 @@
 [
-  { "name": "Organisation one", "note": "Short description of the collaboration", "url": "" },
-  { "name": "Organisation two", "note": "Short description of the collaboration", "url": "" },
-  { "name": "Organisation three", "note": "Short description of the collaboration", "url": "" },
-  { "name": "Organisation four", "note": "Short description of the collaboration", "url": "" }
+  {
+    "kicker": "Nature-related financial risk",
+    "kickerClass": "lagoon",
+    "name": "NatureAlpha / alphaX",
+    "seed": 8,
+    "colors": "#2F7F86,#6F7A3A,#E0A83A,#22264A",
+    "text": "Research and advisory collaboration supporting the development of asset-level approaches to nature-related financial risk. The work examines how dependencies on nature—and exposure to environmental degradation—can be more effectively identified, quantified, and incorporated into broad-market equity-index research and design.",
+    "links": [
+      { "label": "Learn about NatureAlpha", "url": "https://www.naturealpha.ai/" },
+      { "label": "Explore alphaX", "url": "https://alphax.ai/" }
+    ]
+  },
+  {
+    "kicker": "Faith-aligned investing",
+    "kickerClass": "terra",
+    "name": "Bountiful Financial",
+    "seed": 14,
+    "colors": "#B8553A,#E0A83A,#22264A,#F7F0E1",
+    "text": "Strategic and research support for values-aligned finance, with a focus on the development and articulation of Catholic and multi-faith investment approaches. The work brings together financial analysis, Catholic social thought, and questions of long-term value creation.",
+    "links": [
+      { "label": "Read about Bountiful Financial’s Catholic index research", "url": "https://bountifulfinancial.com/bountiful-financial-debuts-landmark-research-on-catholic-indices-at-conference-held-in-rome/" },
+      { "label": "Visit Bountiful Financial", "url": "https://bountifulfinancial.com/" }
+    ]
+  }
 ]

@@ -1,32 +1,39 @@
 ---
 layout: layouts/page.njk
 permalink: /speaking-press/
-title: "Speaking & Press"
-eyebrow: "Speaking & Press"
+title: Selected press, conversations & speaking
+nav_label: Speaking & Press
+kicker: Speaking & Press
 tags: section
 order: 5
-tile: terracotta
-nav_label: "Speaking & Press"
-abstract: "Placeholder abstract for Speaking & Press: one or two sentences shown on the home page and as the page intro."
+tile:
+  label: Talks · Interviews · Workshops
+  title: Public Work
+  text: Talks, interviews, workshops, and collaborations for audiences working across finance, policy, academia, and civil society.
+  go: Speaking and contact
 ---
+<section class="band"><div class="wrap spread">
+<div class="prose">
 
-Placeholder body copy for **Speaking & Press**. Replace this Markdown with the final text.
+A selection of published commentary, interviews, and speaking engagements exploring sustainable investing, climate resilience, faith-consistent finance, and the moral and institutional foundations of economic life.
 
-## A subheading
+</div>
+<figure class="frame"><canvas data-tessera data-seed="61" data-size="24" aria-hidden="true"></canvas><img src="/img/vatican.jpg" alt="Laura speaking at the Pontifical Academy of Social Sciences" width="1100" height="733"><figcaption class="cap">Pontifical Academy of Social Sciences, May 2026</figcaption></figure>
+</div></section>
 
-Paragraphs, lists and links all work here:
-
-- First point
-- Second point
-- Third point
-
-## Talks and press
-
-<ul class="entry-list">
-{%- for entry in press %}
-  <li>
-    <span class="meta">{{ entry.date }} · {{ entry.type }}</span>
-    <span>{% if entry.url %}<a href="{{ entry.url }}">{{ entry.title }}</a>{% else %}{{ entry.title }}{% endif %}, <em>{{ entry.outlet }}</em></span>
-  </li>
+<section class="band ivory2"><div class="wrap">
+<div class="press">
+{%- for p in press %}
+  <article class="pr">
+    <span class="src">{{ p.source }} · {{ p.kind }}</span>
+    <h3 class="t">{{ p.title }}</h3>
+    <p>{{ p.text }}</p>
+    {%- if p.url %}
+    <a class="more" href="{{ p.url }}" target="_blank" rel="noopener">{{ p.linkText }} ↗</a>
+    {%- else %}
+    <span class="more">{{ p.linkText }} <span class="todo">({{ p.todo }})</span></span>
+    {%- endif %}
+  </article>
 {%- endfor %}
-</ul>
+</div>
+</div></section>

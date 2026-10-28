@@ -1,7 +1,0 @@
-/* laurasegafredo.com — site-specific tweaks on top of Tessera. */
-.page-header { padding-block: var(--space-xl) var(--space-l); border-bottom: 1px solid var(--line); }
-.page-header h1 { max-width: 20ch; }
-.page-header .lede { margin-top: var(--space-s); }
-.contact-strip__text { font-family: var(--font-serif); font-size: var(--step-2); line-height: 1.25; max-width: 30ch; }
-.flow--loose { --flow-space: var(--space-l); }
-.portrait { max-width: 16rem; border-radius: var(--radius); }

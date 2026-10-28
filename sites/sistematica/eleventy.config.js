@@ -2,7 +2,6 @@ import sharedConfig from "../../shared/eleventy.shared.js";
 
 export default function (eleventyConfig) {
   sharedConfig(eleventyConfig);
-  eleventyConfig.addPassthroughCopy({ "sites/sistematica/src/css": "css" });
 }
 
 export const config = {
