@@ -8,7 +8,7 @@ tags: section
 order: 5
 tile:
   label: Talks · Interviews · Workshops
-  title: Public Work
+  title: Speaking & Press
   text: Talks, interviews, workshops, and collaborations for audiences working across finance, policy, academia, and civil society.
   go: Speaking and contact
 ---
