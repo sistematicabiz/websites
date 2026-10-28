@@ -8,7 +8,10 @@
     "dev:sistematica": "eleventy --config=sites/sistematica/eleventy.config.js --serve --port=8082",
     "build:laura": "eleventy --config=sites/laura/eleventy.config.js",
     "build:sistematica": "eleventy --config=sites/sistematica/eleventy.config.js",
-    "build": "npm run build:laura && npm run build:sistematica"
+    "build:local:laura": "ELEVENTY_LOCAL=1 eleventy --config=sites/laura/eleventy.config.js --output=sites/laura/_local",
+    "build:local:sistematica": "ELEVENTY_LOCAL=1 eleventy --config=sites/sistematica/eleventy.config.js --output=sites/sistematica/_local",
+    "build": "npm run build:laura && npm run build:sistematica",
+    "build:local": "npm run build:local:laura && npm run build:local:sistematica"
   },
   "engines": {
     "node": ">=20"

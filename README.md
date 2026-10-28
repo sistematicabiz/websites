@@ -47,7 +47,10 @@ npm install
 npm run dev:laura          # http://localhost:8081
 npm run dev:sistematica    # http://localhost:8082
 npm run build              # builds both into sites/*/_site
+npm run build:local        # builds both into sites/*/_local, for opening from Finder
 ```
+
+The normal build (`_site`, what Netlify publishes) uses root paths like `/css/…`, which only work on a web server. `build:local` writes a separate copy with relative links, so you can double-click `sites/laura/_local/index.html` or `sites/sistematica/_local/index.html` and browse every page from disk. Fonts still load from Google Fonts (needs internet), and the contact forms only work on Netlify.
 
 ## Deploying on Netlify
 
