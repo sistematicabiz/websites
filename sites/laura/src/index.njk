@@ -14,8 +14,8 @@ title: Home
   </div>
 </div>
 
-<section id="work" aria-label="Areas of work"><div class="areas">
+<section id="work" class="work" aria-label="Areas of work"><div class="wrap"><div class="areas">
   {%- for item in collections.section | byOrder %}
   <a class="ar" href="{{ item.url }}"><span class="lbl">{{ item.data.tile.label }}</span><h3>{{ item.data.tile.title }}</h3><p>{{ item.data.tile.text }}</p><span class="go">{{ item.data.tile.go }} →</span></a>
   {%- endfor %}
-</div></section>
+</div></div></section>

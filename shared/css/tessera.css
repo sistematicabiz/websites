@@ -190,6 +190,8 @@ footer.site .wrap { display: flex; justify-content: space-between; gap: 16px; fl
 }
 
 /* ---------- Personal site: areas of work mosaic ---------- */
+/* Kept inside .wrap so the mosaic lines up with the hero instead of running edge to edge. */
+.work { padding-bottom: 56px; }
 .areas { display: grid; }
 .ar { padding: 32px 24px 36px; display: grid; gap: 12px; align-content: start; text-decoration: none; color: var(--ivory); transition: filter .2s; }
 .ar:hover { filter: brightness(1.08); }
@@ -202,6 +204,7 @@ footer.site .wrap { display: flex; justify-content: space-between; gap: 16px; fl
 .ar:nth-child(4) { background: var(--olive); }
 .ar:nth-child(5) { background: var(--saffron); color: var(--indigo); }
 @media (min-width: 881px) {
+  .work { padding-bottom: 88px; }
   .areas { grid-template-columns: repeat(6, 1fr); }
   .ar { grid-column: span 2; min-height: 300px; padding: 36px 32px 40px; }
   .ar:nth-child(4), .ar:nth-child(5) { grid-column: span 3; }
