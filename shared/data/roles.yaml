@@ -1,0 +1,40 @@
+# Laura’s current roles, used by both sites.
+# laurasegafredo.com lists all of them on the About page; sistematica.biz shows the ones with a "chip".
+#   role:  the position, e.g. Partner
+#   org:   the organisation name (linked to url)
+#   url:   the organisation’s website
+#   extra: optional extra links shown after the role (e.g. podcast apps)
+#   chip:  optional short label; if present the role appears as a chip on sistematica.biz
+
+- role: Founder
+  org: Sistem(at)ica Research & Advisory
+  url: https://sistematica.biz
+
+- role: Co-host / writer
+  org: Moral Revolution
+  url: https://moralrevolution.substack.com/
+  extra:
+    - label: Apple Podcasts
+      url: https://podcasts.apple.com/us/podcast/moral-revolution-podcast/id1837541394
+    - label: Spotify
+      url: https://open.spotify.com/show/4tMKxIh7bxORHCPt9SjpT8
+  chip: Co-host, Moral Revolution
+
+- role: Adjunct Professor
+  org: School of International and Public Affairs, Columbia University
+  url: https://www.sipa.columbia.edu/communities-connections/faculty/laura-segafredo
+
+- role: Partner
+  org: Universe Partners
+  url: https://www.universe-partners.com/
+  chip: Partner, Universe Partners
+
+- role: Board Member
+  org: Arketa
+  url: https://www.arketa-institute.org/
+  chip: Board, Arketa
+
+- role: Advisor
+  org: All About Water
+  url: https://aawater.co/
+  chip: Advisor, All About Water

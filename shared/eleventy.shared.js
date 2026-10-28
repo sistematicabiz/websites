@@ -1,13 +1,17 @@
 import fs from "node:fs";
+import { load as loadYaml } from "js-yaml";
 
-const readJson = (file) =>
-  JSON.parse(fs.readFileSync(new URL(`./data/${file}`, import.meta.url), "utf8"));
+const readYaml = (file) =>
+  loadYaml(fs.readFileSync(new URL(`./data/${file}`, import.meta.url), "utf8"));
 
 // Setup shared by both sites: global data, shared assets, filters.
 // Paths are relative to the repo root, where the npm scripts run Eleventy.
 export default function sharedConfig(eleventyConfig) {
-  eleventyConfig.addGlobalData("profile", readJson("profile.json"));
-  eleventyConfig.addGlobalData("roles", readJson("roles.json"));
+  // Data files (_data/*.yaml) are written in YAML so they are easy to edit by hand.
+  eleventyConfig.addDataExtension("yaml,yml", (contents) => loadYaml(contents));
+
+  eleventyConfig.addGlobalData("profile", readYaml("profile.yaml"));
+  eleventyConfig.addGlobalData("roles", readYaml("roles.yaml"));
 
   eleventyConfig.addPassthroughCopy({ "shared/css": "css/shared" });
   eleventyConfig.addPassthroughCopy({ "shared/img": "img" });

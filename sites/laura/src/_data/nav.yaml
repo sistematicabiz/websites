@@ -1,0 +1,25 @@
+# Main menu of laurasegafredo.com, in order. label = text shown, url = page address.
+
+- label: Home
+  url: /
+
+- label: About
+  url: /about/
+
+- label: Writing & Podcast
+  url: /writing-podcast/
+
+- label: Finance & Climate
+  url: /finance-climate/
+
+- label: Teaching & Research
+  url: /teaching-research/
+
+- label: Land & Regeneration
+  url: /land-regeneration/
+
+- label: Speaking & Press
+  url: /speaking-press/
+
+- label: Contact
+  url: /contact/

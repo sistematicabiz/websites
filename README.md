@@ -16,14 +16,14 @@ shared/
   css/tessera.css         design B stylesheet, mobile first (adapted from the mockup's b.css)
   js/tessera.js           draws the triangle mosaics into <canvas data-tessera>
   js/nav.js               mobile menu toggle (laurasegafredo.com)
-  data/profile.json       name, headshot, LinkedIn, site URLs, Moral Revolution links
-  data/roles.json         current roles (About page list + sistematica chips)
+  data/profile.yaml       name, headshot, LinkedIn, site URLs, Moral Revolution links
+  data/roles.yaml         current roles (About page list + sistematica chips)
   img/                    headshot, podcast, farminary, vatican, logo
   eleventy.shared.js      shared Eleventy setup
 sites/laura/src/
   *.md / index.njk        one file per page; front matter `tile:` feeds the Home mosaic
-  _data/press.json        Speaking & Press entries
-  _data/nav.json          main navigation
+  _data/press.yaml        Speaking & Press entries
+  _data/nav.yaml          main navigation
   _includes/              layouts and the artwork placeholder partial
 sites/sistematica/src/
   index.njk               the one-pager
@@ -34,9 +34,11 @@ sites/sistematica/src/
 
 ## Editing content
 
+All data files are YAML (`.yaml`). Each one starts with a comment explaining its fields.
+
 - **Page text (laurasegafredo.com):** the Markdown in `sites/laura/src/`.
 - **Home tiles:** the `tile:` block in each section page's front matter.
-- **Press entries:** `sites/laura/src/_data/press.json`. An entry with an empty `url` shows its `todo` note instead of a link.
+- **Press entries:** `sites/laura/src/_data/press.yaml`. An entry with an empty `url` shows its `todo` note instead of a link.
 - **Roles, headshot, LinkedIn:** `shared/data/`.
 - **Artwork placeholders:** search for `partials/art.njk` and replace each include with a `<figure class="frame">` holding the image.
 
