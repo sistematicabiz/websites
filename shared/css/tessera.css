@@ -245,6 +245,8 @@ footer.site .wrap { display: flex; justify-content: space-between; gap: 16px; fl
 .pr p { font-size: 16px; }
 .pr .more { margin-top: 4px; font-size: 14px; font-weight: 500; }
 .pr .todo { font-size: 13px; opacity: .7; }
+a.pr { text-decoration: none; }
+a.pr:hover .t { color: var(--terra); }
 @media (min-width: 881px) { .press { grid-template-columns: repeat(3, 1fr); } }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

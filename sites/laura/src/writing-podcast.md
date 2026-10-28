@@ -22,3 +22,20 @@ Through essays and the Moral Revolution podcast, co-hosted with my friend Tony A
 <div class="actions"><a class="btn" href="{{ profile.moralRevolution.substack }}" target="_blank" rel="noopener">Read on Substack ↗</a><a class="btn line" href="{{ profile.moralRevolution.apple }}" target="_blank" rel="noopener">Listen on Apple Podcasts ↗</a><a class="btn line" href="{{ profile.moralRevolution.spotify }}" target="_blank" rel="noopener">Listen on Spotify ↗</a></div>
 </div>
 </div></section>
+
+{% if substack.length %}
+<section class="band ivory2"><div class="wrap">
+<div class="head"><span class="kicker terra">Latest from Moral Revolution</span><h2>Recent posts</h2></div>
+<div class="press">
+{%- for post in substack %}
+  <a class="pr" href="{{ post.url }}" target="_blank" rel="noopener">
+    <span class="src">Substack · {{ post.kind }} · {{ post.date }}</span>
+    <span class="t">{{ post.title }}</span>
+    {%- if post.excerpt %}<p>{{ post.excerpt }}</p>{% endif %}
+    <span class="more">Read on Substack ↗</span>
+  </a>
+{%- endfor %}
+</div>
+<div class="actions" style="margin-top:32px"><a class="btn line" href="{{ profile.moralRevolution.substack }}" target="_blank" rel="noopener">All posts on Substack ↗</a></div>
+</div></section>
+{% endif %}

@@ -42,6 +42,17 @@ All data files are YAML (`.yaml`). Each one starts with a comment explaining its
 - **Roles, headshot, LinkedIn:** `shared/data/`.
 - **Artwork placeholders:** search for `partials/art.njk` and replace each include with a `<figure class="frame">` holding the image.
 
+## Latest Moral Revolution posts
+
+The Writing & Podcast page shows the three newest posts from the Moral Revolution Substack as cards.
+`sites/laura/src/_data/substack.js` reads the RSS feed (`<substack address>/feed`, taken from `shared/data/profile.yaml`)
+**when the site is built**, so a new post only appears after the next build (on Netlify: the next deploy).
+
+If the feed can't be reached (offline, Substack down, 10-second timeout) the build does not fail. It uses the posts from
+the last successful fetch, saved in `sites/laura/cache/substack.json`. Commit that file when it changes. With no saved
+copy either, the cards section is simply left out. To test the fallback:
+`SUBSTACK_FEED=https://feed.invalid/feed npm run build:laura`.
+
 ## Commands
 
 ```sh
