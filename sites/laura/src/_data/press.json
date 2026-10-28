@@ -1,0 +1,23 @@
+[
+  {
+    "date": "2026",
+    "type": "Talk",
+    "title": "Placeholder talk title",
+    "outlet": "Event or venue",
+    "url": ""
+  },
+  {
+    "date": "2026",
+    "type": "Interview",
+    "title": "Placeholder interview title",
+    "outlet": "Publication",
+    "url": ""
+  },
+  {
+    "date": "2025",
+    "type": "Panel",
+    "title": "Placeholder panel title",
+    "outlet": "Conference",
+    "url": ""
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "laura", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev:laura"], "port": 8081 },
+    { "name": "sistematica", "runtimeExecutable": "npm", "runtimeArgs": ["run", "dev:sistematica"], "port": 8082 }
+  ]
+}

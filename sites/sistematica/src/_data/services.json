@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Placeholder area one",
+    "summary": "One or two sentences describing this area of work.",
+    "tile": "terracotta",
+    "engagements": ["Sample engagement", "Sample engagement"]
+  },
+  {
+    "title": "Placeholder area two",
+    "summary": "One or two sentences describing this area of work.",
+    "tile": "slate",
+    "engagements": ["Sample engagement", "Sample engagement"]
+  },
+  {
+    "title": "Placeholder area three",
+    "summary": "One or two sentences describing this area of work.",
+    "tile": "olive",
+    "engagements": ["Sample engagement", "Sample engagement"]
+  }
+]

@@ -1,0 +1,96 @@
+---
+layout: layouts/base.njk
+---
+<section class="hero">
+  <div class="wrap flow">
+    <p class="eyebrow">Placeholder eyebrow</p>
+    <h1>Placeholder headline for Sistem(at)ica</h1>
+    <p class="lede">Placeholder sub-headline: who this is for and what changes for them.</p>
+    <p><a class="button" href="#contact">Start a conversation</a></p>
+  </div>
+</section>
+
+<section class="section section--tint" id="what" aria-labelledby="what-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">What I do</p>
+      <h2 id="what-heading">Three areas of work</h2>
+    </div>
+    <div class="tiles tiles--three">
+      {%- for s in services %}
+      <article class="tile tile--{{ s.tile }}">
+        <h3>{{ s.title }}</h3>
+        <p>{{ s.summary }}</p>
+        <ul class="engagements">
+          {%- for e in s.engagements %}<li>{{ e }}</li>{% endfor %}
+        </ul>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why" aria-labelledby="why-heading">
+  <div class="wrap prose">
+    <p class="eyebrow">Why Sistem(at)ica</p>
+    <h2 id="why-heading">Placeholder heading</h2>
+    <p>Placeholder paragraph explaining the name and the approach: systemic thinking, applied systematically.</p>
+  </div>
+</section>
+
+<section class="section section--tint" id="collaborations" aria-labelledby="collab-heading">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Selected collaborations</p>
+      <h2 id="collab-heading">Who I've worked with</h2>
+    </div>
+    <div class="card-grid">
+      {%- for c in collaborations %}
+      <div class="card">
+        <h3>{% if c.url %}<a href="{{ c.url }}">{{ c.name }}</a>{% else %}{{ c.name }}{% endif %}</h3>
+        <p>{{ c.note }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about" aria-labelledby="about-heading">
+  <div class="wrap about-grid">
+    <img src="{{ profile.headshot }}" alt="{{ profile.headshotAlt }}" width="320" height="320">
+    <div class="prose">
+      <p class="eyebrow">About</p>
+      <h2 id="about-heading">{{ profile.name }}</h2>
+      <p>Placeholder first paragraph about Laura.</p>
+      <p>Placeholder second paragraph about Laura.</p>
+      <ul class="chips">
+        {%- for role in roles %}<li class="chip">{{ role.label }}{% if role.org %}, {{ role.org }}{% endif %}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint" aria-label="Testimonial">
+  <div class="wrap">
+    <blockquote class="quote">
+      <p>&ldquo;{{ testimonial.quote }}&rdquo;</p>
+      <footer>{{ testimonial.author }}, {{ testimonial.role }}</footer>
+    </blockquote>
+  </div>
+</section>
+
+<section class="section" id="contact" aria-labelledby="contact-heading">
+  <div class="wrap flow">
+    <p class="eyebrow">Contact</p>
+    <h2 id="contact-heading">Let's talk</h2>
+    <form class="form" name="contact-sistematica" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company">
+      <input type="hidden" name="form-name" value="contact-sistematica">
+      <p class="hidden"><label>Leave this empty <input name="company"></label></p>
+      <label>Name <input name="name" autocomplete="name" required></label>
+      <label>Email <input type="email" name="email" autocomplete="email" required></label>
+      <label>Organisation <input name="organisation" autocomplete="organization"></label>
+      <label>Message <textarea name="message" required></textarea></label>
+      <p><button class="button" type="submit">Send message</button></p>
+    </form>
+  </div>
+</section>
