@@ -7,7 +7,7 @@
 #   chip:  optional short label; if present the role appears as a chip on sistematica.biz
 
 - role: Founder
-  org: Sistem(at)ica Research & Advisory
+  org: Sistematica Research & Advisory
   url: https://sistematica.biz
 
 - role: Co-host / writer

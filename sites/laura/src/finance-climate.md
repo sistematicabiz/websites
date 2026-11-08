@@ -2,11 +2,11 @@
 layout: layouts/page.njk
 permalink: /finance-climate/
 title: Finance & Climate
-kicker: Sistem(at)ica · Universe Partners · Arketa · All About Water
+kicker: Sistematica · Universe Partners · Arketa · All About Water
 tags: section
 order: 2
 tile:
-  label: Sistem(at)ica · Universe Partners · All About Water
+  label: Sistematica · Universe Partners · All About Water
   title: Finance & Climate
   text: Advisory, investment, and research work on sustainable and values-aligned finance, with an eye for long-term value.
   go: Advisory, fund and boards
@@ -19,11 +19,11 @@ Finance is never merely technical. Its categories, incentives, time horizons, an
 My work in finance and climate focuses on the relationship between rigorous analysis, long-term value creation, resilience, and the broader social and ecological systems within which markets operate.
 
 <span class="kicker terra">Advisory</span>
-<h3>Sistem(at)ica Research &amp; Advisory</h3>
+<h3>Sistematica Research &amp; Advisory</h3>
 
 Independent research and advisory for organizations navigating sustainable and values-aligned finance, climate resilience, and systems-level questions.
 
-<div class="actions"><a class="btn line" href="{{ profile.sites.sistematica }}">Visit Sistem(at)ica</a></div>
+<div class="actions"><a class="btn line" href="{{ profile.sites.sistematica }}">Visit Sistematica</a></div>
 
 <span class="kicker terra">Venture fund</span>
 <h3>Universe Partners</h3>

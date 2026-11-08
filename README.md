@@ -5,7 +5,7 @@ Eleventy sources for two static sites, built from one repo:
 | Site | Folder | Pages |
 | --- | --- | --- |
 | laurasegafredo.com | `sites/laura/` | Home, About, Writing & Podcast (Moral Revolution), Finance & Climate, Teaching & Research, Land & Regeneration, Speaking & Press, Contact |
-| sistematica.biz | `sites/sistematica/` | One page: hero, what I do, why Sistem(at)ica, selected collaborations, about, testimonial, contact |
+| sistematica.biz | `sites/sistematica/` | One page: hero, what I do, why Sistematica, selected collaborations, about, testimonial, contact |
 
 Both use design direction B, "Tessera" (Bodoni Moda + Jost, colour bands, triangle-mosaic frames).
 
