@@ -32,5 +32,5 @@ My research interests span political economy, ethics, theology, ecology, and the
 - Degrowth, regenerative economics, and institutional transformation
 
 </div>
-{% set seed = 19 %}{% set note = "picture for Teaching & Research" %}{% include "partials/art.njk" %}
+<figure class="frame"><canvas data-tessera data-seed="19" data-size="24" aria-hidden="true"></canvas><img src="/img/teaching.jpg" alt="Laura Segafredo speaking outdoors at a lectern" width="718" height="957" loading="lazy"></figure>
 </div></section>

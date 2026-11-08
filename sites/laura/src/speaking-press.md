@@ -25,6 +25,9 @@ A selection of published commentary, interviews, and speaking engagements explor
 <div class="press">
 {%- for p in press %}
   <article class="pr">
+    {%- if p.image %}
+    <img class="pr-img" src="{{ p.image.src }}" alt="{{ p.image.alt }}" width="{{ p.image.width }}" height="{{ p.image.height }}" loading="lazy">
+    {%- endif %}
     <span class="src">{{ p.source }} · {{ p.kind }}</span>
     <h3 class="t">{{ p.title }}</h3>
     <p>{{ p.text }}</p>

@@ -43,5 +43,5 @@ Financial Times, MSCI, S&P Dow Jones Indices, Environmental Finance, Americas So
 </div></section>
 
 <section class="band"><div class="wrap">
-{% set seed = 41 %}{% set note = "additional picture from the plan" %}{% include "partials/art.njk" %}
+<figure class="frame art"><canvas data-tessera data-seed="41" data-size="24" aria-hidden="true"></canvas><img src="/img/about-event.jpg" alt="Laura Segafredo greeting a guest at a conference dinner" width="718" height="957" loading="lazy"></figure>
 </div></section>

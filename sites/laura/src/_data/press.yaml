@@ -7,6 +7,7 @@
 #   linkText: text of the link, e.g. Read the letter
 #   url:      the link; leave empty ("") if you do not have it yet
 #   todo:     optional note shown instead of the link while url is empty
+#   image:    optional picture shown at the top of the card (src in shared/img/, width, height, alt)
 
 - source: Financial Times
   kind: Letter
@@ -16,6 +17,11 @@
     their dependence on natural systems and planetary limits matters.
   linkText: Read the letter
   url: https://www.ft.com/content/86ccc488-63b2-4afd-9a37-2892d4675a06
+  image:
+    src: /img/ft-letter.jpg
+    width: 1100
+    height: 825
+    alt: 'Newspaper clipping of the Financial Times letter “Markets don’t exist in a liminal cosmic space”'
 
 - source: SRI360
   kind: Podcast

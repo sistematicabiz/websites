@@ -32,7 +32,7 @@ As a partner in Universe Partners, I contribute to work advancing investment app
 
 <div class="actions"><a class="btn line" href="https://www.universe-partners.com/" target="_blank" rel="noopener">Learn about Universe Partners ↗</a></div>
 </div>
-{% set seed = 12 %}{% set note = "picture for Finance & Climate" %}{% include "partials/art.njk" %}
+<figure class="frame"><canvas data-tessera data-seed="12" data-size="24" aria-hidden="true"></canvas><img src="/img/finance-climate.jpg" alt="Laura Segafredo presenting a talk on ecosystem degradation" width="690" height="919" loading="lazy"></figure>
 </div></section>
 
 <section class="band ivory2"><div class="wrap spread top">
@@ -55,5 +55,5 @@ I advise All About Water, a startup working at the intersection of agtech, clima
 
 <div class="actions"><a class="btn line" href="https://aawater.co/" target="_blank" rel="noopener">All About Water ↗</a></div>
 </div>
-{% set seed = 27 %}{% set note = "picture for Boards & other initiatives" %}{% include "partials/art.njk" %}
+<figure class="frame"><canvas data-tessera data-seed="27" data-size="24" aria-hidden="true"></canvas><img src="/img/nasdaq.jpg" alt="Laura Segafredo at the Nasdaq podium for The Economic Club of New York" width="655" height="874" loading="lazy"><figcaption class="cap">The Economic Club of New York at Nasdaq</figcaption></figure>
 </div></section>
