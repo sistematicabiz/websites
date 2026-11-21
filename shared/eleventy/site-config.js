@@ -64,9 +64,12 @@ export function configureSite(eleventyConfig, site) {
   // Long text from the CMS (Markdown) -> HTML. External links open in a new tab; "Sistematica" is styled.
   eleventyConfig.addFilter("md", (s) => (s ? brandHtml(md.render(String(s))) : ""));
 
-  // Headings typed in the CMS: escape, but keep "&shy;" (where a long word may break) working.
-  // Also styles the word "Sistematica".
-  eleventyConfig.addFilter("soft", (s) => brand(s).replace(/&amp;shy;/g, "&shy;"));
+  // Headings and short lines typed in the CMS: escape, keep "&shy;" (where a long word may break),
+  // style the word "Sistematica" and turn *word* into italics.
+  // *word* becomes <i>word</i> (e.g. "Climate change *at* work").
+  eleventyConfig.addFilter("soft", (s) =>
+    brand(s).replace(/&amp;shy;/g, "&shy;").replace(/\*([^*]+)\*/g, "<i>$1</i>")
+  );
 
 
   // width="…" height="…" for an image under /media/ (read from the file, so the page doesn't jump while loading)
