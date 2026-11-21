@@ -1,6 +1,20 @@
-# Site-wide settings for Sistematica
+# Site-wide settings for Sistematica (editable in the CMS: Settings (Sistematica))
 title: Sistematica
 url: https://sistematica.biz
 lang: en
-# Colour theme applied to <html data-theme="..."> (see shared/css/themes.css)
+description: Independent research and advisory at the intersection of finance, social and ecological systems, and long-term value creation.
+# Colour theme applied to <html data-theme="..."> (see shared/css/themes.css): primari, terra, verde, notte
 theme: verde
+contact_email: laura.segafredo@gmail.com
+links:
+  linkedin: https://www.linkedin.com/in/lsegafredo
+  laura: https://laurasegafredo.com
+# Main menu: one-page site, so links point to sections (#about, #what, #collaborations, #contact)
+nav:
+  - { label: About, url: "#about" }
+  - { label: What We Do, url: "#what" }
+  - { label: Collaborations, url: "#collaborations" }
+  - { label: Contact, url: "#contact" }
+footer:
+  text: © Sistematica Research & Advisory · New York
+  laura_label: Writing, teaching and public work at laurasegafredo.com

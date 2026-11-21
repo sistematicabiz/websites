@@ -1,75 +1,77 @@
 ---
 layout: layouts/sistematica.njk
-description: Independent research and advisory at the intersection of finance, social and ecological systems, and long-term value creation.
+eleventyComputed:
+  title: ""
+  description: "{{ pages.home.description | safe }}"
 ---
-{#- Home, from design-reference/campiture/sistematica.html. Text is hard-coded for now: it moves to the CMS in Phase 4. -#}
+{#- Home. All text comes from content/sistematica/pages/home.md (CMS: Pages (Sistematica) > Home);
+    collaborations and role chips come from their collections. -#}
 {% from "macros/contact.njk" import contactCard with context %}
 {% from "macros/links.njk" import linkAttrs, arrow %}
+{%- set p = pages.home -%}
 <section class="wrap s-hero">
   <div class="s-name">
-    <span class="lbl">{% include "partials/sm.njk" %} Research &amp; Advisory</span>
+    <span class="lbl">{{ p.hero.eyebrow | soft | safe }}</span>
     <h1 aria-label="Sistematica"><span>Sistem</span><span><i class="g">at</i></span><span>ica</span></h1>
-    <p class="tag">Systematic insight, systems thinking.</p>
+    <p class="tag">{{ p.hero.subtitle | soft | safe }}</p>
     <div class="row">
-      <p style="font-size:21px;line-height:1.35;font-weight:500">Independent research and advisory for organizations working at the intersection of finance, social and ecological systems, and long-term value creation.</p>
-      <div style="display:grid;gap:18px"><p>I combine rigorous analysis grounded in data with a systems thinking perspective, helping clients navigate complex questions with intellectual clarity and practical purpose.</p>
-      <div class="actions"><a class="btn" href="#contact">Start a conversation</a><a class="btn line" href="#what">What I do</a></div></div>
+      <p style="font-size:21px;line-height:1.35;font-weight:500">{{ p.hero.lead }}</p>
+      <div style="display:grid;gap:18px">{{ p.hero.text | md | trim | safe }}
+      <div class="actions">{% for b in p.hero.buttons %}<a class="btn{% if not loop.first %} line{% endif %}" {{ linkAttrs(b.url) }}>{{ b.label }}{% if b.url | isExternal %} ↗{% endif %}</a>{% endfor %}</div></div>
     </div>
   </div>
   <div class="s-side">
-    <div class="m"><span class="vert">Laura Segafredo, PhD · Founder</span><img src="/media/headshot.jpg" alt="Portrait of Laura Segafredo" width="760" height="1140"></div>
+    <div class="m"><span class="vert">{{ p.hero.photo_caption }}</span><img src="{{ p.hero.photo }}" alt="{{ p.hero.photo_alt }}"{{ p.hero.photo | imgSize | safe }}></div>
     <div class="meter" aria-hidden="true"><i style="height:22%"></i><i style="height:30%"></i><i style="height:26%"></i><i style="height:38%"></i><i style="height:46%"></i><i style="height:42%"></i><i style="height:55%"></i><i style="height:63%"></i><i style="height:60%"></i><i style="height:74%"></i><i style="height:86%"></i><i class="sun" style="height:100%"></i></div>
   </div>
 </section>
 
-<section class="atwork" aria-label="Climate change at work"><div class="wrap aw">
-  <figure><img src="/media/climate-at-work.jpg" alt="An LED road sign reading CLIMATE CHANGE AT WORK in a Brooklyn park, with the Manhattan skyline behind" width="1428" height="954"></figure>
+{%- set aw = p.at_work %}
+<section class="atwork" aria-label="{{ aw.title | replace('*', '') }}"><div class="wrap aw">
+  <figure><img src="{{ aw.photo }}" alt="{{ aw.photo_alt }}"{{ aw.photo | imgSize | safe }}></figure>
   <div class="aw-t">
-    <p class="aw-big">Climate change <i>at</i> work</p>
-    <p>Finance, ecology and everyday life are one system. The work starts from there.</p>
-    <small>Climate Signs, an artwork by Justin Brice Guariglia · Sunset Park, Brooklyn · Photo: Laura Segafredo</small>
+    <p class="aw-big">{{ aw.title | soft | safe }}</p>
+    <p>{{ aw.text }}</p>
+    <small>{{ aw.credit }}</small>
   </div>
 </div></section>
 
 <section id="what" class="svc">
-  <article class="sv"><span class="n">01</span><h3>Research &amp; strategic analysis</h3><p>I help clients make sense of complex questions at the intersection of finance, sustainability, economic systems and real-world impacts. My work is grounded in sound evidence, careful framing, and close attention to the institutional, regulatory, and market context in which decisions are made.</p><p>The aim is not simply to produce analysis, but to clarify the choices, assumptions, risks, and opportunities that matter for long-term strategy.</p></article>
-  <article class="sv"><span class="n">02</span><h3>Sustainable finance &amp; investment insight</h3><p>I provide research and advisory support to organizations seeking to connect investment practice with climate resilience, social and ecological outcomes, and durable value creation.</p><p>This can include work on sustainable and faith-aligned investment approaches, thematic and impact strategies, financial products, and the evolving materiality of environmental and social factors.</p></article>
-  <article class="sv"><span class="n">03</span><h3>Thought leadership &amp; convening</h3><p>I help organizations develop research, narratives, and forums that bring complex ideas into productive public and professional conversation.</p><p>This includes reports, white papers, presentations, workshops, executive briefings, and stakeholder convenings for investment, policy, academic, and mission-driven audiences.</p></article>
+  {%- for a in p.practice_areas %}
+  <article class="sv"><span class="n">{{ "0" if loop.index < 10 }}{{ loop.index }}</span><h3>{{ a.title | soft | safe }}</h3>{{ a.text | md | replace("\n", "") | safe }}</article>
+  {%- endfor %}
 </section>
 <section class="eng-wrap"><div class="wrap eng">
-  <div style="display:grid;gap:12px;align-content:start"><span class="lbl">Sample engagements</span><h2>Eight ways in</h2></div>
+  <div style="display:grid;gap:12px;align-content:start"><span class="lbl">{{ p.engagements.eyebrow }}</span><h2>{{ p.engagements.title | soft | safe }}</h2></div>
   <ol>
-    <li>Sustainable, values-aligned and impact index and active-investment product ideation, strategy and development</li>
-    <li>Research on the drivers of financial performance in non-traditional investment approaches, including sustainable and faith-aligned strategies</li>
-    <li>Thematic, impact, and climate-resilience investment strategy</li>
-    <li>Market, policy, and regulatory analysis</li>
-    <li>Research design, report development, and editorial support</li>
-    <li>Stakeholder workshops, investor education, and executive briefings</li>
-    <li>Partnership strategy for mission-led financial ventures</li>
-    <li>Development of thought-leadership platforms, including reports, presentations, and public-facing narratives</li>
+    {%- for e in p.engagements.items %}
+    <li>{{ e }}</li>
+    {%- endfor %}
   </ol>
 </div></section>
 
 <section class="why"><div class="wrap">
-  <span class="lbl">Why the name · two commitments</span>
-  <div class="big">Rigor without<br><span>reduc&shy;tionism</span></div>
+  <span class="lbl">{{ p.why.eyebrow }}</span>
+  <div class="big">{% for line in p.why.title_lines %}{% if loop.first %}{{ line | soft | safe }}{% else %}<br><span>{{ line | soft | safe }}</span>{% endif %}{% endfor %}</div>
   <div class="cols">
-    <div><h3>Systematic</h3><p>Disciplined research, analytical clarity, intellectual honesty, and attention to evidence. Complex questions deserve more than fashionable language or easy conclusions.</p></div>
-    <div><h3>Systems thinking</h3><p>An understanding that financial, social, ecological, and political outcomes are interconnected. The most consequential challenges cannot be understood, or addressed, one variable at a time.</p></div>
-    <div><h3>Italian flair</h3><p>Sistematica evokes both method and sensibility: rigor without reductionism; coherence without rigidity; analysis attentive to the wider whole.</p></div>
+    {%- for c in p.why.commitments %}
+    <div><h3>{{ c.title | soft | safe }}</h3><p>{{ c.text }}</p></div>
+    {%- endfor %}
+    <div><h3>{{ p.why.flair_title | soft | safe }}</h3>{{ p.why.flair_text | md | trim | safe }}</div>
   </div>
 </div></section>
 
+{%- set q = p.quote_block %}
 <section class="harmony"><div class="wrap hm">
-  <figure><img src="/media/rivera-banner.jpg" alt="Detail of a Diego Rivera mural: two figures hold up a banner reading La verdadera civilización será la armonía de los hombres con la tierra y de los hombres entre sí" width="1276" height="400"></figure>
+  <figure><img src="{{ q.photo }}" alt="{{ q.photo_alt }}"{{ q.photo | imgSize | safe }}></figure>
   <blockquote>
-    <p class="tr">“True civilization will be the harmony of people with the earth, and of people with one another.”</p>
-    <cite>Diego Rivera, mural detail · <span lang="es">La verdadera civilización será la armonía de los hombres con la tierra y de los hombres entre sí</span> · Photo: Laura Segafredo</cite>
+    <p class="tr">{{ q.quote }}</p>
+    <cite>{{ q.source }}{% if q.original %} · <span lang="{{ q.original_lang or 'es' }}">{{ q.original }}</span>{% endif %}{% if q.credit %} · {{ q.credit }}{% endif %}</cite>
   </blockquote>
 </div></section>
 
 <section id="collaborations">
-  <div class="wrap collab-h"><span class="lbl">Rigor, ecological intelligence, and moral clarity in finance</span><h2>Selected collabo&shy;rations</h2></div>
+  <div class="wrap collab-h"><span class="lbl">{{ p.collaborations.eyebrow }}</span><h2>{{ p.collaborations.title | soft | safe }}</h2></div>
   <div class="collab">
     {%- for c in collaborations %}
     <article class="cb"><div class="ph"><span class="vert">{{ c.area }}</span>{% if c.image %}<img src="{{ c.image }}" alt="{{ c.image_alt }}"{{ c.image | imgSize | safe }}{% if c.image_position %} style="object-position:{{ c.image_position }}"{% endif %} loading="lazy">{% endif %}</div><div class="b">
@@ -80,17 +82,18 @@ description: Independent research and advisory at the intersection of finance, s
   </div>
 </section>
 
+{%- set ab = p.about %}{% set t = p.testimonial %}
 <section id="about" class="about"><div class="wrap">
-  <div style="display:grid;gap:4px;align-content:start"><img src="/media/nasdaq.jpg" alt="Laura speaking at the Economic Club of New York at Nasdaq" width="655" height="874"><blockquote class="quote">“A short client quotation goes here: one or two sentences about the clarity and rigor of the work.”<cite>Client name, organization · placeholder</cite></blockquote></div>
+  <div style="display:grid;gap:4px;align-content:start"><img src="{{ ab.photo }}" alt="{{ ab.photo_alt }}"{{ ab.photo | imgSize | safe }}>{% if t.quote %}<blockquote class="quote">{{ t.quote }}<cite>{{ t.author }}{% if t.organization %}, {{ t.organization }}{% endif %}</cite></blockquote>{% endif %}</div>
   <div class="t">
-    <span class="lbl">About</span>
-    <h2>Laura Segafredo, PhD</h2>
-    <p style="font-size:21px;font-weight:500">Economist, climate-finance leader, researcher, and educator.</p>
-    <p>Laura Segafredo, PhD, is an economist, climate-finance leader, researcher, and educator with more than two decades of experience spanning energy, sustainable investing, philanthropy, academia, and advisory work in the United States and Europe. She works at the intersection of finance, ethics, political economy, and ecological transition.</p>
-    <p>Her career has included senior leadership in sustainable-investment research and index investing at BlackRock, as well as work across climate and environmental organizations, academic institutions, and mission-driven ventures. She is currently an Adjunct Professor of International and Public Affairs at Columbia University’s School of International and Public Affairs.</p>
+    <span class="lbl">{{ ab.eyebrow }}</span>
+    <h2>{{ ab.name | soft | safe }}</h2>
+    <p style="font-size:21px;font-weight:500">{{ ab.title_line }}</p>
+    {{ ab.bio | md | safe }}
     <ul class="chips">{% for r in roles %}{% if r.show_on_sistematica %}<li>{{ r.sistematica_chip or (r.role + ", " + r.organization) }}</li>{% endif %}{% endfor %}</ul>
-    <div class="actions"><a class="btn" href="{{ urls.laura }}">Read Laura’s full profile</a><a class="btn line" href="https://www.linkedin.com/in/lsegafredo" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+    <div class="actions"><a class="btn" {{ linkAttrs(site.links.laura) }}>{{ ab.profile_label }}</a><a class="btn line" {{ linkAttrs(site.links.linkedin) }}>{{ ab.linkedin_label }} ↗</a></div>
   </div>
 </div></section>
 
-{% call contactCard({ field: "deep", label: "Contact", title: "Start a conver&shy;sation", idPrefix: "ks", extended: true, messageLabel: "What would you like to discuss?", submitLabel: "Send inquiry" }) %}<p>I am open to working with organizations and collaborators seeking rigorous thinking on sustainable finance, ecological and social resilience, long-term value creation, and systems-level questions.</p>{% endcall %}
+{% set c = p.contact %}
+{% call contactCard({ field: "deep", label: c.eyebrow, title: c.title | soft, idPrefix: "ks", extended: true, messageLabel: c.message_label, submitLabel: c.submit_label, timelineOptions: c.timeline_options }) %}{{ c.intro | md | trim | safe }}{% endcall %}

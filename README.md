@@ -12,7 +12,7 @@ Two static sites built with [Eleventy 3](https://www.11ty.dev/) from one codebas
 ```
 content/               text and data (Markdown/YAML), edited through the CMS (see content/README.md)
   <site>/settings.yml  site title, URL, colour theme
-  laura/pages/         text of each laura page (one file per page)
+  <site>/pages/        text of each page (one file per page)
   media/               all images, including CMS uploads (served at /media/ on both sites)
 shared/
   eleventy/            shared Eleventy setup (site-config.js) and the CMS collection loader
@@ -38,6 +38,7 @@ npm install
 npm run dev:laura          # http://localhost:8080
 npm run dev:sistematica    # http://localhost:8081
 npm run build              # both sites
+npm run check:cms          # compare the CMS config with the content files
 ```
 
 ## Deploy (Netlify)

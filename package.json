@@ -11,7 +11,8 @@
     "dev:sistematica": "eleventy --config=sites/sistematica/eleventy.config.js --serve --port=8081",
     "build:laura": "eleventy --config=sites/laura/eleventy.config.js",
     "build:sistematica": "eleventy --config=sites/sistematica/eleventy.config.js",
-    "build": "npm run build:laura && npm run build:sistematica"
+    "build": "npm run build:laura && npm run build:sistematica",
+    "check:cms": "node scripts/check-cms.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.8",

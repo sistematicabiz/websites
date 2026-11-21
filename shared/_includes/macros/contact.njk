@@ -3,7 +3,7 @@
     Usage:
       {% from "macros/contact.njk" import contactCard with context %}
       {% call contactCard({ field: "red", label: "Get in touch", title: "Talks, interviews, collabo&shy;rations" }) %}optional intro paragraph{% endcall %}
-    Options: field (section class), label, title (HTML allowed), idPrefix, extended (adds Organization + Timeline),
+    Options: field (section class), label, title (HTML allowed), idPrefix, extended (adds Organization + Timeline; options in timelineOptions),
              messageLabel, submitLabel. -#}
 {% macro contactCard(o) %}
 {%- set p = o.idPrefix or "k" -%}
@@ -18,7 +18,7 @@
     {%- endif %}
     <div class="f"><label for="{{ p }}-email">Email</label><input id="{{ p }}-email" name="email" type="email" autocomplete="email" required></div>
     {%- if o.extended %}
-    <div class="f"><label for="{{ p }}-time">Timeline (optional)</label><select id="{{ p }}-time" name="timeline"><option>No fixed timeline</option><option>Within a month</option><option>Next quarter</option><option>Later this year</option></select></div>
+    <div class="f"><label for="{{ p }}-time">Timeline (optional)</label><select id="{{ p }}-time" name="timeline">{% for t in o.timelineOptions %}<option>{{ t }}</option>{% endfor %}</select></div>
     {%- endif %}
     <div class="f full"><label for="{{ p }}-msg">{{ o.messageLabel or "Message" }}</label><textarea id="{{ p }}-msg" name="message" required></textarea></div>
     <div><button class="btn" type="submit">{{ o.submitLabel or "Send" }}</button></div>
