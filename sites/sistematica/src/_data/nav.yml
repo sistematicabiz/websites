@@ -1,0 +1,5 @@
+# Main navigation (one-page site: anchors)
+- { label: About, url: "#about" }
+- { label: What We Do, url: "#what" }
+- { label: Collaborations, url: "#collaborations" }
+- { label: Contact, url: "#contact" }

@@ -16,6 +16,15 @@ export function configureSite(eleventyConfig, site) {
     ...yaml.load(fs.readFileSync(`${contentDir}/settings.yml`, "utf8")),
   }));
 
+  // Public URL of every site, for cross-links (e.g. urls.sistematica in the laura footer)
+  eleventyConfig.addGlobalData("urls", () =>
+    Object.fromEntries(
+      fs.readdirSync("content", { withFileTypes: true })
+        .filter((d) => d.isDirectory() && fs.existsSync(`content/${d.name}/settings.yml`))
+        .map((d) => [d.name, yaml.load(fs.readFileSync(`content/${d.name}/settings.yml`, "utf8")).url])
+    )
+  );
+
   // Shared static assets
   eleventyConfig.addPassthroughCopy({
     "shared/css": "css",
