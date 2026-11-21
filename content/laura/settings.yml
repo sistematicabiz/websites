@@ -1,6 +1,22 @@
-# Site-wide settings for laurasegafredo.com
+# Site-wide settings for laurasegafredo.com (editable in the CMS: Settings > Laura's site)
 title: Laura Segafredo
 url: https://laurasegafredo.com
 lang: en
-# Colour theme applied to <html data-theme="..."> (see shared/css/themes.css)
+description: Researcher, investor, advisor, and educator working across finance, ecology, ethics, and political economy.
+# Colour theme applied to <html data-theme="..."> (see shared/css/themes.css): primari, terra, verde, notte
 theme: primari
+contact_email: laura.segafredo@gmail.com
+links:
+  linkedin: https://www.linkedin.com/in/lsegafredo
+  substack: https://moralrevolution.substack.com/
+  apple_podcasts: https://podcasts.apple.com/us/podcast/moral-revolution-podcast/id1837541394
+  spotify: https://open.spotify.com/show/4tMKxIh7bxORHCPt9SjpT8
+  sistematica: https://sistematica.biz
+footer:
+  text: Laura Segafredo · New York City
+  linkedin_label: LinkedIn
+  sistematica_label: Advisory at Sistematica
+# Band at the bottom of every inner page
+endband:
+  title: "Talks, interviews,\ncollaborations"
+  button_label: Get in touch
