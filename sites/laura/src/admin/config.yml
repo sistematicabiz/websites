@@ -15,7 +15,6 @@ publish_mode: editorial_workflow
 media_folder: content/media
 public_folder: /media
 site_url: https://laurasegafredo.com
-locale: en
 collections:
   - name: laura_pages
     label: Pages (Laura)
@@ -676,10 +675,7 @@ collections:
             name: theme
             widget: select
             options:
-              - label: Primari (red
-                green: null
-                blue: null
-                yellow): null
+              - label: Primari (red, green, blue, yellow)
                 value: primari
               - label: Terra (warm earth tones)
                 value: terra
@@ -926,6 +922,350 @@ collections:
         value_type: int
         required: false
         hint: Lower numbers come first.
+  - name: sistematica_pages
+    label: Pages (Sistematica)
+    label_singular: Page
+    description: >-
+      The text and photos of the Sistematica home page. Collaborations and role chips are edited in their own
+      collections.
+    editor:
+      preview: false
+    files:
+      - name: home
+        label: Home
+        file: content/sistematica/pages/home.md
+        fields:
+          - label: Page title (browser tab)
+            name: title
+            widget: string
+          - label: Search description
+            name: description
+            widget: text
+            required: false
+            hint: Optional. Leave empty to use the site's default description.
+          - label: Opening
+            name: hero
+            widget: object
+            collapsed: false
+            hint: The big name Sistem·at·ica is part of the design and is not edited here.
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Subtitle
+                name: subtitle
+                widget: string
+              - label: Lead
+                name: lead
+                widget: text
+                hint: The larger first paragraph.
+              - label: Second paragraph
+                name: text
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+              - label: Buttons
+                name: buttons
+                widget: list
+                summary: "{{label}}"
+                hint: The first button is filled, the others are outlined.
+                fields:
+                  - label: Button text
+                    name: label
+                    widget: string
+                  - label: Link
+                    name: url
+                    widget: string
+                    hint: "A section of this page (#contact, #what) or a full address (https://…)."
+              - label: Photo
+                name: photo
+                widget: image
+              - label: Photo description (alt text)
+                name: photo_alt
+                widget: string
+              - label: Founder caption
+                name: photo_caption
+                widget: string
+                hint: Vertical label next to the photo.
+          - label: "\"Climate change at work\" block"
+            name: at_work
+            widget: object
+            fields:
+              - label: Photo
+                name: photo
+                widget: image
+              - label: Photo description (alt text)
+                name: photo_alt
+                widget: string
+              - label: Big line
+                name: title
+                widget: string
+                hint: Put a word between asterisks to set it in italics, e.g. Climate change *at* work.
+              - label: Text
+                name: text
+                widget: text
+              - label: Credit
+                name: credit
+                widget: string
+                required: false
+          - label: What I do (practice areas)
+            name: practice_areas
+            widget: list
+            summary: "{{title}}"
+            hint: Numbered automatically (01, 02, …) in the order shown here. Drag to reorder.
+            fields:
+              - label: Title
+                name: title
+                widget: string
+              - label: Text
+                name: text
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - label: Sample engagements
+            name: engagements
+            widget: object
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Title
+                name: title
+                widget: string
+              - label: Engagements
+                name: items
+                widget: list
+                hint: One engagement per item. Drag to reorder.
+          - label: Why the name
+            name: why
+            widget: object
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Title lines
+                name: title_lines
+                widget: list
+                hint: The second line is set in colour. Type &shy; where a long word may break.
+              - label: Commitments
+                name: commitments
+                widget: list
+                summary: "{{title}}"
+                fields:
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Text
+                    name: text
+                    widget: text
+              - label: Italian flair title
+                name: flair_title
+                widget: string
+              - label: Italian flair text
+                name: flair_text
+                widget: text
+          - label: Quotation block (mural)
+            name: quote_block
+            widget: object
+            fields:
+              - label: Photo
+                name: photo
+                widget: image
+              - label: Photo description (alt text)
+                name: photo_alt
+                widget: string
+              - label: Quotation
+                name: quote
+                widget: text
+              - label: Source
+                name: source
+                widget: string
+              - label: Original text
+                name: original
+                widget: string
+                required: false
+              - label: Language of the original (code)
+                name: original_lang
+                widget: string
+                required: false
+                default: es
+                hint: e.g. es for Spanish, it for Italian.
+              - label: Credit
+                name: credit
+                widget: string
+                required: false
+          - label: Collaborations section
+            name: collaborations
+            widget: object
+            hint: The collaborations themselves are edited in "Sistematica · Collaborations".
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Title
+                name: title
+                widget: string
+                hint: Type &shy; where a long word may break.
+          - label: Testimonial
+            name: testimonial
+            widget: object
+            hint: Leave the quotation empty to hide the testimonial.
+            fields:
+              - label: Quotation
+                name: quote
+                widget: text
+                required: false
+              - label: Author
+                name: author
+                widget: string
+                required: false
+              - label: Organization
+                name: organization
+                widget: string
+                required: false
+          - label: About
+            name: about
+            widget: object
+            hint: The role chips come from Roles ("Show on Sistematica").
+            fields:
+              - label: Photo
+                name: photo
+                widget: image
+              - label: Photo description (alt text)
+                name: photo_alt
+                widget: string
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Name
+                name: name
+                widget: string
+              - label: One-line title
+                name: title_line
+                widget: string
+              - label: Bio
+                name: bio
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+              - label: Profile button text
+                name: profile_label
+                widget: string
+                hint: Links to laurasegafredo.com (address in Settings).
+              - label: LinkedIn button text
+                name: linkedin_label
+                widget: string
+          - label: Contact
+            name: contact
+            widget: object
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Title
+                name: title
+                widget: string
+                hint: Type &shy; where a long word may break.
+              - label: Intro
+                name: intro
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+              - label: Message field label
+                name: message_label
+                widget: string
+              - label: Send button text
+                name: submit_label
+                widget: string
+              - label: Timeline options
+                name: timeline_options
+                widget: list
+                hint: Choices in the Timeline menu of the form. Drag to reorder.
+  - name: sistematica_settings
+    label: Settings (Sistematica)
+    editor:
+      preview: false
+    files:
+      - name: settings
+        label: Site settings
+        file: content/sistematica/settings.yml
+        fields:
+          - label: Site name
+            name: title
+            widget: string
+            hint: Shown in browser tabs.
+          - label: Site address
+            name: url
+            widget: string
+          - label: Language
+            name: lang
+            widget: hidden
+            default: en
+          - label: Default search description
+            name: description
+            widget: text
+          - label: Colour theme
+            name: theme
+            widget: select
+            options:
+              - label: Primari (red, green, blue, yellow)
+                value: primari
+              - label: Terra (warm earth tones)
+                value: terra
+              - label: Verde (greens)
+                value: verde
+              - label: Notte (dark)
+                value: notte
+          - label: Contact email
+            name: contact_email
+            widget: string
+            hint: >-
+              Where contact form messages should go. Set the same address in Netlify > Forms > notifications for the
+              Sistematica site.
+          - label: Links
+            name: links
+            widget: object
+            fields:
+              - label: LinkedIn
+                name: linkedin
+                widget: string
+              - label: laurasegafredo.com
+                name: laura
+                widget: string
+          - label: Menu
+            name: nav
+            widget: list
+            summary: "{{label}}"
+            fields:
+              - label: Text
+                name: label
+                widget: string
+              - label: Link
+                name: url
+                widget: string
+                hint: "A section of the page: #about, #what, #collaborations or #contact."
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - label: Text
+                name: text
+                widget: string
+              - label: laurasegafredo.com link text
+                name: laura_label
+                widget: string
   - name: collaborations
     label: Sistematica · Collaborations
     label_singular: Collaboration
