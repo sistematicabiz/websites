@@ -17,13 +17,13 @@ description: Independent research and advisory at the intersection of finance, s
     </div>
   </div>
   <div class="s-side">
-    <div class="m"><span class="vert">Laura Segafredo, PhD · Founder</span><img src="/img/headshot.jpg" alt="Portrait of Laura Segafredo" width="760" height="1140"></div>
+    <div class="m"><span class="vert">Laura Segafredo, PhD · Founder</span><img src="/media/headshot.jpg" alt="Portrait of Laura Segafredo" width="760" height="1140"></div>
     <div class="meter" aria-hidden="true"><i style="height:22%"></i><i style="height:30%"></i><i style="height:26%"></i><i style="height:38%"></i><i style="height:46%"></i><i style="height:42%"></i><i style="height:55%"></i><i style="height:63%"></i><i style="height:60%"></i><i style="height:74%"></i><i style="height:86%"></i><i class="sun" style="height:100%"></i></div>
   </div>
 </section>
 
 <section class="atwork" aria-label="Climate change at work"><div class="wrap aw">
-  <figure><img src="/img/climate-at-work.jpg" alt="An LED road sign reading CLIMATE CHANGE AT WORK in a Brooklyn park, with the Manhattan skyline behind" width="1428" height="954"></figure>
+  <figure><img src="/media/climate-at-work.jpg" alt="An LED road sign reading CLIMATE CHANGE AT WORK in a Brooklyn park, with the Manhattan skyline behind" width="1428" height="954"></figure>
   <div class="aw-t">
     <p class="aw-big">Climate change <i>at</i> work</p>
     <p>Finance, ecology and everyday life are one system. The work starts from there.</p>
@@ -61,7 +61,7 @@ description: Independent research and advisory at the intersection of finance, s
 </div></section>
 
 <section class="harmony"><div class="wrap hm">
-  <figure><img src="/img/rivera-banner.jpg" alt="Detail of a Diego Rivera mural: two figures hold up a banner reading La verdadera civilización será la armonía de los hombres con la tierra y de los hombres entre sí" width="1276" height="400"></figure>
+  <figure><img src="/media/rivera-banner.jpg" alt="Detail of a Diego Rivera mural: two figures hold up a banner reading La verdadera civilización será la armonía de los hombres con la tierra y de los hombres entre sí" width="1276" height="400"></figure>
   <blockquote>
     <p class="tr">“True civilization will be the harmony of people with the earth, and of people with one another.”</p>
     <cite>Diego Rivera, mural detail · <span lang="es">La verdadera civilización será la armonía de los hombres con la tierra y de los hombres entre sí</span> · Photo: Laura Segafredo</cite>
@@ -72,16 +72,16 @@ description: Independent research and advisory at the intersection of finance, s
   <div class="wrap collab-h"><span class="lbl">Rigor, ecological intelligence, and moral clarity in finance</span><h2>Selected collabo&shy;rations</h2></div>
   <div class="collab">
     {%- for c in collaborations %}
-    <article class="cb"><div class="ph"><span class="vert">{{ c.area }}</span>{% if c.image %}<img src="{{ c.image }}" alt="{{ c.image_alt }}"{% if c.image_position %} style="object-position:{{ c.image_position }}"{% endif %} loading="lazy">{% endif %}</div><div class="b">
+    <article class="cb"><div class="ph"><span class="vert">{{ c.area }}</span>{% if c.image %}<img src="{{ c.image }}" alt="{{ c.image_alt }}"{{ c.image | imgSize | safe }}{% if c.image_position %} style="object-position:{{ c.image_position }}"{% endif %} loading="lazy">{% endif %}</div><div class="b">
       <h3>{{ c.name }}</h3>
       <p>{{ c.description }}</p>
-      {% if c.links and c.links.length %}<div class="links">{% for l in c.links %}<a {{ linkAttrs(l.url) }}>{{ l.label }} {{ arrow(l.url) }}</a>{% endfor %}</div>{% endif %}</div></article>
+      {% if c.links and c.links.length %}<div class="links">{% for l in c.links %}<a {{ linkAttrs(l.url) }}>{{ l.label }}{{ arrow(l.url) }}</a>{% endfor %}</div>{% endif %}</div></article>
     {%- endfor %}
   </div>
 </section>
 
 <section id="about" class="about"><div class="wrap">
-  <div style="display:grid;gap:4px;align-content:start"><img src="/img/nasdaq.jpg" alt="Laura speaking at the Economic Club of New York at Nasdaq" width="655" height="874"><blockquote class="quote">“A short client quotation goes here: one or two sentences about the clarity and rigor of the work.”<cite>Client name, organization · placeholder</cite></blockquote></div>
+  <div style="display:grid;gap:4px;align-content:start"><img src="/media/nasdaq.jpg" alt="Laura speaking at the Economic Club of New York at Nasdaq" width="655" height="874"><blockquote class="quote">“A short client quotation goes here: one or two sentences about the clarity and rigor of the work.”<cite>Client name, organization · placeholder</cite></blockquote></div>
   <div class="t">
     <span class="lbl">About</span>
     <h2>Laura Segafredo, PhD</h2>
