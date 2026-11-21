@@ -1,0 +1,34 @@
+---
+layout: layouts/laura-page.njk
+title: "About"
+bodyClass: pg-c4
+permalink: /about/
+---
+{#- From design-reference/campiture/about.html. Page text is still in this template (moves to the CMS in Phase 3). -#}
+{% from "macros/links.njk" import linkAttrs, arrow %}
+<section class="p-hero"><div class="wrap">
+  <div class="t"><span class="lbl">About · New York City</span><h1><span>About</span><span>Laura</span></h1><p class="lede">I am a researcher, advisor, educator, and writer whose work explores the moral and institutional foundations of economic life.</p></div>
+  <figure><span class="vert">Princeton Theological Seminary</span><img src="/img/headshot-princeton.jpg" alt="Laura Segafredo at Princeton Theological Seminary" width="733" height="1100"></figure>
+</div></section>
+<section class="wrap p-sec"><div class="p-two">
+  <div class="side"><span class="lbl">Who I am</span><p class="pull">What is economic life for?</p></div>
+  <div class="main">
+    <p>I work across finance, climate and ecological transition, theology and ethics, and the history of political and economic thought.</p>
+    <p>I am especially interested in the ways institutions shape what we consider possible: the forms of value we measure, the risks we recognize, the futures we finance, and the responsibilities we owe one another and the living world.</p>
+    <p>These questions inform my work across research, advisory, teaching, and public conversation. Through <a href="{{ urls.sistematica }}">{% include "partials/sm.njk" %} Research &amp; Advisory</a>, I collaborate with organizations working on sustainable and values-aligned finance, investment strategy and systems-level questions. Through <a href="/writing/">Moral Revolution</a>, I write and host conversations about economics, ethics, theology, and social transformation. I am also a partner in Universe Partners, a climate-resilience venture fund; a board member of Arketa, a degrowth think tank; and an adjunct professor at Columbia University’s School of International and Public Affairs.</p>
+    <p>Across these roles, I seek to connect rigorous, data driven analysis with a wider moral imagination, taking complexity seriously while keeping in view the question of what economic life is for.</p>
+  </div>
+</div></section>
+<section class="wrap p-sec">
+  <div style="display:grid;gap:12px;margin-bottom:28px"><h2 class="p-h2">Current roles</h2></div>
+  <div class="rows">
+    {%- for r in roles %}{% if r.show_on_about %}
+    <a class="row" {{ linkAttrs(r.link_url) }}><b>{{ r.organization | brand | safe }}</b><span>{{ r.short_line }}</span><span class="go">{{ r.short_link_label or r.link_label }} {{ arrow(r.link_url) }}</span></a>
+    {%- endif %}{% endfor %}
+  </div>
+</section>
+<section class="wrap p-sec"><div class="p-two">
+  <div class="side"><span class="lbl">Selected press, lectures and appearances</span><a class="btn line" href="https://www.linkedin.com/in/lsegafredo" target="_blank" rel="noopener" style="justify-self:start">LinkedIn ↗</a></div>
+  <p class="names">Financial Times <i>·</i> MSCI <i>·</i> S&amp;P Dow Jones Indices <i>·</i> Environmental Finance <i>·</i> Americas Society/Council of the Americas <i>·</i> National Association of Business Economists <i>·</i> SRI360 <i>·</i> Columbia University <i>·</i> Cornell University <i>·</i> Duke University</p>
+</div></section>
+<section class="wrap p-sec"><div class="photo-row" style="--n:2"><img src="/img/about-event.jpg" alt="Laura greeting a guest at a conference dinner" width="718" height="957"><img src="/img/nasdaq.jpg" alt="Laura speaking at the Economic Club of New York at Nasdaq" width="655" height="874"></div></section>
