@@ -1,0 +1,7 @@
+{#- Opening block of an inner page (variable: hero, from content/laura/pages/<page>.md). -#}
+<section class="p-hero"><div class="wrap">
+  <div class="t"><span class="lbl">{{ hero.kicker | soft | safe }}</span><h1>{% for line in hero.title_lines %}<span>{{ line | soft | safe }}</span>{% endfor %}</h1><p class="lede">{{ hero.intro }}</p></div>
+  {%- if hero.photo %}
+  <figure>{% if hero.photo_caption %}<span class="vert">{{ hero.photo_caption }}</span>{% endif %}<img src="{{ hero.photo }}" alt="{{ hero.photo_alt }}"{{ hero.photo | imgSize | safe }}></figure>
+  {%- endif %}
+</div></section>

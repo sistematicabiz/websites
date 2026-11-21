@@ -12,11 +12,12 @@ Two static sites built with [Eleventy 3](https://www.11ty.dev/) from one codebas
 ```
 content/               text and data (Markdown/YAML), edited through the CMS (see content/README.md)
   <site>/settings.yml  site title, URL, colour theme
-  media/               images uploaded through the CMS (served at /media/ on both sites)
+  laura/pages/         text of each laura page (one file per page)
+  media/               all images, including CMS uploads (served at /media/ on both sites)
 shared/
   eleventy/            shared Eleventy setup (site-config.js) and the CMS collection loader
   _includes/           Nunjucks layouts, partials and macros used by both sites
-  css/ js/ img/        static assets (CSS copied unchanged from the Campiture mockups)
+  css/ js/             static assets (CSS copied unchanged from the Campiture mockups)
 sites/<site>/
   eleventy.config.js   per-site config (calls shared/eleventy/site-config.js)
   netlify.toml         per-site Netlify build

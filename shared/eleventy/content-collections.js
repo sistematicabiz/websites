@@ -8,6 +8,24 @@ import markdownIt from "markdown-it";
 
 export const md = markdownIt({ html: true, typographer: false });
 
+// Links to other websites open in a new tab. Our own sites (set by site-config) stay in the same tab.
+let ownUrls = [];
+export function setOwnUrls(urls) {
+  ownUrls = Object.values(urls).filter(Boolean);
+}
+export function isExternal(url) {
+  if (!url || !/^https?:\/\//.test(url)) return false;
+  return !ownUrls.some((u) => url.startsWith(u));
+}
+md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+  const href = tokens[idx].attrGet("href");
+  if (isExternal(href)) {
+    tokens[idx].attrSet("target", "_blank");
+    tokens[idx].attrSet("rel", "noopener");
+  }
+  return self.renderToken(tokens, idx, options);
+};
+
 const FRONT_MATTER = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/;
 
 function readEntry(file) {
@@ -44,4 +62,15 @@ export function loadFolder(dir) {
     .map((f) => readEntry(path.join(dir, f)))
     .filter((e) => !e.draft)
     .sort(byOrderThenDate);
+}
+
+// A folder of single-page files (e.g. content/laura/pages/about.md) as { about: {...}, home: {...} }
+export function loadFiles(dir) {
+  if (!fs.existsSync(dir)) return {};
+  return Object.fromEntries(
+    fs
+      .readdirSync(dir)
+      .filter((f) => f.endsWith(".md"))
+      .map((f) => [path.basename(f, ".md"), readEntry(path.join(dir, f))])
+  );
 }

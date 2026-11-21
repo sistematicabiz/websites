@@ -1,4 +1,5 @@
 {#- Link helpers. Import with: {% from "macros/links.njk" import linkAttrs, arrow %}
-    External URLs (absolute, not one of our own sites) open in a new tab and get ↗; internal ones get →. -#}
+    External URLs (absolute, not one of our own sites) open in a new tab and get " ↗";
+    internal pages get " →"; in-page anchors (#…) get no arrow. Write {{ label }}{{ arrow(url) }} (no space). -#}
 {% macro linkAttrs(url) %}href="{{ url }}"{% if url | isExternal %} target="_blank" rel="noopener"{% endif %}{% endmacro %}
-{% macro arrow(url) %}{{ "↗" if url | isExternal else "→" }}{% endmacro %}
+{% macro arrow(url) %}{% if url | isExternal %} ↗{% elif not (url | string).startsWith("#") %} →{% endif %}{% endmacro %}

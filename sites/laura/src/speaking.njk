@@ -1,14 +1,13 @@
 ---
 layout: layouts/laura-page.njk
-title: "Speaking & Press"
 bodyClass: pg-off
 permalink: /speaking/
+eleventyComputed:
+  description: "{{ pages.speaking.description | safe }}"
+  title: "{{ pages.speaking.title | safe }}"
 ---
-{#- From design-reference/campiture/speaking.html. Page text is still in this template (moves to the CMS in Phase 3). -#}
-<section class="p-hero"><div class="wrap">
-  <div class="t"><span class="lbl">Selected press, conversations &amp; speaking</span><h1><span>In conver-</span><span>sation</span></h1><p class="lede">A selection of published commentary, interviews, and speaking engagements exploring sustainable investing, climate resilience, faith-consistent finance, and the moral and institutional foundations of economic life.</p></div>
-  <figure><span class="vert">Vatican · May 2026</span><img src="/img/vatican.jpg" alt="Laura speaking at the Pontifical Academy of Social Sciences, May 2026" width="1100" height="733"></figure>
-</div></section>
+{#- Opening text from content/laura/pages/speaking.md (CMS: Pages > Speaking & Press); items from content/laura/speaking. -#}
+{% set hero = pages.speaking.hero %}{% include "partials/page-hero.njk" %}
 <section class="wrap p-sec"><div class="press-list">
 {%- for item in speaking %}
 {% include "partials/speaking-item.njk" %}
