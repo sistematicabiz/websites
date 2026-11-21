@@ -1,0 +1,32 @@
+---
+layout: layouts/laura-page.njk
+title: "Finance & Climate"
+bodyClass: pg-c2
+permalink: /finance/
+---
+{#- From design-reference/campiture/finance.html. Page text is still in this template (moves to the CMS in Phase 3). -#}
+{% from "macros/links.njk" import linkAttrs, arrow %}
+{#- Role cards (content/shared/roles, show_on_finance) for one group. -#}
+{% macro roleCards(group) %}
+  <div class="fields" style="--n:2">
+    {%- for r in roles %}{% if r.show_on_finance and r.group == group %}
+    <a class="fd f{{ r.colour | replace('c', '') if r.colour and r.colour != 'none' else '0' }}" {{ linkAttrs(r.link_url) }}><span class="lbl">{{ r.role }}</span><h3>{{ r.organization | brand | safe }}</h3>{{ r.html | safe }}<span class="go">{{ r.link_label | brand | safe }} {{ arrow(r.link_url) }}</span></a>
+    {%- endif %}{% endfor %}
+  </div>
+{% endmacro %}
+<section class="p-hero"><div class="wrap">
+  <div class="t"><span class="lbl">Finance &amp; climate</span><h1><span>Finance &amp;</span><span>Climate</span></h1><p class="lede">Finance is never merely technical. Its categories, incentives, time horizons, and assumptions shape which futures are made investable, and which communities, ecosystems, and forms of value remain overlooked.</p></div>
+  <figure><span class="vert">Research presentation</span><img src="/img/finance-climate.jpg" alt="Laura presenting research on ecosystem degradation" width="690" height="919"></figure>
+</div></section>
+<section class="wrap p-sec"><div class="p-two">
+  <div class="side"><span class="lbl">The work</span></div>
+  <div class="main"><p>My work in finance and climate focuses on the relationship between rigorous analysis, long-term value creation, resilience, and the broader social and ecological systems within which markets operate.</p></div>
+</div></section>
+<section class="wrap p-sec">
+  <div style="display:grid;gap:12px;margin-bottom:28px"><span class="lbl">Advisory and investment</span></div>
+  {{ roleCards("Advisory & investment") }}
+</section>
+<section class="wrap p-sec">
+  <div style="display:grid;gap:12px;margin-bottom:28px"><h2 class="p-h2">Boards &amp; other initiatives</h2></div>
+  {{ roleCards("Boards & other initiatives") }}
+</section>

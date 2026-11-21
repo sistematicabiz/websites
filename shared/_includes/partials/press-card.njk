@@ -1,0 +1,7 @@
+{#- Home "In conversation" card for one speaking item (variable: item). -#}
+{%- from "macros/links.njk" import linkAttrs -%}
+{%- if item.link_url -%}
+<a class="pr" {{ linkAttrs(item.link_url) }}><span class="src">{{ item.short_outlet or item.outlet }} · {{ item.type }}</span><span class="t">{{ item.title }}</span></a>
+{%- else -%}
+<div class="pr"><span class="src">{{ item.short_outlet or item.outlet }} · {{ item.type }}</span><span class="t">{{ item.title }}</span></div>
+{%- endif -%}

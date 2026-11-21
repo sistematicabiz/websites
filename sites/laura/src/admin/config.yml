@@ -1,5 +1,5 @@
 # Sveltia CMS configuration (Netlify/Decap CMS compatible format)
-# Docs: https://github.com/sveltia/sveltia-cms
+# Docs: https://sveltiacms.app/en/docs
 
 backend:
   name: github
@@ -11,23 +11,187 @@ backend:
 # Every change becomes a draft (a pull request) that must be published from the CMS
 publish_mode: editorial_workflow
 
-# Uploaded images and files: stored in the repo, served at /uploads/ by the laura site
-media_folder: content/laura/uploads
-public_folder: /uploads
+# Uploaded images: stored in the repo, served at /media/ by both sites
+media_folder: content/media
+public_folder: /media
 
 site_url: https://laurasegafredo.com
 locale: en
 
 collections:
-  # Test collection to prove the editing flow. Real collections arrive in Phase 3/4.
-  - name: notes
-    label: Notes (test)
-    label_singular: Note
-    folder: content/laura/notes
+  # ---------------------------------------------------------------- laurasegafredo.com
+  - name: speaking
+    label: Speaking & Press
+    label_singular: Speaking or press item
+    description: >-
+      Talks, interviews, podcasts and articles. All items appear on the Speaking & Press page;
+      items marked "Show on home" also appear in the "In conversation" block on the home page.
+    folder: content/laura/speaking
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
+    identifier_field: title
+    summary: "{{outlet}} · {{type}}: {{title}}"
+    sortable_fields: [order, date, outlet, title]
+    view_filters:
+      - { label: Shown on home, field: featured, pattern: true }
     fields:
+      - { label: Outlet, name: outlet, widget: string, hint: "Who published or hosted it, e.g. Financial Times." }
+      - label: Short outlet name
+        name: short_outlet
+        widget: string
+        required: false
+        hint: Optional shorter name used on the home page (e.g. AS/COA). Leave empty to use the full outlet name.
+      - label: Type
+        name: type
+        widget: select
+        options: [Letter, Podcast, Conference, Webinar, Panel, Talk, Interview, Article]
       - { label: Title, name: title, widget: string }
-      - { label: Date, name: date, widget: datetime }
-      - { label: Image, name: image, widget: image, required: false }
-      - { label: Body, name: body, widget: markdown }
+      - { label: Abstract, name: abstract, widget: text, hint: "One or two sentences shown on the Speaking & Press page." }
+      - label: Link text
+        name: link_label
+        widget: string
+        required: false
+        hint: e.g. "Read the letter" or "Listen to the conversation". An arrow is added automatically.
+      - label: Link URL
+        name: link_url
+        widget: string
+        required: false
+        hint: Full address starting with https://. Leave empty if there is no link yet; the item is then shown without a link.
+      - label: Date
+        name: date
+        widget: datetime
+        required: false
+        date_format: "MMMM D, YYYY"
+        time_format: false
+        format: YYYY-MM-DD
+        hint: When it was published or took place. Used to sort items that have the same order number.
+      - label: Image
+        name: image
+        widget: image
+        required: false
+        hint: Optional. Shown inside the card, below the text.
+      - label: Image description (alt text)
+        name: image_alt
+        widget: string
+        required: false
+        hint: Required if you add an image. Describe what the picture shows, for people who cannot see it.
+      - { label: Show on home, name: featured, widget: boolean, default: false, required: false }
+      - label: Order
+        name: order
+        widget: number
+        value_type: int
+        required: false
+        hint: Lower numbers come first. Items without a number go last, newest first.
+
+  # ---------------------------------------------------------------- shared by both sites
+  - name: roles
+    label: Roles
+    label_singular: Role
+    description: >-
+      Laura's current roles. Each role can appear on the About page ("Current roles"), on the
+      Finance & Climate page (cards) and in the Sistematica bio (chips).
+    folder: content/shared/roles
+    create: true
+    slug: "{{slug}}"
+    identifier_field: organization
+    summary: "{{organization}} · {{role}}"
+    sortable_fields: [order, organization, group]
+    fields:
+      - { label: Organization, name: organization, widget: string, hint: "e.g. Universe Partners. The word Sistematica is styled automatically." }
+      - { label: Role, name: role, widget: string, hint: "Label on the Finance & Climate card, e.g. Senior Advisor." }
+      - label: Short line (About page)
+        name: short_line
+        widget: string
+        hint: Shown next to the organization under "Current roles" on the About page.
+      - label: Description (Finance & Climate page)
+        name: body
+        widget: markdown
+        required: false
+        buttons: [bold, italic, link]
+        editor_components: []
+        hint: Text of the card on the Finance & Climate page. Leave empty if the role is not shown there.
+      - label: Link URL
+        name: link_url
+        widget: string
+        hint: Full address (https://…) or a page of this site such as /writing/.
+      - label: Link text (Finance & Climate)
+        name: link_label
+        widget: string
+        required: false
+        hint: e.g. "Visit Arketa". An arrow is added automatically.
+      - label: Link text (About page)
+        name: short_link_label
+        widget: string
+        required: false
+        hint: Shorter link text for the About page, e.g. "Website". Leave empty to reuse the text above.
+      - label: Group
+        name: group
+        widget: select
+        options: [Advisory & investment, Boards & other initiatives, Other]
+        hint: Section of the Finance & Climate page where the card appears.
+      - label: Card colour (Finance & Climate)
+        name: colour
+        widget: select
+        required: false
+        default: none
+        options:
+          - { label: "None (light grey)", value: none }
+          - { label: "Colour 1 (red)", value: c1 }
+          - { label: "Colour 2 (green)", value: c2 }
+          - { label: "Colour 3 (blue)", value: c3 }
+          - { label: "Colour 4 (yellow)", value: c4 }
+      - { label: Show on About page, name: show_on_about, widget: boolean, default: true, required: false }
+      - { label: Show on Finance & Climate page, name: show_on_finance, widget: boolean, default: false, required: false }
+      - { label: Show on Sistematica, name: show_on_sistematica, widget: boolean, default: false, required: false }
+      - label: Chip text (Sistematica)
+        name: sistematica_chip
+        widget: string
+        required: false
+        hint: Text of the chip in the Sistematica bio, e.g. "Board, Arketa". Leave empty for "Role, Organization".
+      - label: Order
+        name: order
+        widget: number
+        value_type: int
+        required: false
+        hint: Lower numbers come first.
+
+  # ---------------------------------------------------------------- sistematica
+  - name: collaborations
+    label: Sistematica · Collaborations
+    label_singular: Collaboration
+    description: The "Selected collaborations" section of the Sistematica home page.
+    folder: content/sistematica/collaborations
+    create: true
+    slug: "{{slug}}"
+    identifier_field: name
+    summary: "{{name}} · {{area}}"
+    sortable_fields: [order, name]
+    fields:
+      - { label: Name, name: name, widget: string, hint: "e.g. Bountiful Financial" }
+      - { label: Area, name: area, widget: string, hint: "Short vertical label on the photo, e.g. Faith-aligned investing." }
+      - { label: Description, name: description, widget: text }
+      - label: Links
+        name: links
+        widget: list
+        required: false
+        summary: "{{label}}"
+        fields:
+          - { label: Link text, name: label, widget: string }
+          - { label: URL, name: url, widget: string, hint: "Full address starting with https://" }
+      - { label: Photo, name: image, widget: image, required: false }
+      - label: Photo description (alt text)
+        name: image_alt
+        widget: string
+        required: false
+        hint: Required if you add a photo.
+      - label: Photo focus
+        name: image_position
+        widget: string
+        required: false
+        hint: "Optional. Which part of the photo stays visible when it is cropped, e.g. 50% 30% (horizontal, vertical)."
+      - label: Order
+        name: order
+        widget: number
+        value_type: int
+        required: false
+        hint: Lower numbers come first.

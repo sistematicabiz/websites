@@ -53,12 +53,9 @@ description: Researcher, investor, advisor, and educator working across finance,
 <section id="press" class="offw"><div class="wrap press-wrap">
   <div><span class="lbl">Selected press, conversations &amp; speaking</span><h2>In conver&shy;sation</h2></div>
   <div class="press">
-    <a class="pr" href="https://www.ft.com/content/86ccc488-63b2-4afd-9a37-2892d4675a06" target="_blank" rel="noopener"><span class="src">Financial Times · Letter</span><span class="t">Markets don’t exist in a liminal cosmic space</span></a>
-    <a class="pr" href="https://sri360.com/podcast/laura-segafredo/" target="_blank" rel="noopener"><span class="src">SRI360 · Podcast</span><span class="t">Nature risk, sustainable investing, and the moral purposes of finance</span></a>
-    <a class="pr" href="https://www.msci.com/research-and-insights/blog-post/capital-for-climate-action-conference-key-takeaways" target="_blank" rel="noopener"><span class="src">MSCI · Conference</span><span class="t">Capital for Climate Action</span></a>
-    <a class="pr" href="#"><span class="src">Pontifical Academy of Social Sciences · Talk</span><span class="t">Catholic investment indices and faith-consistent finance</span></a>
-    <a class="pr" href="https://www.as-coa.org/events/financing-climate-change-adaptation-latin-america" target="_blank" rel="noopener"><span class="src">AS/COA · Panel</span><span class="t">Financing Climate Change Adaptation in Latin America</span></a>
-    <a class="pr" href="#"><span class="src">Humanistic Management International · Podcast</span><span class="t">Transforming Finance and Economics as Moral Revolution</span></a>
+    {%- for item in speaking %}{% if item.featured %}
+    {% include "partials/press-card.njk" %}
+    {%- endif %}{% endfor %}
   </div>
 </div></section>
 
