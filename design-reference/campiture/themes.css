@@ -1,0 +1,34 @@
+/* Campiture colour themes. A theme only sets these tokens; layout and type never change.
+   bg/surface/off/soft  page, cards, muted fields, light tint fields
+   ink / on-ink         main text, and text on ink-coloured blocks (buttons, footer)
+   c1..c4 / on-c1..c4   the four colour fields and the text that sits on each
+   accent-c1..c3        the giant display type set on c1 (contact), c2 (why), c3 (Moral Revolution)
+   Laura's site defaults to "primari", Sistematica to "verde"; visitors can switch at runtime. */
+:root,[data-theme="primari"]{
+  --bg:#FFFFFF; --surface:#FFFFFF; --off:#EEEDEA; --soft:#EEEDEA; --ink:#111111; --on-ink:#FFFFFF;
+  --c1:#E1251B; --on-c1:#FFFFFF; --c2:#00A651; --on-c2:#111111;
+  --c3:#1D4ED8; --on-c3:#FFFFFF; --c4:#FFD200; --on-c4:#111111;
+  --accent-c1:#111111; --accent-c2:#FFFFFF; --accent-c3:#111111;
+  color-scheme:light;
+}
+[data-theme="terra"]{
+  --bg:#FBF6EE; --surface:#FFFDF8; --off:#F1E8DA; --soft:#EFE4D2; --ink:#2B2420; --on-ink:#FBF6EE;
+  --c1:#C4613F; --on-c1:#FFF8EF; --c2:#8A9A5B; --on-c2:#1F2614;
+  --c3:#3D6566; --on-c3:#FBF6EE; --c4:#E6B450; --on-c4:#2B2420;
+  --accent-c1:#2B2420; --accent-c2:#FBF6EE; --accent-c3:#F3E3C8;
+  color-scheme:light;
+}
+[data-theme="verde"]{
+  --bg:#FFFFFF; --surface:#FFFFFF; --off:#F1F3EE; --soft:#E3F1E6; --ink:#111111; --on-ink:#FFFFFF;
+  --c1:#0B4A32; --on-c1:#FFFFFF; --c2:#00A651; --on-c2:#03250F;
+  --c3:#1F6B6B; --on-c3:#FFFFFF; --c4:#FFD200; --on-c4:#111111;
+  --accent-c1:#FFD200; --accent-c2:#FFFFFF; --accent-c3:#D7F0E0;
+  color-scheme:light;
+}
+[data-theme="notte"]{
+  --bg:#141414; --surface:#1E1E1E; --off:#1B1B1B; --soft:#242424; --ink:#EFE9DC; --on-ink:#141414;
+  --c1:#A3231F; --on-c1:#F6EFE3; --c2:#1E6B48; --on-c2:#F1F6EF;
+  --c3:#2338A8; --on-c3:#F3F1FA; --c4:#E0A526; --on-c4:#141414;
+  --accent-c1:#F6EFE3; --accent-c2:#E0A526; --accent-c3:#EFE9DC;
+  color-scheme:dark;
+}

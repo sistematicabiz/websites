@@ -1,0 +1,460 @@
+Plan for my professional (sistematica.biz) and personal (laurasegafredo.com) websites:
+
+I’d like ro treat the two sites as a complementary pair:
+
+Sistem(at)ica is the focused, client-facing professional practice;
+
+Laura Segafredo is the broader intellectual home that helps a visitor understand my work across finance, climate, theology, political economy, and public conversation.
+
+Here are some guidance that I’m pasting from some AI prompts
+
+The relationship between the sites
+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Site                 Primary audience                                                                                                           Primary job                                            Tone                                                          Main call to action
+  -------------------- -------------------------------------------------------------------------------------------------------------------------- ------------------------------------------------------ ------------------------------------------------------------- ---------------------------------------------------
+  sistematica.biz      Prospective clients, collaborators, asset owners, financial firms, mission-driven organizations                            Explain your advisory offer and establish trust        Clear, understated, rigorous, warm                            “Discuss a project” / “Get in touch”
+
+  laurasegafredo.com   People Googling you: academic colleagues, journalists, students, podcast listeners, fund collaborators, event organizers   Present your intellectual and professional ecosystem   Personal but not confessional; reflective and public-facing   “Explore my work” / links to the relevant project
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Avoid duplicating everything. The consulting site can introduce you briefly and link to the personal site for “writing, teaching, and public work.” The personal site can mention Sistem(at)ica as your independent advisory practice and link out for services.
+
+This separation lets each site remain disciplined. It also protects the personal site from becoming a résumé and the consulting site from becoming a long intellectual biography.
+
+Sistematica.biz structure & draft copy
+
+Begin with a polished one-page website, plus a contact form.
+
+Navigation / homepage sequence
+
+-   About
+
+-   What We Do
+
+-   Selected Collaborations
+
+-   Contact
+
+Homepage sequence
+
+1.  Hero: what you offer, whom you help, and why it matters
+
+2.  Practice areas: three concise service areas
+
+3.  Your approach: the meaning of Sistem(at)ica
+
+4.  Selected clients/collaborations
+
+5.  Brief bio and credentials
+
+6.  Testimonial or case-study quotation
+
+7.  Contact invitation
+
+A homepage should make the practice immediately understandable; clarity of niche and visible proof of work consistently appear as effective patterns in consultancy sites.
+
+Hero copy
+
+Sistem(at)ica Research & Advisory
+Systematic insight, systems thinking.
+
+Independent research and advisory for organizations working at the intersection of finance, social and ecological systems, and long-term value creation.
+
+I combine rigorous analysis grounded in data with a systems thinking perspective, helping clients navigate complex questions with intellectual clarity and practical purpose.
+
+[Link to “Start a conversation” form at bottom of page]
+
+“What I do” copy
+
+Research and strategic analysis
+
+I help clients make sense of complex questions at the intersection of finance, sustainability, economic systems and real-world impacts. My work is grounded in sound evidence, careful framing, and close attention to the institutional, regulatory, and market context in which decisions are made.
+
+The aim is not simply to produce analysis, but to clarify the choices, assumptions, risks, and opportunities that matter for long-term strategy.
+
+Sustainable finance and investment insight
+
+I provide research and advisory support to organizations seeking to connect investment practice with climate resilience, social and ecological outcomes, and durable value creation.
+
+This can include work on sustainable and faith-aligned investment approaches, thematic and impact strategies, financial products, and the evolving materiality of environmental and social factors. The emphasis is always on analytical rigor: translating broad ambitions into credible, usable frameworks and decisions.
+
+Thought leadership and convening
+
+I help organizations develop research, narratives, and forums that bring complex ideas into productive public and professional conversation.
+
+This includes reports, white papers, presentations, workshops, executive briefings, and stakeholder convenings for investment, policy, academic, and mission-driven audiences. I combine research depth with clear communication, helping clients articulate ideas that are both intellectually serious and practically relevant.
+
+Sample engagements
+
+-   Sustainable, values-aligned and impact index and active-investment product ideation, strategy and development
+
+-   Research on the drivers of financial performance in non-traditional investment approaches, including sustainable and faith-aligned strategies
+
+-   Thematic, impact, and climate-resilience investment strategy
+
+-   Market, policy, and regulatory analysis
+
+-   Research design, report development, and editorial support
+
+-   Stakeholder workshops, investor education, and executive briefings
+
+-   Partnership strategy for mission-led financial ventures
+
+-   Development of thought-leadership platforms, including reports, presentations, and public-facing narratives
+
+The “why Sistem(at)ica” section
+
+Why Sistem(at)ica
+
+Sistem(at)ica brings together two commitments.
+
+The first is systematic: disciplined research, analytical clarity, intellectual honesty, and attention to evidence. Complex questions deserve more than fashionable language or easy conclusions.
+
+The second is systems thinking: an understanding that financial, social, ecological, and political outcomes are interconnected. The most consequential challenges cannot be understood—or addressed—one variable at a time.
+
+The name also carries an Italian flair. Sistematica evokes both method and sensibility: rigor without reductionism; coherence without rigidity; analysis attentive to the wider whole.
+
+This is the approach behind the work: rigorous enough for decision-making, expansive enough for the realities clients are trying to navigate.
+
+About / credentials section
+
+About Laura Segafredo
+
+Laura Segafredo, PhD, is an economist, climate-finance leader, researcher, and educator with more than two decades of experience spanning energy, sustainable investing, philanthropy, academia, and advisory work in the United States and Europe. She works at the intersection of finance, ethics, political economy, and ecological transition.
+
+Her career has included senior leadership in sustainable-investment research and index investing at BlackRock, as well as work across climate and environmental organizations, academic institutions, and mission-driven ventures. She is currently an Adjunct Professor of International and Public Affairs at Columbia University’s School of International and Public Affairs.
+
+Through Sistem(at)ica Research & Advisory, Laura works with organizations seeking rigorous research and strategic perspective on sustainable finance, climate resilience, thematic and faith-aligned investment, and systems-level questions of long-term value creation. Her work combines data-informed analysis with the ability to translate complex ideas into strategy, research, public communication, and constructive dialogue.
+
+Laura is also a partner in Universe Partners, a climate-resilience venture fund; a board member of Arketa, a think tank focused on post-growth economic thought; an advisor to All About Water, an AgTech/FinTech startup; and co-host of Moral Revolution, a podcast and writing project on ethics, economics, theology, ecology, and social transformation.
+
+[Read Laura’s full profile] — linking to laurasegafredo.com
+
+[link to Laura’s LinkedIn]:
+
+Selected collaborations
+
+I collaborate with organizations working to bring greater analytical rigor, ecological intelligence, and moral clarity to finance and investment decision-making.
+
+NatureAlpha / alphaX
+
+Research and advisory collaboration supporting the development of asset-level approaches to nature-related financial risk. The work examines how dependencies on nature—and exposure to environmental degradation—can be more effectively identified, quantified, and incorporated into broad-market equity-index research and design.
+
+[Learn about NatureAlpha] · [Explore alphaX] https://alphax.ai/ https://www.naturealpha.ai/
+
+Bountiful Financial
+Strategic and research support for values-aligned finance, with a focus on the development and articulation of Catholic and multi-faith investment approaches. The work brings together financial analysis, Catholic social thought, and questions of long-term value creation.
+
+[Read about Bountiful Financial’s Catholic index research] · [Visit Bountiful Financial]
+
+https://bountifulfinancial.com/ https://bountifulfinancial.com/bountiful-financial-debuts-landmark-research-on-catholic-indices-at-conference-held-in-rome/
+
+Contact section
+
+Start a conversation
+
+I am open to working with organizations and collaborators seeking rigorous thinking on sustainable finance, ecological and social resilience, long-term value creation, and systems-level questions.
+
+For research, advisory, speaking, workshop, or collaboration inquiries, use the form below.
+
+[A short contact form should include: name, organization, email, “What would you like to discuss?”, and optional timeline.]
+
+Logo: [note: this is not very good, I did it with AI prompts. I wanted an owl as a symbol; I like the data nodes and the @ in the eye as a nod to the (at) in the name, but it could probably be improved. Any suggestions?]
+
+[]
+
+Headshot (please don’t crop, I want the dress to be seen!):
+
+[]
+
+Colors/theme:
+
+I want to communicate sophistication. Not going for a minimalistic style because that’s not my personality – I love color and pattern, but it has to look tasteful. I love art, so I’d be keen to incorporate art – for example art with an ecological sensibility. See a few pictures from brilliant artists below
+
+[Art Installations]
+
+[AGNES DENES Living Pyramid - The Brooklyn Rail]
+
+[At 88, Agnes Denes Finally Gets the Retrospective She Deserves - The New York Times]
+
+[]
+
+[]
+
+LauraSegafredo.com: recommended structure
+
+The personal site should not feel corporate but more like an intellectual map of my interests: a carefully organized way into the bodies of work and institutions that shape my public contribution.
+
+The home page can be concise, with featured work and clear pathways. The detailed material belongs on 4-5 dedicated pages.
+
+Navigation
+
+-   Home
+
+-   About
+
+-   Writing & Podcast
+
+-   Finance & Climate
+
+-   Teaching & Research
+
+-   Speaking & Commentary
+
+-   Contact
+
+Homepage copy
+
+Laura Segafredo
+Researcher, investor, advisor, and educator. Lifelong student. Lover of beauty. Aspiring farmer.
+
+My work spans finance, ecology, ethics, and political economy—from building businesses and advising organizations to teaching, writing, and hosting conversations. What connects these pursuits is a question: how can economic and financial systems better serve human and more-than-human flourishing, ecological resilience, and the common good?
+
+[Explore my work]
+[Read Moral Revolution]
+
+Structure: Use 5 linked “areas of work” panels:
+
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Area                  Short copy                                                                                                                                                  Link
+  --------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------------------------
+  Moral Revolution      Essays and conversations on the moral imagination needed for a more just and sustainable economy.                                                           Substack / podcast
+
+  Finance & Climate     Advisory, investment, and research work on sustainable and values-aligned finance, with an eye for long-term value.                                         Sistem(at)ica, Universe Partners, All About Water
+
+  Teaching & Research   Academic inquiry and teaching on sustainable finance, ecological economics, ethics and institutional change.                                                SIPA/Columbia faculty page
+
+  Land & regeneration   Learning from soil, seasons, and the work of growing food—and exploring how land-based education can help us rethink value, community, and economic life.   Farminary, Oikos Lab
+
+  Public Work           Talks, interviews, workshops, and collaborations for audiences working across finance, policy, academia, and civil society.                                 Speaking/contact
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+About page
+
+About copy:
+
+I am a researcher, advisor, educator, and writer whose work explores the moral and institutional foundations of economic life. I work across finance, climate and ecological transition, theology and ethics, and the history of political and economic thought.
+
+I am especially interested in the ways institutions shape what we consider possible: the forms of value we measure, the risks we recognize, the futures we finance, and the responsibilities we owe one another and the living world.
+
+These questions inform my work across research, advisory, teaching, and public conversation. Through Sistem(at)ica Research & Advisory [link], I collaborate with organizations working on sustainable and values-aligned finance, investment strategy and systems-level questions. Through Moral Revolution [link], I write and host conversations about economics, ethics, theology, and social transformation. I am also a partner in Universe Partners, a climate-resilience venture fund; a board member of Arketa, a degrowth think tank; and an adjunct professor at Columbia University’s School of International and Public Affairs.
+
+Across these roles, I seek to connect rigorous, data driven analysis with a wider moral imagination, taking complexity seriously while keeping in view the question of what economic life is for.
+
+Current roles:
+
+-   Founder, Sistem(at)ica Research & Advisory (link)
+
+-   Co-host / writer, Moral Revolution https://moralrevolution.substack.com/ [also add links to apple and spotify]
+
+-   Adjunct Professor, School of International and Public Affairs, Columbia University https://www.sipa.columbia.edu/communities-connections/faculty/laura-segafredo
+
+-   Partner, Universe Partners https://www.universe-partners.com/
+
+-   Board Member, Arketa https://www.arketa-institute.org/
+
+-   Advisor, All About Water https://aawater.co/
+
+Selected press, lectures and appearances:
+
+Financial Times, MSCI, S&P Dow Jones Indices, Environmental Finance, Americas Society/Council of the Americas, National Association of Business Economists, SRI360, Columbia University, Cornell University, Duke University.
+
+Add:
+
+-   A headshot (either same as above or this):
+
+  []
+
+-   Link to LinkedIn : www.linkedin.com/in/lsegafredo
+
+-   current location: New York City Metropolitan Area.
+
+Additional picture:
+
+[]
+
+Moral Revolution page
+
+Moral Revolution copy
+
+Moral Revolution is a writing and conversation project that gives oxygen to ideas, institutions, and moral horizons capable of reshaping social and economic life for the better. It brings theology, ethics, political economy, ecology, and social justice into conversation—not as separate disciplines, but as shared resources for imagining a more just world in which humanity and the rest of creation can flourish.
+
+Through essays and the Moral Revolution podcast, co-hosted with my friend Tony Annett, I explore questions such as: What do our economies ask us to value? What forms of life do they make possible—or foreclose? And what would it mean to build institutions rooted in dignity, solidarity, care, and ecological responsibility?
+
+[Read on Substack] https://moralrevolution.substack.com/
+[Listen to the podcast] https://podcasts.apple.com/us/podcast/moral-revolution-podcast/id1837541394 https://open.spotify.com/show/4tMKxIh7bxORHCPt9SjpT8
+
+[]
+
+Finance & Climate page
+
+Finance & climate copy
+
+Finance is never merely technical. Its categories, incentives, time horizons, and assumptions shape which futures are made investable—and which communities, ecosystems, and forms of value remain overlooked.
+
+My work in finance and climate focuses on the relationship between rigorous analysis, long-term value creation, resilience, and the broader social and ecological systems within which markets operate.
+
+Sistem(at)ica Research & Advisory
+Independent research and advisory for organizations navigating sustainable and values-aligned finance, climate resilience, and systems-level questions.
+[Visit Sistem(at)ica] link to website
+
+Universe Partners
+As a partner in Universe Partners, I contribute to work advancing investment approaches oriented toward climate resilience and the conditions for durable adaptation.
+[Learn about Universe Partners] https://www.universe-partners.com/
+
+Picture:
+
+[]
+
+Boards & other initiatives
+
+Arketa – Board Member
+Arketa is a think tank exploring degrowth, post-growth economics, and the institutional transformations necessary for ecological sustainability and collective flourishing.
+
+This work complements my broader interest in economic systems that recognize planetary limits, democratic participation, care, and forms of prosperity not reducible to aggregate growth.
+
+All About Water - Senior Advisor
+
+I advise All About Water, a startup working at the intersection of agtech, climate technology, and finance. Its platform uses climate and hydrological data to support smarter irrigation, water-risk management, and agricultural planning, connecting water intelligence with more resilient farming and better-informed investment decisions.
+
+Picture:
+
+[]
+
+Teaching and research page
+
+Teaching & research
+
+My teaching focuses on the practice of sustainable finance, drawing on my experience helping to develop the field within capital markets.
+
+My research interests span political economy, ethics, theology, ecology, and the history of economic and political thought. I explore how traditions of moral and political reflection can illuminate contemporary questions of finance, democracy, inequality, climate change, and institutional design—and help us imagine different ways of organizing economic life.
+
+School of International and Public Affairs, Columbia University
+[Visit faculty profile] https://www.sipa.columbia.edu/communities-connections/faculty/laura-segafredo
+
+Selected current research interests
+
+-   Christian democracy and twentieth-century Italian political thought
+
+-   Political economy, moral philosophy, and economic alternatives
+
+-   Theology, ecology, and social ethics
+
+-   Sustainable and faith-aligned investing
+
+-   Degrowth, regenerative economics, and institutional transformation
+
+Picture:
+
+[]
+
+Land, learning & regeneration
+
+Alongside my work in finance, history, theology and the economy, I am deepening my understanding of regenerative farming and the relationships among land, food, community, and economic life. My work and learning at Princeton Theological Seminary’s Farminary (https://ptsem.edu/academics/departments/farminary/) bring these questions into a setting where theological reflection meets the practical work of growing food and caring for soil.
+
+I am interested not only in how we cultivate land, but in what working with it can teach us about interdependence, limits, care, and responsibility—especially those of us whose lives as economists, city dwellers, white-collar professionals, or academics can keep us at a distance from the living systems on which we depend. This is an ongoing process of learning, one that invites me to reconsider the assumptions about productivity, value, and prosperity that shape my work elsewhere.
+
+Oikos Lab
+
+An idea in development
+
+These interests are also informing Oikos Lab, an idea I am developing to connect land-based learning, ecological care, and new approaches to economic life.
+
+I am exploring how universities and other learning communities might bring food growing, ecological restoration, and reflection on economics and ethics into closer relationship, using their land not simply as a backdrop to education, but as a place of learning, nourishment, and shared responsibility.
+
+The aim is to connect ideas with practice: to ask what institutions oriented toward ecological resilience and the common good might look like, and how we might begin to build them.
+
+Picture:
+
+[]
+
+Selected press, conversations & speaking
+
+A selection of published commentary, interviews, and speaking engagements exploring sustainable investing, climate resilience, faith-consistent finance, and the moral and institutional foundations of economic life.
+
+Financial Times
+Markets don’t exist in a liminal cosmic space
+A letter on the tendency to treat financial markets as detached from the material world—and why recognizing their dependence on natural systems and planetary limits matters. [Read the letter]
+
+Letter: Markets don’t exist in a liminal cosmic space
+
+https://www.ft.com/content/86ccc488-63b2-4afd-9a37-2892d4675a06
+
+[]
+
+SRI360
+Nature risk, sustainable investing, and the moral purposes of finance
+
+A conversation with Scott Arnell about my path from energy and climate research to sustainable investing, the role of geospatial data in understanding nature-related financial risk, and the ethical questions beneath investment decisions.
+[Listen to the conversation] https://sri360.com/podcast/laura-segafredo/
+
+MSCI
+
+Capital for Climate Action Conference
+
+A contribution to MSCI’s conference on financing the low-carbon transition, highlighting the investment needed to decarbonize high-emitting sectors—and why those sectors are central to the transition, not simply exposures to avoid.
+
+[Read the conference recap] https://www.msci.com/research-and-insights/blog-post/capital-for-climate-action-conference-key-takeaways
+
+National Association for Business Economics (NABE)
+
+Climate Finance: Recent Developments and Trends
+
+A webinar conversation with Sean Kidney, CEO of the Climate Bonds Initiative, moderated by Ellen Hughes-Cromwick of Third Way, on developments and trends in climate finance
+
+Explore the webinar archive
+
+Americas Society/Council of the Americas
+
+Financing Climate Change Adaptation in Latin America
+A panel discussion on financing climate adaptation in Latin America, bringing an investment perspective to the challenge of building resilience in a changing climate.
+
+Explore the event https://www.as-coa.org/events/financing-climate-change-adaptation-latin-america
+
+Humanistic Management International
+
+Transforming Finance and Economics as Moral Revolution
+A conversation with Anthony Annett about the moral imagination needed to reshape economic life. We explore how dignity, solidarity, ecological responsibility, and insights from history and faith traditions can inform more humane institutions.
+
+Listen to the conversation ttps://humanisticmanagement.international/podcast/transforming-finance-and-economics-as-moral-revolution-laura-segafredo-and-tony-annett/
+
+Pontifical Academy of Social Sciences
+
+Catholic investment indices and faith-consistent finance
+
+A presentation at the Vatican in May 2026 sharing research developed with Bountiful Financial on Catholic investment indices, at the Mensuram Bonam conference.
+
+Read about the research and presentation
+
+Picture of me Speaking at the pontifical academy of social sciences in May 2026:
+
+  []
+
+Get in touch – fillable form to be emailed to laura.segafredo@gmail.com
+
+Design direction
+
+The visual goal should be intellectual confidence, warmth, and restraint.
+
+Sistem(at)ica
+
+-   Palette: warm ivory or paper white; charcoal or deep navy typography; one understated accent such as olive, terracotta, muted rust, or mineral green.
+
+-   Typography: a serious serif for headlines paired with a clean sans serif for body text. This can quietly communicate rigor plus humanistic range.
+
+-   Visual language: subtle grids, diagrams, data textures, topographic or relational-line motifs—not generic stock images of skyscrapers, handshakes, or “green finance” leaves.
+
+-   Photography: one strong, approachable professional portrait of you; otherwise use abstract or documentary-style visual material sparingly.
+
+-   Logo usage: retain the parenthesis in “Sistem(at)ica.” It visually expresses the conceptual pairing: systematic and systems.
+
+LauraSegafredo.com
+
+-   More editorial and spacious than the business site.
+
+-   Let essays, episode titles, images from fieldwork/travel where appropriate, and thoughtful portraiture carry the site.
+
+-   Use a shared typographic family or a subtle shared color accent to signal that the sites belong to the same person, but give the personal site more white space and a more magazine-like rhythm.
+
+-   Make every external project visibly labeled. Someone arriving from Google should never wonder where to find the podcast, fund, think tank, or faculty role.
