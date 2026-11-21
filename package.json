@@ -1,0 +1,20 @@
+{
+  "name": "websites",
+  "private": true,
+  "type": "module",
+  "description": "laurasegafredo.com and sistematica: two Eleventy sites sharing one codebase",
+  "engines": {
+    "node": ">=22 <23"
+  },
+  "scripts": {
+    "dev:laura": "eleventy --config=sites/laura/eleventy.config.js --serve --port=8080",
+    "dev:sistematica": "eleventy --config=sites/sistematica/eleventy.config.js --serve --port=8081",
+    "build:laura": "eleventy --config=sites/laura/eleventy.config.js",
+    "build:sistematica": "eleventy --config=sites/sistematica/eleventy.config.js",
+    "build": "npm run build:laura && npm run build:sistematica"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8",
+    "js-yaml": "^4.3.2"
+  }
+}
