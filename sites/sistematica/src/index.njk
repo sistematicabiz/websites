@@ -4,6 +4,7 @@ description: Independent research and advisory at the intersection of finance, s
 ---
 {#- Home, from design-reference/campiture/sistematica.html. Text is hard-coded for now: it moves to the CMS in Phase 4. -#}
 {% from "macros/contact.njk" import contactCard with context %}
+{% from "macros/links.njk" import linkAttrs, arrow %}
 <section class="wrap s-hero">
   <div class="s-name">
     <span class="lbl">{% include "partials/sm.njk" %} Research &amp; Advisory</span>
@@ -70,14 +71,12 @@ description: Independent research and advisory at the intersection of finance, s
 <section id="collaborations">
   <div class="wrap collab-h"><span class="lbl">Rigor, ecological intelligence, and moral clarity in finance</span><h2>Selected collabo&shy;rations</h2></div>
   <div class="collab">
-    <article class="cb"><div class="ph"><span class="vert">Nature-related financial risk</span><img src="/img/finance-climate.jpg" alt="Laura presenting research on ecosystem degradation" width="690" height="919" style="object-position:50% 30%"></div><div class="b">
-      <h3>NatureAlpha / alphaX</h3>
-      <p>Research and advisory collaboration supporting the development of asset-level approaches to nature-related financial risk. The work examines how dependencies on nature, and exposure to environmental degradation, can be more effectively identified, quantified, and incorporated into broad-market equity-index research and design.</p>
-      <div class="links"><a href="https://www.naturealpha.ai/" target="_blank" rel="noopener">NatureAlpha ↗</a><a href="https://alphax.ai/" target="_blank" rel="noopener">alphaX ↗</a></div></div></article>
-    <article class="cb"><div class="ph"><span class="vert">Faith-aligned investing</span><img src="/img/vatican.jpg" alt="Laura presenting at the Pontifical Academy of Social Sciences" width="1100" height="733"></div><div class="b">
-      <h3>Bountiful Financial</h3>
-      <p>Strategic and research support for values-aligned finance, with a focus on the development and articulation of Catholic and multi-faith investment approaches. The work brings together financial analysis, Catholic social thought, and questions of long-term value creation.</p>
-      <div class="links"><a href="https://bountifulfinancial.com/bountiful-financial-debuts-landmark-research-on-catholic-indices-at-conference-held-in-rome/" target="_blank" rel="noopener">Catholic index research ↗</a><a href="https://bountifulfinancial.com/" target="_blank" rel="noopener">Bountiful Financial ↗</a></div></div></article>
+    {%- for c in collaborations %}
+    <article class="cb"><div class="ph"><span class="vert">{{ c.area }}</span>{% if c.image %}<img src="{{ c.image }}" alt="{{ c.image_alt }}"{% if c.image_position %} style="object-position:{{ c.image_position }}"{% endif %} loading="lazy">{% endif %}</div><div class="b">
+      <h3>{{ c.name }}</h3>
+      <p>{{ c.description }}</p>
+      {% if c.links and c.links.length %}<div class="links">{% for l in c.links %}<a {{ linkAttrs(l.url) }}>{{ l.label }} {{ arrow(l.url) }}</a>{% endfor %}</div>{% endif %}</div></article>
+    {%- endfor %}
   </div>
 </section>
 
@@ -89,7 +88,7 @@ description: Independent research and advisory at the intersection of finance, s
     <p style="font-size:21px;font-weight:500">Economist, climate-finance leader, researcher, and educator.</p>
     <p>Laura Segafredo, PhD, is an economist, climate-finance leader, researcher, and educator with more than two decades of experience spanning energy, sustainable investing, philanthropy, academia, and advisory work in the United States and Europe. She works at the intersection of finance, ethics, political economy, and ecological transition.</p>
     <p>Her career has included senior leadership in sustainable-investment research and index investing at BlackRock, as well as work across climate and environmental organizations, academic institutions, and mission-driven ventures. She is currently an Adjunct Professor of International and Public Affairs at Columbia University’s School of International and Public Affairs.</p>
-    <ul class="chips"><li>Partner, Universe Partners</li><li>Board, Arketa</li><li>Advisor, All About Water</li><li>Co-host, Moral Revolution</li></ul>
+    <ul class="chips">{% for r in roles %}{% if r.show_on_sistematica %}<li>{{ r.sistematica_chip or (r.role + ", " + r.organization) }}</li>{% endif %}{% endfor %}</ul>
     <div class="actions"><a class="btn" href="{{ urls.laura }}">Read Laura’s full profile</a><a class="btn line" href="https://www.linkedin.com/in/lsegafredo" target="_blank" rel="noopener">LinkedIn ↗</a></div>
   </div>
 </div></section>

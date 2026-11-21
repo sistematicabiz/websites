@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="/css/{{ s }}">
 {%- endfor %}
 </head>
-<body>
+<body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
 {% include "partials/header.njk" %}
 <main id="top">
 {% block content %}{{ content | safe }}{% endblock %}

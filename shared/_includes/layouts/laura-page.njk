@@ -1,0 +1,6 @@
+{#- Inner pages of laurasegafredo.com: adds pages.css and the closing "Get in touch" band.
+    Set bodyClass in front matter (pg-c1 … pg-c4, pg-off) to pick the page's colour field. -#}
+{% extends "layouts/laura.njk" %}
+{% block styles %}<link rel="stylesheet" href="/css/pages.css">{% endblock %}
+{% block content %}{{ content | safe }}
+{% include "partials/endband.njk" %}{% endblock %}
