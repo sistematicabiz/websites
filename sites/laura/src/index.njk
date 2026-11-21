@@ -1,0 +1,65 @@
+---
+layout: layouts/laura.njk
+description: Researcher, investor, advisor, and educator working across finance, ecology, ethics, and political economy.
+---
+{#- Home, from design-reference/campiture/laura.html. Text is hard-coded for now: it moves to the CMS in Phase 3. -#}
+{% from "macros/contact.njk" import contactCard with context %}
+<section class="wrap hero">
+  <div class="h-name">
+    <h1><span>Laura</span><span>Segafredo</span></h1>
+    <div class="row">
+      <p class="descr">Researcher, investor, advisor, and educator. Lifelong student. Lover of beauty. Aspiring farmer.</p>
+      <div style="display:grid;gap:18px">
+        <p>My work spans finance, ecology, ethics, and political economy, from building businesses and advising organizations to teaching, writing, and hosting conversations. What connects these pursuits is a question: how can economic and financial systems better serve human and more-than-human flourishing, ecological resilience, and the common good?</p>
+        <div class="actions"><a class="btn" href="#areas">Explore my work</a><a class="btn line" href="https://moralrevolution.substack.com/" target="_blank" rel="noopener">Read Moral Revolution ↗</a></div>
+      </div>
+    </div>
+  </div>
+  <div class="h-cols">
+    <div class="y"><span class="vert">New York City</span><img src="/img/headshot.jpg" alt="Portrait of Laura Segafredo" width="760" height="1140"></div>
+    <div class="r">{% set monoFill = "var(--on-c1)" %}{% set monoAccent = "var(--on-c1)" %}{% set monoAccentOpacity = ".5" %}{% include "partials/mono.njk" %}</div>
+    <div class="g">Finance · Ecology · Ethics · Political economy</div>
+  </div>
+</section>
+
+<section id="areas" class="areas">
+  <a class="col" href="/teaching/"><span class="lbl">Columbia SIPA</span><h3>Teaching &amp; Research</h3><p>Academic inquiry and teaching on sustainable finance, ecological economics, ethics and institutional change.</p><span class="go">Teaching and research →</span></a>
+  <a class="col" href="/finance/"><span class="lbl">{% include "partials/sm.njk" %} · Universe Partners · All About Water</span><h3>Finance &amp; Climate</h3><p>Advisory, investment, and research work on sustainable and values-aligned finance, with an eye for long-term value.</p><span class="go">Advisory, fund and boards →</span></a>
+  <a class="col bookmark" href="/writing/"><span class="lbl">Substack · Podcast</span><h3>Moral Revolution</h3><p>Essays and conversations on the moral imagination needed for a more just and sustainable economy.</p><span class="go">Read and listen →</span></a>
+  <a class="col" href="/teaching/#land"><span class="lbl">Farminary · Oikos Lab</span><h3>Land &amp; Regeneration</h3><p>Learning from soil, seasons, and the work of growing food, and exploring how land-based education can help us rethink value, community, and economic life.</p><span class="go">From the field →</span></a>
+  <a class="col" href="/speaking/"><span class="lbl">Talks · Interviews · Workshops</span><h3>Public Work</h3><p>Talks, interviews, workshops, and collaborations for audiences working across finance, policy, academia, and civil society.</p><span class="go">Speaking and contact →</span></a>
+</section>
+
+<section id="mr" class="blue"><div class="wrap mr">
+  <h2><span>Moral</span><span>Revo&shy;</span><span>lution</span></h2>
+  <div class="txt">
+    <img src="/img/podcast.jpg" alt="Laura and Tony Annett recording the Moral Revolution podcast" width="900" height="471">
+    <span class="lbl">Writing &amp; podcast · with Tony Annett</span>
+    <p>A writing and conversation project that brings theology, ethics, political economy, ecology, and social justice into conversation, as shared resources for imagining a more just world in which humanity and the rest of creation can flourish.</p>
+    <div class="actions"><a class="btn" href="https://moralrevolution.substack.com/" target="_blank" rel="noopener">Substack ↗</a><a class="btn line" href="https://podcasts.apple.com/us/podcast/moral-revolution-podcast/id1837541394" target="_blank" rel="noopener">Apple ↗</a><a class="btn line" href="https://open.spotify.com/show/4tMKxIh7bxORHCPt9SjpT8" target="_blank" rel="noopener">Spotify ↗</a></div>
+  </div>
+</div></section>
+
+<section id="land" class="land">
+  <div class="y"><span class="vert" style="padding-bottom:28px">At the Farminary, Princeton</span><img src="/img/farminary.jpg" alt="Laura working a garden bed at the Farminary" width="700" height="933"></div>
+  <div class="t">
+    <span class="lbl">Land, learning &amp; regeneration</span>
+    <h2>What the soil teaches</h2>
+    <p>Alongside my work in finance, history, theology and the economy, I am deepening my understanding of regenerative farming and the relationships among land, food, community, and economic life, through my work and learning at Princeton Theological Seminary’s Farminary.</p>
+    <div class="oikos"><span class="lbl">Oikos Lab · in development</span><p>Connecting land-based learning, ecological care, and new approaches to economic life.</p></div>
+  </div>
+</section>
+
+<section id="press" class="offw"><div class="wrap press-wrap">
+  <div><span class="lbl">Selected press, conversations &amp; speaking</span><h2>In conver&shy;sation</h2></div>
+  <div class="press">
+    <a class="pr" href="https://www.ft.com/content/86ccc488-63b2-4afd-9a37-2892d4675a06" target="_blank" rel="noopener"><span class="src">Financial Times · Letter</span><span class="t">Markets don’t exist in a liminal cosmic space</span></a>
+    <a class="pr" href="https://sri360.com/podcast/laura-segafredo/" target="_blank" rel="noopener"><span class="src">SRI360 · Podcast</span><span class="t">Nature risk, sustainable investing, and the moral purposes of finance</span></a>
+    <a class="pr" href="https://www.msci.com/research-and-insights/blog-post/capital-for-climate-action-conference-key-takeaways" target="_blank" rel="noopener"><span class="src">MSCI · Conference</span><span class="t">Capital for Climate Action</span></a>
+    <a class="pr" href="#"><span class="src">Pontifical Academy of Social Sciences · Talk</span><span class="t">Catholic investment indices and faith-consistent finance</span></a>
+    <a class="pr" href="https://www.as-coa.org/events/financing-climate-change-adaptation-latin-america" target="_blank" rel="noopener"><span class="src">AS/COA · Panel</span><span class="t">Financing Climate Change Adaptation in Latin America</span></a>
+    <a class="pr" href="#"><span class="src">Humanistic Management International · Podcast</span><span class="t">Transforming Finance and Economics as Moral Revolution</span></a>
+  </div>
+</div></section>
+
+{{ contactCard({ field: "red", label: "Get in touch", title: "Talks, interviews, collabo&shy;rations" }) }}
