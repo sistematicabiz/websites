@@ -3,7 +3,15 @@
 // Paths are relative to the repo root: always run Eleventy from there (see npm scripts).
 import fs from "node:fs";
 import yaml from "js-yaml";
-import { loadFolder } from "./content-collections.js";
+import path from "node:path";
+import { imageSize } from "image-size";
+import { loadFolder, loadFiles, md, setOwnUrls, isExternal } from "./content-collections.js";
+
+const SM = '<span class="sm">Sistem<i>at</i>ica</span>';
+const brand = (s) => esc(s).replace(/Sistem(?:\(at\)|at)ica/g, SM);
+// Style "Sistematica" in the text parts of HTML that is already safe (e.g. rendered Markdown)
+const brandHtml = (html) => String(html ?? "").replace(/>[^<]*/g, (t) => t.replace(/Sistem(?:\(at\)|at)ica/g, SM));
+const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 export function configureSite(eleventyConfig, site) {
   const contentDir = `content/${site}`;
@@ -24,6 +32,10 @@ export function configureSite(eleventyConfig, site) {
       .map((d) => [d.name, yaml.load(fs.readFileSync(`content/${d.name}/settings.yml`, "utf8")).url])
   );
   eleventyConfig.addGlobalData("urls", urls);
+  setOwnUrls(urls);
+
+  // Page texts (one file per page, edited in the CMS "Pages" collection): pages.home, pages.about, …
+  eleventyConfig.addGlobalData("pages", () => loadFiles(`${contentDir}/pages`));
 
   // CMS collections (Markdown files in content/). Available in every template of every site.
   eleventyConfig.addGlobalData("speaking", () => loadFolder("content/laura/speaking"));
@@ -34,7 +46,6 @@ export function configureSite(eleventyConfig, site) {
   eleventyConfig.addPassthroughCopy({
     "shared/css": "css",
     "shared/js": "js",
-    "shared/img": "img",
     // Images uploaded through the CMS (media_folder in sites/laura/src/admin/config.yml)
     "content/media": "media",
   });
@@ -50,17 +61,34 @@ export function configureSite(eleventyConfig, site) {
 
   eleventyConfig.addFilter("year", () => new Date().getFullYear());
 
+  // Long text from the CMS (Markdown) -> HTML. External links open in a new tab; "Sistematica" is styled.
+  eleventyConfig.addFilter("md", (s) => (s ? brandHtml(md.render(String(s))) : ""));
+
+  // Headings typed in the CMS: escape, but keep "&shy;" (where a long word may break) working.
+  // Also styles the word "Sistematica".
+  eleventyConfig.addFilter("soft", (s) => brand(s).replace(/&amp;shy;/g, "&shy;"));
+
+
+  // width="…" height="…" for an image under /media/ (read from the file, so the page doesn't jump while loading)
+  const sizes = new Map();
+  eleventyConfig.addFilter("imgSize", (src) => {
+    if (!src || !src.startsWith("/media/")) return "";
+    if (!sizes.has(src)) {
+      try {
+        const { width, height } = imageSize(fs.readFileSync(path.join("content/media", src.slice(7))));
+        sizes.set(src, ` width="${width}" height="${height}"`);
+      } catch {
+        sizes.set(src, "");
+      }
+    }
+    return sizes.get(src);
+  });
+
   // Wrap the word "Sistematica" in the brand markup (Sistem<i>at</i>ica). Input is escaped first.
-  const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-  eleventyConfig.addFilter("brand", (s) =>
-    esc(s).replace(/Sistem(?:\(at\)|at)ica/g, '<span class="sm">Sistem<i>at</i>ica</span>')
-  );
+  eleventyConfig.addFilter("brand", brand);
 
   // A link is external if it is absolute and does not point to one of our own sites.
-  eleventyConfig.addFilter("isExternal", (url) => {
-    if (!url || !/^https?:\/\//.test(url)) return false;
-    return !Object.values(urls).some((u) => u && url.startsWith(u));
-  });
+  eleventyConfig.addFilter("isExternal", isExternal);
 
   return {
     dir: {
