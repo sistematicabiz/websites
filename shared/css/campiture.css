@@ -1,0 +1,171 @@
+/* Campiture (chosen direction), themeable: every colour comes from themes.css tokens.
+   Based on direction K: flat, full-bleed fields of saturated primaries, no shadows, no rules.
+   Huge condensed uppercase that breaks words across lines, photographs cut into the colour fields,
+   labels set vertically like the spine of a printed piece. Archivo at a narrow width, regular weight. */
+:root{--sans:"Archivo","Helvetica Neue",Arial,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--sans);font-stretch:100%}
+a{color:inherit}
+.wrap{max-width:1360px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.mockbar{background:var(--ink);color:var(--on-ink);font-size:13px}
+.mockbar .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;padding-block:8px}
+.mockbar a{color:var(--c4)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+h1,h2,h3{margin:0;font-weight:500;font-stretch:68%;text-transform:uppercase;letter-spacing:-.01em;line-height:.84}
+p{margin:0;max-width:60ch}
+.lbl{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.vert{writing-mode:vertical-rl;transform:rotate(180deg);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+
+header.site{position:sticky;top:0;z-index:5;background:var(--bg)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:500 22px/1 var(--sans);font-stretch:68%;text-transform:uppercase}
+.brand .mono{width:30px;height:30px}
+nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:14px;font-weight:500;padding:6px 10px;display:block}
+nav li:nth-child(2) a:hover{background:var(--c1);color:var(--on-c1)}
+nav li:nth-child(3) a:hover{background:var(--c3);color:var(--on-c3)}
+nav li:nth-child(4) a:hover{background:var(--c2);color:var(--on-c2)}
+nav li:nth-child(5) a:hover,nav li:nth-child(6) a:hover{background:var(--c4);color:var(--on-c4)}
+nav a:hover{background:var(--off)}
+
+.btn{display:inline-block;padding:14px 22px;text-decoration:none;font-weight:600;font-size:15px;background:var(--ink);color:var(--on-ink)}
+.btn.line{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.btn:hover{background:var(--surface);color:var(--ink)}
+.btn.line:hover{background:var(--ink);color:var(--on-ink);box-shadow:none}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+
+/* hero: name across a white field, photo cut into a yellow field, red monogram field */
+.hero{display:grid;grid-template-columns:repeat(12,1fr);min-height:calc(100vh - 110px)}
+.h-name{grid-column:1/span 8;padding:40px 0 40px;display:grid;align-content:space-between;gap:28px}
+.h-name h1{font-size:clamp(84px,15vw,236px)}
+.h-name h1 span{display:block}
+.h-name .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;padding-right:32px}
+.descr{font-size:23px;line-height:1.3;font-weight:500}
+.h-cols{grid-column:9/span 4;display:grid;grid-template-rows:auto 1fr auto}
+.h-cols .y{background:var(--c4);color:var(--on-c4);padding:22px 22px 0;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:end}
+.h-cols .y img{display:block;width:100%;height:auto}
+.h-cols .r{background:var(--c1);display:grid;place-items:center;padding:24px;min-height:150px}
+.h-cols .r .mono{width:120px;height:120px}
+.h-cols .g{background:var(--c2);color:var(--on-c2);padding:18px 22px;font-weight:600;font-size:15px}
+
+/* areas: five vertical colour columns */
+.areas{display:grid;grid-template-columns:repeat(5,1fr)}
+.col{padding:26px 22px 30px;min-height:520px;display:grid;grid-template-rows:auto 1fr auto auto;gap:16px;text-decoration:none;position:relative}
+.col h3{font-size:clamp(40px,3.9vw,62px);writing-mode:vertical-rl;transform:rotate(180deg);justify-self:start;align-self:end;max-height:330px}
+.col p{font-size:15px;line-height:1.45}
+.col .go{font-weight:600;font-size:14px}
+.col:hover .go{text-decoration:underline;text-underline-offset:4px}
+.col:nth-child(1){background:var(--c1);color:var(--on-c1)}
+.col:nth-child(2){background:var(--c2);color:var(--on-c2)}
+.col:nth-child(3){background:var(--c3);color:var(--on-c3)}
+.col:nth-child(4){background:var(--c4);color:var(--on-c4)}
+.col:nth-child(5){background:var(--off)}
+
+/* moral revolution: blue field with type that breaks the word */
+.blue{background:var(--c3);color:var(--on-c3)}
+.mr{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;padding-block:72px}
+.mr h2{font-size:clamp(90px,14vw,220px);color:var(--accent-c3)}
+.mr h2 span{display:block}
+.mr .txt{display:grid;gap:22px;align-content:end}
+.mr img{display:block;width:100%;height:auto}
+.mr .btn{background:var(--on-c3);color:var(--c3)}
+.mr .btn.line{background:transparent;color:var(--on-c3)}
+.mr .btn.line:hover{background:var(--on-c3);color:var(--c3)}
+
+/* land: half yellow with cut-in photo, half white text */
+.land{display:grid;grid-template-columns:1fr 1fr}
+.land .y{background:var(--c4);color:var(--on-c4);display:grid;grid-template-columns:auto 1fr;gap:24px;padding:56px 0 0 max(20px,calc((100vw - 1360px)/2 + 20px));align-items:end}
+.land .y img{display:block;width:100%;max-width:440px;height:auto;justify-self:end}
+.land .t{padding:56px max(20px,calc((100vw - 1360px)/2 + 20px)) 56px 48px;display:grid;gap:18px;align-content:center}
+.land h2{font-size:clamp(64px,8vw,128px)}
+.land .oikos{background:var(--c2);color:var(--on-c2);padding:18px 20px;display:grid;gap:6px;max-width:48ch}
+
+/* press: off-white field, index of six in a 3x2 grid */
+.offw{background:var(--off)}
+.press-wrap{padding-block:72px;display:grid;gap:36px}
+.press-wrap h2{font-size:clamp(64px,8vw,128px)}
+.press{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.pr{background:var(--surface);padding:22px;display:grid;gap:10px;align-content:start;text-decoration:none;min-height:170px}
+.pr .src{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.pr .t{font:500 26px/1 var(--sans);font-stretch:75%;text-transform:uppercase}
+.pr:nth-child(1):hover{background:var(--c1);color:var(--on-c1)}
+.pr:nth-child(2):hover{background:var(--c2);color:var(--on-c2)}
+.pr:nth-child(3):hover{background:var(--c3);color:var(--on-c3)}
+.pr:nth-child(4):hover{background:var(--c4);color:var(--on-c4)}
+.pr:nth-child(5):hover{background:var(--c1);color:var(--on-c1)}
+.pr:nth-child(6):hover{background:var(--c2);color:var(--on-c2)}
+
+/* contact: red field */
+.red{background:var(--c1);color:var(--on-c1)}
+.contact{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;padding-block:72px}
+.contact h2{font-size:clamp(60px,7.4vw,118px);color:var(--accent-c1)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.f{display:grid;gap:0;background:var(--surface);color:var(--ink);padding:12px 14px}
+.f.full{grid-column:1/-1}
+label{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+input,textarea{font:inherit;padding:6px 0;border:0;background:transparent}
+textarea{min-height:130px}
+form .btn{margin-top:12px}
+.formnote{grid-column:1/-1}
+
+footer{background:var(--ink);color:var(--on-ink);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:28px}
+
+@media (max-width:1000px){
+  .hero{grid-template-columns:1fr;min-height:0}
+  .h-name,.h-cols{grid-column:1/-1}
+  .h-name .row{grid-template-columns:1fr;padding-right:0}
+  .h-cols{grid-template-rows:auto;grid-template-columns:2fr 1fr}
+  .h-cols .g{grid-column:1/-1}
+  .areas{grid-template-columns:1fr 1fr}
+  .col{min-height:360px}
+  .col:nth-child(5){grid-column:1/-1}
+  .mr,.contact,.land{grid-template-columns:1fr}
+  .land .y{padding-right:20px}
+  .land .t{padding-left:20px}
+  .press{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .areas,.press,form,.h-cols{grid-template-columns:1fr}
+  .col h3{writing-mode:horizontal-tb;transform:none;align-self:start}
+  .col{grid-template-rows:auto auto auto auto;min-height:0}
+}
+
+/* name on two lines: Laura / Segafredo, each kept whole */
+.h-name{container-type:inline-size}
+.h-name h1{font-size:clamp(44px,21.5cqi,210px);line-height:.86}
+.h-name h1 span{white-space:nowrap}
+
+/* theme picker: palette only */
+.themes{display:flex;gap:6px;align-items:center}
+.themes button{width:26px;height:26px;border-radius:50%;border:2px solid transparent;padding:0;cursor:pointer;
+  background:conic-gradient(var(--a) 0 25%,var(--b) 0 50%,var(--c) 0 75%,var(--d) 0);outline-offset:2px}
+.themes button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 2px var(--bg)}
+.themes .lbl{margin-right:4px}
+@media (max-width:560px){.themes .lbl{display:none}}
+
+/* Moral Revolution sits in the middle of the five areas, with a bookmark ribbon: the book open at its marked page */
+.col.bookmark{overflow:visible}
+.col.bookmark::before{content:"";position:absolute;top:0;right:22px;width:22px;height:64px;background:var(--c4);
+  clip-path:polygon(0 0,100% 0,100% 100%,50% 78%,0 100%);z-index:1}
+
+/* contact block as a spiral notebook (as in Tavolo): the whole card holding title and form,
+   punched holes and wire coils down its left edge; the section around it takes the page colour */
+#contact{background:var(--bg);padding:64px max(20px,env(safe-area-inset-left,0px))}
+#contact .contact{position:relative;background:var(--c1);color:var(--on-c1);max-width:1320px;margin:0 auto;
+  padding:64px 56px 64px 96px;box-shadow:0 1px 1px rgba(0,0,0,.06),0 18px 36px -18px rgba(0,0,0,.45)}
+#contact .contact::before{content:"";position:absolute;left:26px;top:22px;bottom:22px;width:22px;
+  background:radial-gradient(circle at 11px 16px,var(--bg) 0 7px,transparent 7.5px) 0 0/22px 36px repeat-y}
+#contact .contact::after{content:"";position:absolute;left:-14px;top:22px;bottom:22px;width:52px;
+  background:linear-gradient(transparent 0 13px,var(--ink) 13px 18px,transparent 18px) 0 0/52px 36px repeat-y;
+  -webkit-mask:linear-gradient(90deg,#000 0 72%,transparent 72%);mask:linear-gradient(90deg,#000 0 72%,transparent 72%)}
+@media (max-width:1000px){#contact .contact{padding:44px 24px 44px 76px}#contact .contact::before{left:20px}#contact .contact::after{left:-10px;width:46px}}
+@media (max-width:560px){#contact{padding-inline:20px 12px}#contact .contact{padding:36px 18px 36px 60px}#contact .contact::before{left:14px}}
+
+/* Sistematica wordmark: one word, "at" set in italic and in the accent colour */
+.sm i,.brand i,h1 i.g{font-style:italic}
+.sm i{color:var(--at,var(--c2))}
+.col,a.row:hover,.pi:hover{--at:inherit}
+.f1{--at:var(--accent-c1)}
+.sm i,.brand i{padding-right:.07em}
+h1 i.g{padding-inline:.06em .05em}

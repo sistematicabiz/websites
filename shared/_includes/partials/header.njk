@@ -1,0 +1,7 @@
+{#- Sticky site header: brand mark + main nav (sites/<site>/src/_data/nav.yml). -#}
+<header class="site"><div class="wrap">
+  {% include "partials/brand-" + site.id + ".njk" %}
+  <nav aria-label="Main"><ul>
+    {%- for item in nav %}<li><a href="{{ item.url }}"{% if item.url == page.url %} aria-current="page"{% endif %}>{{ item.label }}</a></li>{% endfor -%}
+  </ul></nav>
+</div></header>

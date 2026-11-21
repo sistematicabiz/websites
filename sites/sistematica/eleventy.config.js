@@ -1,14 +1,5 @@
-import sharedConfig from "../../shared/eleventy.shared.js";
+import { configureSite } from "../../shared/eleventy/site-config.js";
 
 export default function (eleventyConfig) {
-  sharedConfig(eleventyConfig);
+  return configureSite(eleventyConfig, "sistematica");
 }
-
-export const config = {
-  dir: {
-    input: "sites/sistematica/src",
-    output: "sites/sistematica/_site",
-  },
-  markdownTemplateEngine: "njk",
-  htmlTemplateEngine: "njk",
-};

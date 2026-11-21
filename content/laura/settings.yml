@@ -1,0 +1,6 @@
+# Site-wide settings for laurasegafredo.com
+title: Laura Segafredo
+url: https://laurasegafredo.com
+lang: en
+# Colour theme applied to <html data-theme="..."> (see shared/css/themes.css)
+theme: primari

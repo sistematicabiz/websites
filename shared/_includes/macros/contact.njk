@@ -1,0 +1,27 @@
+{#- "Get in touch" card: a full-bleed colour field with a heading and the contact form.
+    Submissions go to Netlify Forms (form name = "contact-<site>").
+    Usage:
+      {% from "macros/contact.njk" import contactCard with context %}
+      {% call contactCard({ field: "red", label: "Get in touch", title: "Talks, interviews, collabo&shy;rations" }) %}optional intro paragraph{% endcall %}
+    Options: field (section class), label, title (HTML allowed), idPrefix, extended (adds Organization + Timeline),
+             messageLabel, submitLabel. -#}
+{% macro contactCard(o) %}
+{%- set p = o.idPrefix or "k" -%}
+<section id="contact" class="{{ o.field }}"><div class="wrap contact">
+  <div style="display:grid;gap:16px;align-content:start"><span class="lbl">{{ o.label }}</span><h2>{{ o.title | safe }}</h2>{% set intro = caller() if caller else "" %}{% if intro | trim %}{{ intro | safe }}{% endif %}</div>
+  <form id="contact-form" name="contact-{{ site.id }}" method="POST" data-netlify="true" netlify-honeypot="company-website">
+    <input type="hidden" name="form-name" value="contact-{{ site.id }}">
+    <p hidden><label>Leave this empty <input name="company-website"></label></p>
+    <div class="f"><label for="{{ p }}-name">Name</label><input id="{{ p }}-name" name="name" autocomplete="name" required></div>
+    {%- if o.extended %}
+    <div class="f"><label for="{{ p }}-org">Organization</label><input id="{{ p }}-org" name="organization" autocomplete="organization"></div>
+    {%- endif %}
+    <div class="f"><label for="{{ p }}-email">Email</label><input id="{{ p }}-email" name="email" type="email" autocomplete="email" required></div>
+    {%- if o.extended %}
+    <div class="f"><label for="{{ p }}-time">Timeline (optional)</label><select id="{{ p }}-time" name="timeline"><option>No fixed timeline</option><option>Within a month</option><option>Next quarter</option><option>Later this year</option></select></div>
+    {%- endif %}
+    <div class="f full"><label for="{{ p }}-msg">{{ o.messageLabel or "Message" }}</label><textarea id="{{ p }}-msg" name="message" required></textarea></div>
+    <div><button class="btn" type="submit">{{ o.submitLabel or "Send" }}</button></div>
+  </form>
+</div></section>
+{% endmacro %}

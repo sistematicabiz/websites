@@ -1,0 +1,6 @@
+# Site-wide settings for Sistematica
+title: Sistematica
+url: https://sistematica.biz
+lang: en
+# Colour theme applied to <html data-theme="..."> (see shared/css/themes.css)
+theme: verde

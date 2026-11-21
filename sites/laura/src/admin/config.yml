@@ -1,0 +1,33 @@
+# Sveltia CMS configuration (Netlify/Decap CMS compatible format)
+# Docs: https://github.com/sveltia/sveltia-cms
+
+backend:
+  name: github
+  repo: sistematicabiz/websites
+  branch: main
+  # GitHub OAuth goes through Netlify's OAuth provider (configured on the laura Netlify site)
+  base_url: https://api.netlify.com
+
+# Every change becomes a draft (a pull request) that must be published from the CMS
+publish_mode: editorial_workflow
+
+# Uploaded images and files: stored in the repo, served at /uploads/ by the laura site
+media_folder: content/laura/uploads
+public_folder: /uploads
+
+site_url: https://laurasegafredo.com
+locale: en
+
+collections:
+  # Test collection to prove the editing flow. Real collections arrive in Phase 3/4.
+  - name: notes
+    label: Notes (test)
+    label_singular: Note
+    folder: content/laura/notes
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime }
+      - { label: Image, name: image, widget: image, required: false }
+      - { label: Body, name: body, widget: markdown }

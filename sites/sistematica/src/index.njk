@@ -1,103 +1,97 @@
 ---
-layout: layouts/base.njk
+layout: layouts/sistematica.njk
+description: Independent research and advisory at the intersection of finance, social and ecological systems, and long-term value creation.
 ---
-<div class="wrap hero">
-  <div class="copy">
-    <span class="kicker">Sistem(at)ica Research &amp; Advisory</span>
-    <h1>Systematic insight, <em class="i">systems thinking.</em></h1>
-    <p class="lead">Independent research and advisory for organizations working at the intersection of finance, social and ecological systems, and long-term value creation.</p>
-    <p>I combine rigorous analysis grounded in data with a systems thinking perspective, helping clients navigate complex questions with intellectual clarity and practical purpose.</p>
-    <div class="actions"><a class="btn" href="#contact">Start a conversation</a><a class="btn line" href="#what">What I do</a></div>
-  </div>
-  <figure class="frame">
-    <canvas data-tessera data-seed="21" data-size="28" aria-hidden="true"></canvas>
-    <img src="{{ profile.headshot.src }}" alt="{{ profile.headshot.alt }}" width="{{ profile.headshot.width }}" height="{{ profile.headshot.height }}">
-    <figcaption class="cap">Laura Segafredo, PhD · Founder</figcaption>
-  </figure>
-</div>
-<canvas class="pat" data-tessera data-seed="5" data-size="22" data-density=".55" aria-hidden="true"></canvas>
-
-<section id="what" class="band"><div class="wrap">
-  <div class="head"><span class="kicker terra">What I do</span><h2>Research, insight, and the conversations that move ideas</h2></div>
-  <div class="tiles">
-    {%- for area in practice %}
-    <article class="tile"><span class="n">{{ area.n }}</span><h3>{{ area.title }}</h3>
-      {%- for para in area.paragraphs %}<p>{{ para }}</p>{% endfor %}
-    </article>
-    {%- endfor %}
-  </div>
-  <h3 class="eng-title">Sample engagements</h3>
-  <ul class="eng">
-    {%- for item in engagements %}
-    <li>{{ item }}</li>
-    {%- endfor %}
-  </ul>
-</div></section>
-
-<section class="band indigo why" aria-labelledby="why-heading"><div class="wrap">
-  <div class="why-grid">
-    <div><span class="kicker saffron" id="why-heading">Why Sistem(at)ica</span><div class="bigname" aria-hidden="true">Sistem<span class="p">(at)</span>ica</div></div>
-    <div>
-      <p class="lead">Sistem(at)ica brings together two commitments.</p>
-      <div class="why-cols">
-        <div><h3>Systematic</h3><p>The first is systematic: disciplined research, analytical clarity, intellectual honesty, and attention to evidence. Complex questions deserve more than fashionable language or easy conclusions.</p></div>
-        <div><h3>Systems thinking</h3><p>The second is systems thinking: an understanding that financial, social, ecological, and political outcomes are interconnected. The most consequential challenges cannot be understood—or addressed—one variable at a time.</p></div>
-      </div>
-      <div class="after">
-        <p>The name also carries an Italian flair. Sistematica evokes both method and sensibility: rigor without reductionism; coherence without rigidity; analysis attentive to the wider whole.</p>
-        <p>This is the approach behind the work: rigorous enough for decision-making, expansive enough for the realities clients are trying to navigate.</p>
-      </div>
+{#- Home, from design-reference/campiture/sistematica.html. Text is hard-coded for now: it moves to the CMS in Phase 4. -#}
+{% from "macros/contact.njk" import contactCard with context %}
+<section class="wrap s-hero">
+  <div class="s-name">
+    <span class="lbl">{% include "partials/sm.njk" %} Research &amp; Advisory</span>
+    <h1 aria-label="Sistematica"><span>Sistem</span><span><i class="g">at</i></span><span>ica</span></h1>
+    <p class="tag">Systematic insight, systems thinking.</p>
+    <div class="row">
+      <p style="font-size:21px;line-height:1.35;font-weight:500">Independent research and advisory for organizations working at the intersection of finance, social and ecological systems, and long-term value creation.</p>
+      <div style="display:grid;gap:18px"><p>I combine rigorous analysis grounded in data with a systems thinking perspective, helping clients navigate complex questions with intellectual clarity and practical purpose.</p>
+      <div class="actions"><a class="btn" href="#contact">Start a conversation</a><a class="btn line" href="#what">What I do</a></div></div>
     </div>
   </div>
+  <div class="s-side">
+    <div class="m"><span class="vert">Laura Segafredo, PhD · Founder</span><img src="/img/headshot.jpg" alt="Portrait of Laura Segafredo" width="760" height="1140"></div>
+    <div class="meter" aria-hidden="true"><i style="height:22%"></i><i style="height:30%"></i><i style="height:26%"></i><i style="height:38%"></i><i style="height:46%"></i><i style="height:42%"></i><i style="height:55%"></i><i style="height:63%"></i><i style="height:60%"></i><i style="height:74%"></i><i style="height:86%"></i><i class="sun" style="height:100%"></i></div>
+  </div>
+</section>
+
+<section class="atwork" aria-label="Climate change at work"><div class="wrap aw">
+  <figure><img src="/img/climate-at-work.jpg" alt="An LED road sign reading CLIMATE CHANGE AT WORK in a Brooklyn park, with the Manhattan skyline behind" width="1428" height="954"></figure>
+  <div class="aw-t">
+    <p class="aw-big">Climate change <i>at</i> work</p>
+    <p>Finance, ecology and everyday life are one system. The work starts from there.</p>
+    <small>Climate Signs, an artwork by Justin Brice Guariglia · Sunset Park, Brooklyn · Photo: Laura Segafredo</small>
+  </div>
 </div></section>
 
-<section id="collaborations" class="band ivory2"><div class="wrap">
-  <div class="head">
-    <span class="kicker terra">Selected collaborations</span>
-    <h2>Rigor, ecological intelligence, and moral clarity in finance</h2>
-    <p>I collaborate with organizations working to bring greater analytical rigor, ecological intelligence, and moral clarity to finance and investment decision-making.</p>
+<section id="what" class="svc">
+  <article class="sv"><span class="n">01</span><h3>Research &amp; strategic analysis</h3><p>I help clients make sense of complex questions at the intersection of finance, sustainability, economic systems and real-world impacts. My work is grounded in sound evidence, careful framing, and close attention to the institutional, regulatory, and market context in which decisions are made.</p><p>The aim is not simply to produce analysis, but to clarify the choices, assumptions, risks, and opportunities that matter for long-term strategy.</p></article>
+  <article class="sv"><span class="n">02</span><h3>Sustainable finance &amp; investment insight</h3><p>I provide research and advisory support to organizations seeking to connect investment practice with climate resilience, social and ecological outcomes, and durable value creation.</p><p>This can include work on sustainable and faith-aligned investment approaches, thematic and impact strategies, financial products, and the evolving materiality of environmental and social factors.</p></article>
+  <article class="sv"><span class="n">03</span><h3>Thought leadership &amp; convening</h3><p>I help organizations develop research, narratives, and forums that bring complex ideas into productive public and professional conversation.</p><p>This includes reports, white papers, presentations, workshops, executive briefings, and stakeholder convenings for investment, policy, academic, and mission-driven audiences.</p></article>
+</section>
+<section class="eng-wrap"><div class="wrap eng">
+  <div style="display:grid;gap:12px;align-content:start"><span class="lbl">Sample engagements</span><h2>Eight ways in</h2></div>
+  <ol>
+    <li>Sustainable, values-aligned and impact index and active-investment product ideation, strategy and development</li>
+    <li>Research on the drivers of financial performance in non-traditional investment approaches, including sustainable and faith-aligned strategies</li>
+    <li>Thematic, impact, and climate-resilience investment strategy</li>
+    <li>Market, policy, and regulatory analysis</li>
+    <li>Research design, report development, and editorial support</li>
+    <li>Stakeholder workshops, investor education, and executive briefings</li>
+    <li>Partnership strategy for mission-led financial ventures</li>
+    <li>Development of thought-leadership platforms, including reports, presentations, and public-facing narratives</li>
+  </ol>
+</div></section>
+
+<section class="why"><div class="wrap">
+  <span class="lbl">Why the name · two commitments</span>
+  <div class="big">Rigor without<br><span>reduc&shy;tionism</span></div>
+  <div class="cols">
+    <div><h3>Systematic</h3><p>Disciplined research, analytical clarity, intellectual honesty, and attention to evidence. Complex questions deserve more than fashionable language or easy conclusions.</p></div>
+    <div><h3>Systems thinking</h3><p>An understanding that financial, social, ecological, and political outcomes are interconnected. The most consequential challenges cannot be understood, or addressed, one variable at a time.</p></div>
+    <div><h3>Italian flair</h3><p>Sistematica evokes both method and sensibility: rigor without reductionism; coherence without rigidity; analysis attentive to the wider whole.</p></div>
   </div>
+</div></section>
+
+<section class="harmony"><div class="wrap hm">
+  <figure><img src="/img/rivera-banner.jpg" alt="Detail of a Diego Rivera mural: two figures hold up a banner reading La verdadera civilización será la armonía de los hombres con la tierra y de los hombres entre sí" width="1276" height="400"></figure>
+  <blockquote>
+    <p class="tr">“True civilization will be the harmony of people with the earth, and of people with one another.”</p>
+    <cite>Diego Rivera, mural detail · <span lang="es">La verdadera civilización será la armonía de los hombres con la tierra y de los hombres entre sí</span> · Photo: Laura Segafredo</cite>
+  </blockquote>
+</div></section>
+
+<section id="collaborations">
+  <div class="wrap collab-h"><span class="lbl">Rigor, ecological intelligence, and moral clarity in finance</span><h2>Selected collabo&shy;rations</h2></div>
   <div class="collab">
-    {%- for c in collaborations %}
-    <article class="card"><canvas data-tessera data-seed="{{ c.seed }}" data-size="16" data-colors="{{ c.colors }}" aria-hidden="true"></canvas><div class="body">
-      <span class="kicker {{ c.kickerClass }}">{{ c.kicker }}</span><h3>{{ c.name }}</h3>
-      <p>{{ c.text }}</p>
-      <div class="links">{% for l in c.links %}<a href="{{ l.url }}" target="_blank" rel="noopener">{{ l.label }} ↗</a>{% endfor %}</div>
-    </div></article>
-    {%- endfor %}
+    <article class="cb"><div class="ph"><span class="vert">Nature-related financial risk</span><img src="/img/finance-climate.jpg" alt="Laura presenting research on ecosystem degradation" width="690" height="919" style="object-position:50% 30%"></div><div class="b">
+      <h3>NatureAlpha / alphaX</h3>
+      <p>Research and advisory collaboration supporting the development of asset-level approaches to nature-related financial risk. The work examines how dependencies on nature, and exposure to environmental degradation, can be more effectively identified, quantified, and incorporated into broad-market equity-index research and design.</p>
+      <div class="links"><a href="https://www.naturealpha.ai/" target="_blank" rel="noopener">NatureAlpha ↗</a><a href="https://alphax.ai/" target="_blank" rel="noopener">alphaX ↗</a></div></div></article>
+    <article class="cb"><div class="ph"><span class="vert">Faith-aligned investing</span><img src="/img/vatican.jpg" alt="Laura presenting at the Pontifical Academy of Social Sciences" width="1100" height="733"></div><div class="b">
+      <h3>Bountiful Financial</h3>
+      <p>Strategic and research support for values-aligned finance, with a focus on the development and articulation of Catholic and multi-faith investment approaches. The work brings together financial analysis, Catholic social thought, and questions of long-term value creation.</p>
+      <div class="links"><a href="https://bountifulfinancial.com/bountiful-financial-debuts-landmark-research-on-catholic-indices-at-conference-held-in-rome/" target="_blank" rel="noopener">Catholic index research ↗</a><a href="https://bountifulfinancial.com/" target="_blank" rel="noopener">Bountiful Financial ↗</a></div></div></article>
+  </div>
+</section>
+
+<section id="about" class="about"><div class="wrap">
+  <div style="display:grid;gap:4px;align-content:start"><img src="/img/nasdaq.jpg" alt="Laura speaking at the Economic Club of New York at Nasdaq" width="655" height="874"><blockquote class="quote">“A short client quotation goes here: one or two sentences about the clarity and rigor of the work.”<cite>Client name, organization · placeholder</cite></blockquote></div>
+  <div class="t">
+    <span class="lbl">About</span>
+    <h2>Laura Segafredo, PhD</h2>
+    <p style="font-size:21px;font-weight:500">Economist, climate-finance leader, researcher, and educator.</p>
+    <p>Laura Segafredo, PhD, is an economist, climate-finance leader, researcher, and educator with more than two decades of experience spanning energy, sustainable investing, philanthropy, academia, and advisory work in the United States and Europe. She works at the intersection of finance, ethics, political economy, and ecological transition.</p>
+    <p>Her career has included senior leadership in sustainable-investment research and index investing at BlackRock, as well as work across climate and environmental organizations, academic institutions, and mission-driven ventures. She is currently an Adjunct Professor of International and Public Affairs at Columbia University’s School of International and Public Affairs.</p>
+    <ul class="chips"><li>Partner, Universe Partners</li><li>Board, Arketa</li><li>Advisor, All About Water</li><li>Co-host, Moral Revolution</li></ul>
+    <div class="actions"><a class="btn" href="{{ urls.laura }}">Read Laura’s full profile</a><a class="btn line" href="https://www.linkedin.com/in/lsegafredo" target="_blank" rel="noopener">LinkedIn ↗</a></div>
   </div>
 </div></section>
 
-<section id="about" class="band"><div class="wrap">
-  <div class="about">
-    <div class="head" style="margin:0"><span class="kicker terra">About Laura Segafredo</span><h2>Laura Segafredo, PhD</h2><p class="display-italic">Economist, climate-finance leader, researcher, and educator.</p></div>
-    <div class="text">
-      <p>Laura Segafredo, PhD, is an economist, climate-finance leader, researcher, and educator with more than two decades of experience spanning energy, sustainable investing, philanthropy, academia, and advisory work in the United States and Europe. She works at the intersection of finance, ethics, political economy, and ecological transition.</p>
-      <p>Her career has included senior leadership in sustainable-investment research and index investing at BlackRock, as well as work across climate and environmental organizations, academic institutions, and mission-driven ventures. She is currently an Adjunct Professor of International and Public Affairs at Columbia University’s School of International and Public Affairs.</p>
-      <ul class="chips">
-        {%- for role in roles | withChip %}<li>{{ role.chip }}</li>{% endfor %}
-      </ul>
-      <div class="actions"><a class="btn line" href="{{ profile.sites.laura }}/about/">Read Laura’s full profile</a><a class="btn line" href="{{ profile.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a></div>
-    </div>
-  </div>
-  <blockquote class="quote">“{{ testimonial.quote }}”<cite>{{ testimonial.cite }}</cite></blockquote>
-</div></section>
-
-<section id="contact" class="band indigo"><div class="wrap">
-  <div class="head">
-    <span class="kicker saffron">Contact</span><h2>Start a conversation</h2>
-    <p>I am open to working with organizations and collaborators seeking rigorous thinking on sustainable finance, ecological and social resilience, long-term value creation, and systems-level questions.</p>
-    <p>For research, advisory, speaking, workshop, or collaboration inquiries, use the form below.</p>
-  </div>
-  <form class="contact" name="contact-sistematica" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="company">
-    <input type="hidden" name="form-name" value="contact-sistematica">
-    <p class="hp"><label>Leave this empty <input name="company" tabindex="-1" autocomplete="off"></label></p>
-    <div class="f"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
-    <div class="f"><label for="f-org">Organization</label><input id="f-org" name="organization" autocomplete="organization"></div>
-    <div class="f"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
-    <div class="f"><label for="f-time">Timeline (optional)</label><select id="f-time" name="timeline"><option>No fixed timeline</option><option>Within a month</option><option>Next quarter</option><option>Later this year</option></select></div>
-    <div class="f full"><label for="f-msg">What would you like to discuss?</label><textarea id="f-msg" name="message" required></textarea></div>
-    <div><button class="btn" type="submit">Send inquiry</button></div>
-  </form>
-</div></section>
-<canvas class="pat" data-tessera data-seed="9" data-size="22" data-density=".55" aria-hidden="true"></canvas>
+{% call contactCard({ field: "deep", label: "Contact", title: "Start a conver&shy;sation", idPrefix: "ks", extended: true, messageLabel: "What would you like to discuss?", submitLabel: "Send inquiry" }) %}<p>I am open to working with organizations and collaborators seeking rigorous thinking on sustainable finance, ecological and social resilience, long-term value creation, and systems-level questions.</p>{% endcall %}
