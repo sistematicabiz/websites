@@ -1,41 +1,764 @@
 # Sveltia CMS configuration (Netlify/Decap CMS compatible format)
 # Docs: https://sveltiacms.app/en/docs
+#
+# backend: GitHub repo, branch main. Login goes through Netlify's OAuth provider (set up on the laura Netlify site).
+# publish_mode editorial_workflow: every change is a draft (a pull request) until it is published from the CMS.
+# media_folder: uploaded images are stored in content/media and served at /media/ by both sites.
+# Text fields typed as headings accept &shy; to mark where a long word may break.
 
 backend:
   name: github
   repo: sistematicabiz/websites
   branch: main
-  # GitHub OAuth goes through Netlify's OAuth provider (configured on the laura Netlify site)
   base_url: https://api.netlify.com
-
-# Every change becomes a draft (a pull request) that must be published from the CMS
 publish_mode: editorial_workflow
-
-# Uploaded images: stored in the repo, served at /media/ by both sites
 media_folder: content/media
 public_folder: /media
-
 site_url: https://laurasegafredo.com
 locale: en
-
 collections:
-  # ---------------------------------------------------------------- laurasegafredo.com
+  - name: laura_pages
+    label: Pages (Laura)
+    label_singular: Page
+    description: The text and photos of each page of laurasegafredo.com.
+    editor:
+      preview: false
+    files:
+      - name: home
+        label: Home
+        file: content/laura/pages/home.md
+        fields:
+          - label: Page title (browser tab)
+            name: title
+            widget: string
+          - label: Search description
+            name: description
+            widget: text
+            required: false
+            hint: Optional. Shown by Google under the page title. Leave empty to use the site's default description.
+          - label: Opening
+            name: hero
+            widget: object
+            collapsed: false
+            fields:
+              - label: Name lines
+                name: name_lines
+                widget: list
+                hint: The big name, one line each.
+              - label: Tagline
+                name: tagline
+                widget: string
+              - label: Intro
+                name: intro
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+              - label: Buttons
+                name: buttons
+                widget: list
+                summary: "{{label}}"
+                hint: The first button is filled, the others are outlined.
+                fields:
+                  - label: Button text
+                    name: label
+                    widget: string
+                  - label: Link
+                    name: url
+                    widget: string
+                    hint: A page (/writing/), a section of this page (#areas) or a full address (https://…).
+              - label: Photo
+                name: photo
+                widget: image
+              - label: Photo description (alt text)
+                name: photo_alt
+                widget: string
+              - label: Photo caption
+                name: photo_caption
+                widget: string
+                required: false
+              - label: Themes line
+                name: themes_line
+                widget: string
+                hint: Line under the colour blocks, e.g. Finance · Ecology · Ethics.
+          - label: Area cards
+            name: areas
+            widget: list
+            summary: "{{title}}"
+            hint: The coloured cards under the opening. Drag to reorder.
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+                hint: Small line above the title.
+              - label: Title
+                name: title
+                widget: string
+              - label: Text
+                name: text
+                widget: text
+              - label: Link text
+                name: link_label
+                widget: string
+                hint: An arrow is added automatically.
+              - label: Link
+                name: link_url
+                widget: string
+                hint: A page of this site, e.g. /teaching/ or /teaching/#land
+              - label: Bookmark style
+                name: bookmark
+                widget: boolean
+                required: false
+                default: false
+                hint: Highlighted card (used for Moral Revolution).
+          - label: Moral Revolution block
+            name: moral_revolution
+            widget: object
+            fields:
+              - label: Title lines
+                name: title_lines
+                widget: list
+                hint: Type &shy; where a long word may break.
+              - label: Photo
+                name: photo
+                widget: image
+              - label: Photo description (alt text)
+                name: photo_alt
+                widget: string
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Text
+                name: text
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+              - label: Substack button text
+                name: substack_label
+                widget: string
+              - label: Apple Podcasts button text
+                name: apple_label
+                widget: string
+              - label: Spotify button text
+                name: spotify_label
+                widget: string
+          - label: Land & Oikos Lab block
+            name: land
+            widget: object
+            fields:
+              - label: Photo
+                name: photo
+                widget: image
+              - label: Photo description (alt text)
+                name: photo_alt
+                widget: string
+              - label: Photo caption
+                name: photo_caption
+                widget: string
+                required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Title
+                name: title
+                widget: string
+              - label: Text
+                name: text
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+              - label: Oikos Lab eyebrow
+                name: oikos_eyebrow
+                widget: string
+              - label: Oikos Lab text
+                name: oikos_text
+                widget: text
+          - label: "\"In conversation\" block"
+            name: press
+            widget: object
+            hint: The cards come from Speaking & Press (items marked "Show on home").
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Title
+                name: title
+                widget: string
+                hint: Type &shy; where a long word may break.
+          - label: "\"Get in touch\" block"
+            name: contact
+            widget: object
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Title
+                name: title
+                widget: string
+                hint: Type &shy; where a long word may break.
+      - name: about
+        label: About
+        file: content/laura/pages/about.md
+        fields:
+          - label: Page title (browser tab)
+            name: title
+            widget: string
+          - label: Search description
+            name: description
+            widget: text
+            required: false
+            hint: Optional. Shown by Google under the page title. Leave empty to use the site's default description.
+          - label: Opening
+            name: hero
+            widget: object
+            collapsed: false
+            fields:
+              - label: Kicker
+                name: kicker
+                widget: string
+                hint: Small uppercase line above the title.
+              - label: Title lines
+                name: title_lines
+                widget: list
+                hint: Each line of the big title. Type &shy; where a long word may break, e.g. Revo&shy;
+              - label: Intro
+                name: intro
+                widget: text
+              - label: Photo
+                name: photo
+                widget: image
+                required: false
+              - label: Photo description (alt text)
+                name: photo_alt
+                widget: string
+                required: false
+                hint: Describe the picture for people who cannot see it. Required if there is a photo.
+              - label: Photo caption
+                name: photo_caption
+                widget: string
+                required: false
+                hint: Short vertical label next to the photo.
+          - label: Who I am
+            name: who
+            widget: object
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Opening line
+                name: opening_line
+                widget: string
+                hint: The large question on the left.
+              - label: Text
+                name: body
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - label: Current roles heading
+            name: roles_title
+            widget: string
+            hint: The roles themselves are edited in Roles.
+          - label: Press, lectures and appearances
+            name: appearances
+            widget: object
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: LinkedIn button text
+                name: linkedin_label
+                widget: string
+                hint: The address is in Settings.
+              - label: Names
+                name: names
+                widget: list
+                hint: One name per item. Drag to reorder.
+          - label: Photos at the bottom
+            name: gallery
+            widget: list
+            summary: "{{alt}}"
+            fields:
+              - label: Photo
+                name: image
+                widget: image
+              - label: Photo description (alt text)
+                name: alt
+                widget: string
+      - name: writing
+        label: Writing & Podcast
+        file: content/laura/pages/writing.md
+        fields:
+          - label: Page title (browser tab)
+            name: title
+            widget: string
+          - label: Search description
+            name: description
+            widget: text
+            required: false
+            hint: Optional. Shown by Google under the page title. Leave empty to use the site's default description.
+          - label: Opening
+            name: hero
+            widget: object
+            collapsed: false
+            fields:
+              - label: Kicker
+                name: kicker
+                widget: string
+                hint: Small uppercase line above the title.
+              - label: Title lines
+                name: title_lines
+                widget: list
+                hint: Each line of the big title. Type &shy; where a long word may break, e.g. Revo&shy;
+              - label: Intro
+                name: intro
+                widget: text
+              - label: Photo
+                name: photo
+                widget: image
+                required: false
+              - label: Photo description (alt text)
+                name: photo_alt
+                widget: string
+                required: false
+                hint: Describe the picture for people who cannot see it. Required if there is a photo.
+              - label: Photo caption
+                name: photo_caption
+                widget: string
+                required: false
+                hint: Short vertical label next to the photo.
+          - label: The project
+            name: project
+            widget: object
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Substack button text
+                name: substack_label
+                widget: string
+                hint: The addresses are in Settings.
+              - label: Apple Podcasts button text
+                name: apple_label
+                widget: string
+              - label: Spotify button text
+                name: spotify_label
+                widget: string
+              - label: Text
+                name: body
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - label: Questions
+            name: questions
+            widget: list
+            summary: "{{question}}"
+            fields:
+              - label: Label
+                name: label
+                widget: string
+                hint: e.g. Question one
+              - label: Question
+                name: question
+                widget: string
+              - label: Longer text
+                name: text
+                widget: text
+                required: false
+              - label: Colour
+                name: colour
+                widget: select
+                default: c1
+                options:
+                  - label: None (light grey)
+                    value: none
+                  - label: Colour 1 (red)
+                    value: c1
+                  - label: Colour 2 (green)
+                    value: c2
+                  - label: Colour 3 (blue)
+                    value: c3
+                  - label: Colour 4 (yellow)
+                    value: c4
+          - label: Latest from Substack
+            name: substack
+            widget: object
+            hint: The cards are placeholders until the Substack feed is connected.
+            fields:
+              - label: Heading
+                name: title
+                widget: string
+              - label: Note
+                name: note
+                widget: string
+              - label: Placeholder cards
+                name: placeholders
+                widget: list
+                summary: "{{title}}"
+                fields:
+                  - label: Eyebrow
+                    name: eyebrow
+                    widget: string
+                  - label: Title
+                    name: title
+                    widget: string
+                  - label: Text
+                    name: text
+                    widget: text
+                  - label: Link text
+                    name: link_label
+                    widget: string
+      - name: finance
+        label: Finance & Climate
+        file: content/laura/pages/finance.md
+        fields:
+          - label: Page title (browser tab)
+            name: title
+            widget: string
+          - label: Search description
+            name: description
+            widget: text
+            required: false
+            hint: Optional. Shown by Google under the page title. Leave empty to use the site's default description.
+          - label: Opening
+            name: hero
+            widget: object
+            collapsed: false
+            fields:
+              - label: Kicker
+                name: kicker
+                widget: string
+                hint: Small uppercase line above the title.
+              - label: Title lines
+                name: title_lines
+                widget: list
+                hint: Each line of the big title. Type &shy; where a long word may break, e.g. Revo&shy;
+              - label: Intro
+                name: intro
+                widget: text
+              - label: Photo
+                name: photo
+                widget: image
+                required: false
+              - label: Photo description (alt text)
+                name: photo_alt
+                widget: string
+                required: false
+                hint: Describe the picture for people who cannot see it. Required if there is a photo.
+              - label: Photo caption
+                name: photo_caption
+                widget: string
+                required: false
+                hint: Short vertical label next to the photo.
+          - label: The work
+            name: work
+            widget: object
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Text
+                name: body
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - label: Heading above advisory & investment cards
+            name: advisory_heading
+            widget: string
+            hint: "Cards come from Roles (group: Advisory & investment)."
+          - label: Heading above boards & other initiatives cards
+            name: boards_heading
+            widget: string
+            hint: "Cards come from Roles (group: Boards & other initiatives)."
+      - name: teaching
+        label: Teaching & Research
+        file: content/laura/pages/teaching.md
+        fields:
+          - label: Page title (browser tab)
+            name: title
+            widget: string
+          - label: Search description
+            name: description
+            widget: text
+            required: false
+            hint: Optional. Shown by Google under the page title. Leave empty to use the site's default description.
+          - label: Opening
+            name: hero
+            widget: object
+            collapsed: false
+            fields:
+              - label: Kicker
+                name: kicker
+                widget: string
+                hint: Small uppercase line above the title.
+              - label: Title lines
+                name: title_lines
+                widget: list
+                hint: Each line of the big title. Type &shy; where a long word may break, e.g. Revo&shy;
+              - label: Intro
+                name: intro
+                widget: text
+              - label: Photo
+                name: photo
+                widget: image
+                required: false
+              - label: Photo description (alt text)
+                name: photo_alt
+                widget: string
+                required: false
+                hint: Describe the picture for people who cannot see it. Required if there is a photo.
+              - label: Photo caption
+                name: photo_caption
+                widget: string
+                required: false
+                hint: Short vertical label next to the photo.
+          - label: Columbia
+            name: columbia
+            widget: object
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Profile button text
+                name: profile_label
+                widget: string
+              - label: Profile link
+                name: profile_url
+                widget: string
+          - label: Research
+            name: research
+            widget: object
+            fields:
+              - label: Text
+                name: body
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+              - label: Research interests heading
+                name: interests_heading
+                widget: string
+              - label: Research interests
+                name: interests
+                widget: list
+                hint: One interest per item. Drag to reorder.
+          - label: Land, learning & regeneration
+            name: land
+            widget: object
+            fields:
+              - label: Photo
+                name: photo
+                widget: image
+              - label: Photo description (alt text)
+                name: photo_alt
+                widget: string
+              - label: Photo caption
+                name: photo_caption
+                widget: string
+                required: false
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Title
+                name: title
+                widget: string
+              - label: Text
+                name: body
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - label: Oikos Lab
+            name: oikos
+            widget: object
+            fields:
+              - label: Eyebrow
+                name: eyebrow
+                widget: string
+              - label: Title
+                name: title
+                widget: string
+              - label: Text
+                name: body
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+      - name: speaking
+        label: Speaking & Press
+        file: content/laura/pages/speaking.md
+        fields:
+          - label: Page title (browser tab)
+            name: title
+            widget: string
+          - label: Search description
+            name: description
+            widget: text
+            required: false
+            hint: Optional. Shown by Google under the page title. Leave empty to use the site's default description.
+          - label: Opening
+            name: hero
+            widget: object
+            collapsed: false
+            fields:
+              - label: Kicker
+                name: kicker
+                widget: string
+                hint: Small uppercase line above the title.
+              - label: Title lines
+                name: title_lines
+                widget: list
+                hint: Each line of the big title. Type &shy; where a long word may break, e.g. Revo&shy;
+              - label: Intro
+                name: intro
+                widget: text
+              - label: Photo
+                name: photo
+                widget: image
+                required: false
+              - label: Photo description (alt text)
+                name: photo_alt
+                widget: string
+                required: false
+                hint: Describe the picture for people who cannot see it. Required if there is a photo.
+              - label: Photo caption
+                name: photo_caption
+                widget: string
+                required: false
+                hint: Short vertical label next to the photo.
+  - name: laura_settings
+    label: Settings (Laura)
+    editor:
+      preview: false
+    files:
+      - name: settings
+        label: Site settings
+        file: content/laura/settings.yml
+        fields:
+          - label: Site name
+            name: title
+            widget: string
+            hint: Shown in the header and in browser tabs.
+          - label: Site address
+            name: url
+            widget: string
+          - label: Language
+            name: lang
+            widget: hidden
+            default: en
+          - label: Default search description
+            name: description
+            widget: text
+            hint: Shown by Google when a page has no description of its own.
+          - label: Colour theme
+            name: theme
+            widget: select
+            options:
+              - label: Primari (red
+                green: null
+                blue: null
+                yellow): null
+                value: primari
+              - label: Terra (warm earth tones)
+                value: terra
+              - label: Verde (greens)
+                value: verde
+              - label: Notte (dark)
+                value: notte
+          - label: Contact email
+            name: contact_email
+            widget: string
+            hint: Where contact form messages should go. Set the same address in Netlify > Forms > notifications.
+          - label: Links
+            name: links
+            widget: object
+            fields:
+              - label: LinkedIn
+                name: linkedin
+                widget: string
+              - label: Substack
+                name: substack
+                widget: string
+              - label: Apple Podcasts
+                name: apple_podcasts
+                widget: string
+              - label: Spotify
+                name: spotify
+                widget: string
+              - label: Sistematica
+                name: sistematica
+                widget: string
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - label: Text
+                name: text
+                widget: string
+              - label: LinkedIn link text
+                name: linkedin_label
+                widget: string
+              - label: Sistematica link text
+                name: sistematica_label
+                widget: string
+          - label: "\"Get in touch\" band (bottom of inner pages)"
+            name: endband
+            widget: object
+            fields:
+              - label: Text
+                name: title
+                widget: text
+                hint: Press Enter for a line break.
+              - label: Button text
+                name: button_label
+                widget: string
   - name: speaking
     label: Speaking & Press
     label_singular: Speaking or press item
     description: >-
-      Talks, interviews, podcasts and articles. All items appear on the Speaking & Press page;
-      items marked "Show on home" also appear in the "In conversation" block on the home page.
+      Talks, interviews, podcasts and articles. All items appear on the Speaking & Press page; items marked "Show on
+      home" also appear in the "In conversation" block on the home page.
     folder: content/laura/speaking
     create: true
     slug: "{{slug}}"
     identifier_field: title
     summary: "{{outlet}} · {{type}}: {{title}}"
-    sortable_fields: [order, date, outlet, title]
+    sortable_fields:
+      - order
+      - date
+      - outlet
+      - title
     view_filters:
-      - { label: Shown on home, field: featured, pattern: true }
+      - label: Shown on home
+        field: featured
+        pattern: true
     fields:
-      - { label: Outlet, name: outlet, widget: string, hint: "Who published or hosted it, e.g. Financial Times." }
+      - label: Outlet
+        name: outlet
+        widget: string
+        hint: Who published or hosted it, e.g. Financial Times.
       - label: Short outlet name
         name: short_outlet
         widget: string
@@ -44,9 +767,22 @@ collections:
       - label: Type
         name: type
         widget: select
-        options: [Letter, Podcast, Conference, Webinar, Panel, Talk, Interview, Article]
-      - { label: Title, name: title, widget: string }
-      - { label: Abstract, name: abstract, widget: text, hint: "One or two sentences shown on the Speaking & Press page." }
+        options:
+          - Letter
+          - Podcast
+          - Conference
+          - Webinar
+          - Panel
+          - Talk
+          - Interview
+          - Article
+      - label: Title
+        name: title
+        widget: string
+      - label: Abstract
+        name: abstract
+        widget: text
+        hint: One or two sentences shown on the Speaking & Press page.
       - label: Link text
         name: link_label
         widget: string
@@ -56,12 +792,14 @@ collections:
         name: link_url
         widget: string
         required: false
-        hint: Full address starting with https://. Leave empty if there is no link yet; the item is then shown without a link.
+        hint: >-
+          Full address starting with https://. Leave empty if there is no link yet; the item is then shown without a
+          link.
       - label: Date
         name: date
         widget: datetime
         required: false
-        date_format: "MMMM D, YYYY"
+        date_format: MMMM D, YYYY
         time_format: false
         format: YYYY-MM-DD
         hint: When it was published or took place. Used to sort items that have the same order number.
@@ -75,30 +813,41 @@ collections:
         widget: string
         required: false
         hint: Required if you add an image. Describe what the picture shows, for people who cannot see it.
-      - { label: Show on home, name: featured, widget: boolean, default: false, required: false }
+      - label: Show on home
+        name: featured
+        widget: boolean
+        default: false
+        required: false
       - label: Order
         name: order
         widget: number
         value_type: int
         required: false
         hint: Lower numbers come first. Items without a number go last, newest first.
-
-  # ---------------------------------------------------------------- shared by both sites
   - name: roles
     label: Roles
     label_singular: Role
     description: >-
-      Laura's current roles. Each role can appear on the About page ("Current roles"), on the
-      Finance & Climate page (cards) and in the Sistematica bio (chips).
+      Laura's current roles. Each role can appear on the About page ("Current roles"), on the Finance & Climate page
+      (cards) and in the Sistematica bio (chips).
     folder: content/shared/roles
     create: true
     slug: "{{slug}}"
     identifier_field: organization
     summary: "{{organization}} · {{role}}"
-    sortable_fields: [order, organization, group]
+    sortable_fields:
+      - order
+      - organization
+      - group
     fields:
-      - { label: Organization, name: organization, widget: string, hint: "e.g. Universe Partners. The word Sistematica is styled automatically." }
-      - { label: Role, name: role, widget: string, hint: "Label on the Finance & Climate card, e.g. Senior Advisor." }
+      - label: Organization
+        name: organization
+        widget: string
+        hint: e.g. Universe Partners. The word Sistematica is styled automatically.
+      - label: Role
+        name: role
+        widget: string
+        hint: Label on the Finance & Climate card, e.g. Senior Advisor.
       - label: Short line (About page)
         name: short_line
         widget: string
@@ -107,7 +856,10 @@ collections:
         name: body
         widget: markdown
         required: false
-        buttons: [bold, italic, link]
+        buttons:
+          - bold
+          - italic
+          - link
         editor_components: []
         hint: Text of the card on the Finance & Climate page. Leave empty if the role is not shown there.
       - label: Link URL
@@ -127,7 +879,10 @@ collections:
       - label: Group
         name: group
         widget: select
-        options: [Advisory & investment, Boards & other initiatives, Other]
+        options:
+          - Advisory & investment
+          - Boards & other initiatives
+          - Other
         hint: Section of the Finance & Climate page where the card appears.
       - label: Card colour (Finance & Climate)
         name: colour
@@ -135,14 +890,31 @@ collections:
         required: false
         default: none
         options:
-          - { label: "None (light grey)", value: none }
-          - { label: "Colour 1 (red)", value: c1 }
-          - { label: "Colour 2 (green)", value: c2 }
-          - { label: "Colour 3 (blue)", value: c3 }
-          - { label: "Colour 4 (yellow)", value: c4 }
-      - { label: Show on About page, name: show_on_about, widget: boolean, default: true, required: false }
-      - { label: Show on Finance & Climate page, name: show_on_finance, widget: boolean, default: false, required: false }
-      - { label: Show on Sistematica, name: show_on_sistematica, widget: boolean, default: false, required: false }
+          - label: None (light grey)
+            value: none
+          - label: Colour 1 (red)
+            value: c1
+          - label: Colour 2 (green)
+            value: c2
+          - label: Colour 3 (blue)
+            value: c3
+          - label: Colour 4 (yellow)
+            value: c4
+      - label: Show on About page
+        name: show_on_about
+        widget: boolean
+        default: true
+        required: false
+      - label: Show on Finance & Climate page
+        name: show_on_finance
+        widget: boolean
+        default: false
+        required: false
+      - label: Show on Sistematica
+        name: show_on_sistematica
+        widget: boolean
+        default: false
+        required: false
       - label: Chip text (Sistematica)
         name: sistematica_chip
         widget: string
@@ -154,8 +926,6 @@ collections:
         value_type: int
         required: false
         hint: Lower numbers come first.
-
-  # ---------------------------------------------------------------- sistematica
   - name: collaborations
     label: Sistematica · Collaborations
     label_singular: Collaboration
@@ -165,20 +935,38 @@ collections:
     slug: "{{slug}}"
     identifier_field: name
     summary: "{{name}} · {{area}}"
-    sortable_fields: [order, name]
+    sortable_fields:
+      - order
+      - name
     fields:
-      - { label: Name, name: name, widget: string, hint: "e.g. Bountiful Financial" }
-      - { label: Area, name: area, widget: string, hint: "Short vertical label on the photo, e.g. Faith-aligned investing." }
-      - { label: Description, name: description, widget: text }
+      - label: Name
+        name: name
+        widget: string
+        hint: e.g. Bountiful Financial
+      - label: Area
+        name: area
+        widget: string
+        hint: Short vertical label on the photo, e.g. Faith-aligned investing.
+      - label: Description
+        name: description
+        widget: text
       - label: Links
         name: links
         widget: list
         required: false
         summary: "{{label}}"
         fields:
-          - { label: Link text, name: label, widget: string }
-          - { label: URL, name: url, widget: string, hint: "Full address starting with https://" }
-      - { label: Photo, name: image, widget: image, required: false }
+          - label: Link text
+            name: label
+            widget: string
+          - label: URL
+            name: url
+            widget: string
+            hint: Full address starting with https://
+      - label: Photo
+        name: image
+        widget: image
+        required: false
       - label: Photo description (alt text)
         name: image_alt
         widget: string
@@ -188,7 +976,7 @@ collections:
         name: image_position
         widget: string
         required: false
-        hint: "Optional. Which part of the photo stays visible when it is cropped, e.g. 50% 30% (horizontal, vertical)."
+        hint: Optional. Which part of the photo stays visible when it is cropped, e.g. 50% 30% (horizontal, vertical).
       - label: Order
         name: order
         widget: number
