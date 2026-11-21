@@ -1,32 +1,32 @@
 ---
 layout: layouts/laura-page.njk
-title: "Writing & Podcast"
 bodyClass: pg-c3
 permalink: /writing/
+eleventyComputed:
+  description: "{{ pages.writing.description | safe }}"
+  title: "{{ pages.writing.title | safe }}"
 ---
-{#- From design-reference/campiture/writing.html. Page text is still in this template (moves to the CMS in Phase 3). -#}
-<section class="p-hero"><div class="wrap">
-  <div class="t"><span class="lbl">Writing &amp; podcast · with Tony Annett</span><h1><span>Moral</span><span>Revo&shy;</span><span>lution</span></h1><p class="lede">A writing and conversation project that gives oxygen to ideas, institutions, and moral horizons capable of reshaping social and economic life for the better.</p></div>
-  <figure><span class="vert">Recording the podcast</span><img src="/img/podcast.jpg" alt="Laura and Tony Annett recording the Moral Revolution podcast" width="900" height="471"></figure>
-</div></section>
+{#- All text comes from content/laura/pages/writing.md (CMS: Pages > Writing & Podcast); links from site settings. -#}
+{% from "macros/links.njk" import linkAttrs %}
+{%- set p = pages.writing -%}
+{% set hero = p.hero %}{% include "partials/page-hero.njk" %}
 <section class="wrap p-sec"><div class="p-two">
-  <div class="side"><span class="lbl">The project</span>
-    <div class="actions" style="margin-top:8px"><a class="btn" href="https://moralrevolution.substack.com/" target="_blank" rel="noopener">Read on Substack ↗</a><a class="btn line" href="https://podcasts.apple.com/us/podcast/moral-revolution-podcast/id1837541394" target="_blank" rel="noopener">Apple Podcasts ↗</a><a class="btn line" href="https://open.spotify.com/show/4tMKxIh7bxORHCPt9SjpT8" target="_blank" rel="noopener">Spotify ↗</a></div></div>
+  <div class="side"><span class="lbl">{{ p.project.eyebrow }}</span>
+    <div class="actions" style="margin-top:8px"><a class="btn" {{ linkAttrs(site.links.substack) }}>{{ p.project.substack_label }} ↗</a><a class="btn line" {{ linkAttrs(site.links.apple_podcasts) }}>{{ p.project.apple_label }} ↗</a><a class="btn line" {{ linkAttrs(site.links.spotify) }}>{{ p.project.spotify_label }} ↗</a></div></div>
   <div class="main">
-    <p>Moral Revolution brings theology, ethics, political economy, ecology, and social justice into conversation, not as separate disciplines, but as shared resources for imagining a more just world in which humanity and the rest of creation can flourish.</p>
-    <p>Through essays and the Moral Revolution podcast, co-hosted with my friend Tony Annett, I explore questions such as these.</p>
+    {{ p.project.body | md | safe }}
   </div>
 </div></section>
-<section class="wrap p-sec"><div class="fields" style="--n:3">
-  <div class="fd f1"><span class="lbl">Question one</span><h3>What do our economies ask us to value?</h3></div>
-  <div class="fd f2"><span class="lbl">Question two</span><h3>What forms of life do they make possible, or foreclose?</h3></div>
-  <div class="fd f4"><span class="lbl">Question three</span><h3>Institutions rooted in dignity, solidarity, care?</h3><p>What would it mean to build institutions rooted in dignity, solidarity, care, and ecological responsibility?</p></div>
+<section class="wrap p-sec"><div class="fields" style="--n:{{ p.questions.length }}">
+  {%- for q in p.questions %}
+  <div class="fd f{{ q.colour | replace('c', '') if q.colour and q.colour != 'none' else '0' }}"><span class="lbl">{{ q.label }}</span><h3>{{ q.question | soft | safe }}</h3>{% if q.text %}<p>{{ q.text }}</p>{% endif %}</div>
+  {%- endfor %}
 </div></section>
 <section class="wrap p-sec">
-  <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:28px"><h2 class="p-h2">Latest from Substack</h2><span class="tag">Filled in automatically from the Substack feed</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:28px"><h2 class="p-h2">{{ p.substack.title | soft | safe }}</h2><span class="tag">{{ p.substack.note }}</span></div>
   <div class="fields" style="--n:3">
-    <a class="fd fs" href="https://moralrevolution.substack.com/" target="_blank" rel="noopener"><span class="lbl">Essay · date</span><h3>Latest essay title</h3><p>The first lines of the newest post appear here, pulled from the RSS feed when the site is rebuilt.</p><span class="go">Read on Substack ↗</span></a>
-    <a class="fd fs" href="https://moralrevolution.substack.com/" target="_blank" rel="noopener"><span class="lbl">Podcast · date</span><h3>Latest episode title</h3><p>Episodes appear here too, with a link to the full conversation.</p><span class="go">Listen ↗</span></a>
-    <a class="fd fs" href="https://moralrevolution.substack.com/" target="_blank" rel="noopener"><span class="lbl">Essay · date</span><h3>Earlier post title</h3><p>Placeholder until the feed is connected.</p><span class="go">Read on Substack ↗</span></a>
+    {%- for post in p.substack.placeholders %}
+    <a class="fd fs" {{ linkAttrs(site.links.substack) }}><span class="lbl">{{ post.eyebrow }}</span><h3>{{ post.title }}</h3><p>{{ post.text }}</p><span class="go">{{ post.link_label }} ↗</span></a>
+    {%- endfor %}
   </div>
 </section>

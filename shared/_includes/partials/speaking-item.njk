@@ -1,10 +1,10 @@
 {#- One entry on /speaking/ (variable: item). Without link_url the card is not a link. -#}
 {%- from "macros/links.njk" import linkAttrs, arrow -%}
 {%- set inner -%}
-<span class="src">{{ item.outlet }} · {{ item.type }}</span><div><h3>{{ item.title }}</h3><p>{{ item.abstract }}</p>{% if item.image %}<img class="pimg" src="{{ item.image }}" alt="{{ item.image_alt }}" loading="lazy">{% endif %}</div>
+<span class="src">{{ item.outlet }} · {{ item.type }}</span><div><h3>{{ item.title }}</h3><p>{{ item.abstract }}</p>{% if item.image %}<img class="pimg" src="{{ item.image }}" alt="{{ item.image_alt }}"{{ item.image | imgSize | safe }} loading="lazy">{% endif %}</div>
 {%- endset -%}
 {%- if item.link_url -%}
-<a class="pi" {{ linkAttrs(item.link_url) }}>{{ inner | safe }}<span class="go">{{ item.link_label or "Read more" }} {{ arrow(item.link_url) }}</span></a>
+<a class="pi" {{ linkAttrs(item.link_url) }}>{{ inner | safe }}<span class="go">{{ item.link_label or "Read more" }}{{ arrow(item.link_url) }}</span></a>
 {%- else -%}
 <div class="pi">{{ inner | safe }}</div>
 {%- endif -%}
