@@ -38,3 +38,12 @@ footer{--at:var(--c2)}
 
 /* The current page in the menu is also underlined. */
 nav a[aria-current="page"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+
+/* Form button and text on the contact field, in the themes selectable in the CMS. */
+[data-site="laura"][data-theme="verde"] .red .btn,
+[data-site="sistematica"][data-theme="primari"] .deep .btn{background:#fff;color:#111}
+[data-site="laura"][data-theme="verde"] .red .btn:hover,
+[data-site="sistematica"][data-theme="primari"] .deep .btn:hover{background:#111;color:#fff}
+[data-site="sistematica"][data-theme="primari"] .deep .contact p,
+[data-site="sistematica"][data-theme="primari"] .atwork small{opacity:1}
+[data-site="sistematica"][data-theme="primari"] .aw-big i{color:inherit}
