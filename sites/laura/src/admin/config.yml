@@ -85,7 +85,7 @@ collections:
             name: areas
             widget: list
             summary: "{{title}}"
-            hint: The coloured cards under the opening. Drag to reorder.
+            hint: The coloured cards under the opening. Colours follow the position, so keep the red and green cards apart when reordering.
             fields:
               - label: Eyebrow
                 name: eyebrow
@@ -712,12 +712,8 @@ collections:
             options:
               - label: Primari (red, green, blue, yellow)
                 value: primari
-              - label: Terra (warm earth tones)
-                value: terra
               - label: Verde (greens)
                 value: verde
-              - label: Notte (dark)
-                value: notte
           - label: Social sharing image
             name: share_image
             widget: image
@@ -1319,12 +1315,8 @@ collections:
             options:
               - label: Primari (red, green, blue, yellow)
                 value: primari
-              - label: Terra (warm earth tones)
-                value: terra
               - label: Verde (greens)
                 value: verde
-              - label: Notte (dark)
-                value: notte
           - label: Social sharing image
             name: share_image
             widget: image
