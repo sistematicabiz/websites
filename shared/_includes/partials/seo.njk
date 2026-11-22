@@ -1,0 +1,19 @@
+{#- Search and social-sharing tags. Page title/description come from the CMS, with site defaults. -#}
+{%- set desc = description or site.description -%}
+{%- set fullTitle = (title + " · " + site.title) if title else site.title -%}
+{%- set pageUrl = page.url | absUrl(site.url) -%}
+{%- set shareImage = site.share_image | absUrl(site.url) -%}
+{% if desc %}<meta name="description" content="{{ desc }}">
+{% endif %}{% if noindex %}<meta name="robots" content="noindex">
+{% else %}<link rel="canonical" href="{{ pageUrl }}">
+<meta property="og:url" content="{{ pageUrl }}">
+{% endif %}<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ fullTitle }}">
+{% if desc %}<meta property="og:description" content="{{ desc }}">
+{% endif %}<meta property="og:image" content="{{ shareImage }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ site.title }}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">

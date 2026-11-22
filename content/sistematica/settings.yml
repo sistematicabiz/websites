@@ -5,6 +5,8 @@ lang: en
 description: Independent research and advisory at the intersection of finance, social and ecological systems, and long-term value creation.
 # Colour theme applied to <html data-theme="..."> (see shared/css/themes.css): primari, terra, verde, notte
 theme: verde
+# Default picture when a page is shared on social media (1200 x 630)
+share_image: /media/share-sistematica.png
 contact_email: laura.segafredo@gmail.com
 links:
   linkedin: https://www.linkedin.com/in/lsegafredo
