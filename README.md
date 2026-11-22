@@ -39,6 +39,7 @@ npm run dev:laura          # http://localhost:8080
 npm run dev:sistematica    # http://localhost:8081
 npm run build              # both sites
 npm run check:cms          # compare the CMS config with the content files
+npm run fetch:substack     # refresh the latest posts on Writing & Podcast
 ```
 
 ## Deploy (Netlify)
@@ -52,3 +53,8 @@ Each `netlify.toml` skips the build when nothing that site depends on has change
 Sveltia CMS at `https://<laura site>/admin/`, configured in `sites/laura/src/admin/config.yml`
 (GitHub backend on `main`, editorial workflow: every change is a draft pull request until published).
 Login uses a GitHub OAuth App registered on the laura Netlify site.
+
+## Guides
+
+- [Editing guide](docs/editing-guide.md) for whoever updates the content
+- [Launch checklist](docs/launch-checklist.md) with the manual Netlify, GitHub and DNS steps

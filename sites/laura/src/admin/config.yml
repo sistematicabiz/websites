@@ -1,7 +1,7 @@
 # Sveltia CMS configuration (Netlify/Decap CMS compatible format)
 # Docs: https://sveltiacms.app/en/docs
 #
-# backend: GitHub repo, branch main. Login goes through Netlify's OAuth provider (set up on the laura Netlify site).
+# backend: GitHub repo, branch main. Login uses Netlify as OAuth client (set up on the laura Netlify site): keep base_url unset.
 # publish_mode editorial_workflow: every change is a draft (a pull request) until it is published from the CMS.
 # media_folder: uploaded images are stored in content/media and served at /media/ by both sites.
 # Text fields typed as headings accept &shy; to mark where a long word may break.
@@ -10,7 +10,6 @@ backend:
   name: github
   repo: sistematicabiz/websites
   branch: main
-  base_url: https://api.netlify.com
 publish_mode: editorial_workflow
 media_folder: content/media
 public_folder: /media
@@ -106,12 +105,6 @@ collections:
                 name: link_url
                 widget: string
                 hint: A page of this site, e.g. /teaching/ or /teaching/#land
-              - label: Bookmark style
-                name: bookmark
-                widget: boolean
-                required: false
-                default: false
-                hint: Highlighted card (used for Moral Revolution).
           - label: Moral Revolution block
             name: moral_revolution
             widget: object
@@ -203,6 +196,7 @@ collections:
                 name: title
                 widget: string
                 hint: Type &shy; where a long word may break.
+        preview_path: ""
       - name: about
         label: About
         file: content/laura/pages/about.md
@@ -294,6 +288,7 @@ collections:
               - label: Photo description (alt text)
                 name: alt
                 widget: string
+        preview_path: about/
       - name: writing
         label: Writing & Podcast
         file: content/laura/pages/writing.md
@@ -395,31 +390,18 @@ collections:
           - label: Latest from Substack
             name: substack
             widget: object
-            hint: The cards are placeholders until the Substack feed is connected.
+            hint: The posts are loaded automatically from Substack every day.
             fields:
               - label: Heading
                 name: title
                 widget: string
-              - label: Note
-                name: note
+              - label: Link text for essays
+                name: read_label
                 widget: string
-              - label: Placeholder cards
-                name: placeholders
-                widget: list
-                summary: "{{title}}"
-                fields:
-                  - label: Eyebrow
-                    name: eyebrow
-                    widget: string
-                  - label: Title
-                    name: title
-                    widget: string
-                  - label: Text
-                    name: text
-                    widget: text
-                  - label: Link text
-                    name: link_label
-                    widget: string
+              - label: Link text for podcast episodes
+                name: listen_label
+                widget: string
+        preview_path: writing/
       - name: finance
         label: Finance & Climate
         file: content/laura/pages/finance.md
@@ -485,6 +467,7 @@ collections:
             name: boards_heading
             widget: string
             hint: "Cards come from Roles (group: Boards & other initiatives)."
+        preview_path: finance/
       - name: teaching
         label: Teaching & Research
         file: content/laura/pages/teaching.md
@@ -605,6 +588,7 @@ collections:
                   - italic
                   - link
                 editor_components: []
+        preview_path: teaching/
       - name: speaking
         label: Speaking & Press
         file: content/laura/pages/speaking.md
@@ -647,6 +631,57 @@ collections:
                 widget: string
                 required: false
                 hint: Short vertical label next to the photo.
+        preview_path: speaking/
+      - name: not_found
+        label: Page not found (404)
+        file: content/laura/pages/not-found.md
+        fields:
+          - label: Page title (browser tab)
+            name: title
+            widget: string
+          - label: Search description
+            name: description
+            widget: text
+            required: false
+            hint: Optional. This page is hidden from search engines.
+          - label: Eyebrow
+            name: eyebrow
+            widget: string
+          - label: Heading
+            name: heading
+            widget: string
+          - label: Text
+            name: text
+            widget: text
+          - label: Button text
+            name: button_label
+            widget: string
+        preview_path: 404.html
+      - name: thanks
+        label: Thank you (after the contact form)
+        file: content/laura/pages/thanks.md
+        fields:
+          - label: Page title (browser tab)
+            name: title
+            widget: string
+          - label: Search description
+            name: description
+            widget: text
+            required: false
+            hint: Optional. This page is hidden from search engines.
+          - label: Eyebrow
+            name: eyebrow
+            widget: string
+          - label: Heading
+            name: heading
+            widget: string
+          - label: Text
+            name: text
+            widget: text
+          - label: Button text
+            name: button_label
+            widget: string
+        preview_path: thanks/
   - name: laura_settings
     label: Settings (Laura)
     editor:
@@ -683,6 +718,10 @@ collections:
                 value: verde
               - label: Notte (dark)
                 value: notte
+          - label: Social sharing image
+            name: share_image
+            widget: image
+            hint: Shown when a page is shared on social media. Use 1200 x 630 pixels.
           - label: Contact email
             name: contact_email
             widget: string
@@ -697,6 +736,10 @@ collections:
               - label: Substack
                 name: substack
                 widget: string
+              - label: Substack feed address
+                name: substack_feed
+                widget: string
+                hint: Used for the latest posts on Writing & Podcast.
               - label: Apple Podcasts
                 name: apple_podcasts
                 widget: string
@@ -820,6 +863,7 @@ collections:
         value_type: int
         required: false
         hint: Lower numbers come first. Items without a number go last, newest first.
+    preview_path: speaking/
   - name: roles
     label: Roles
     label_singular: Role
@@ -896,6 +940,8 @@ collections:
             value: c3
           - label: Colour 4 (yellow)
             value: c4
+          - label: Sistematica (deep green)
+            value: sistematica
       - label: Show on About page
         name: show_on_about
         widget: boolean
@@ -1193,6 +1239,57 @@ collections:
                 name: timeline_options
                 widget: list
                 hint: Choices in the Timeline menu of the form. Drag to reorder.
+        preview_path: ""
+      - name: not_found
+        label: Page not found (404)
+        file: content/sistematica/pages/not-found.md
+        fields:
+          - label: Page title (browser tab)
+            name: title
+            widget: string
+          - label: Search description
+            name: description
+            widget: text
+            required: false
+            hint: Optional. This page is hidden from search engines.
+          - label: Eyebrow
+            name: eyebrow
+            widget: string
+          - label: Heading
+            name: heading
+            widget: string
+          - label: Text
+            name: text
+            widget: text
+          - label: Button text
+            name: button_label
+            widget: string
+        preview_path: 404.html
+      - name: thanks
+        label: Thank you (after the contact form)
+        file: content/sistematica/pages/thanks.md
+        fields:
+          - label: Page title (browser tab)
+            name: title
+            widget: string
+          - label: Search description
+            name: description
+            widget: text
+            required: false
+            hint: Optional. This page is hidden from search engines.
+          - label: Eyebrow
+            name: eyebrow
+            widget: string
+          - label: Heading
+            name: heading
+            widget: string
+          - label: Text
+            name: text
+            widget: text
+          - label: Button text
+            name: button_label
+            widget: string
+        preview_path: thanks/
   - name: sistematica_settings
     label: Settings (Sistematica)
     editor:
@@ -1228,6 +1325,10 @@ collections:
                 value: verde
               - label: Notte (dark)
                 value: notte
+          - label: Social sharing image
+            name: share_image
+            widget: image
+            hint: Shown when a page is shared on social media. Use 1200 x 630 pixels.
           - label: Contact email
             name: contact_email
             widget: string

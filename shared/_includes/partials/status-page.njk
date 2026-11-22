@@ -1,0 +1,5 @@
+{#- Simple full-colour page used for 404 and "thank you" (variable: s, from content/<site>/pages). -#}
+<section class="{{ 'deep' if site.id == 'sistematica' else 'red' }}"><div class="wrap contact" style="min-height:62vh;align-content:center">
+  <div style="display:grid;gap:16px;align-content:start"><span class="lbl">{{ s.eyebrow }}</span><h1 style="font-size:clamp(60px,7.4vw,118px)">{{ s.heading | soft | safe }}</h1></div>
+  <div style="display:grid;gap:22px;align-content:end;justify-items:start"><p>{{ s.text }}</p><a class="btn" href="/">{{ s.button_label }}</a></div>
+</div></section>

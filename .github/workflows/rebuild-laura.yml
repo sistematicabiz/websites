@@ -1,0 +1,25 @@
+# Rebuilds laurasegafredo.com once a day so "Latest from Substack" stays current.
+# Needs the repository secret NETLIFY_BUILD_HOOK_LAURA (see docs/launch-checklist.md).
+name: Daily rebuild (Laura)
+
+on:
+  schedule:
+    - cron: "15 6 * * *" # 06:15 UTC
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call the Netlify build hook
+        env:
+          HOOK: ${{ secrets.NETLIFY_BUILD_HOOK_LAURA }}
+        run: |
+          if [ -z "$HOOK" ]; then
+            echo "::notice::NETLIFY_BUILD_HOOK_LAURA is not set yet, so no rebuild was requested."
+            exit 0
+          fi
+          curl --fail --silent --show-error --retry 3 --max-time 30 -X POST -d '{}' "$HOOK" > /dev/null
+          echo "Rebuild requested."

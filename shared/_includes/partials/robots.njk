@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+{% if site.id == "laura" %}Disallow: /admin/
+{% endif %}
+Sitemap: {{ "/sitemap.xml" | absUrl(site.url) }}
