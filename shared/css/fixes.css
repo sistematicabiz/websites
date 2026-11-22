@@ -74,11 +74,23 @@ footer a,.cb .links a{display:inline-block;padding-block:5px;margin-block:-5px}
 h1,h2,h3,p,li,label,.lbl,.big,.aw-big,.src,.go,.t{overflow-wrap:break-word}
 .hero>*,.h-name .row>*,.h-cols>*,.areas>*,.mr>*,.land>*,.press-wrap>*,.press>*,.contact>*,.p-hero .wrap>*,.p-two>*,.fields>*,.pi>*,.s-hero>*,.s-name .row>*,.svc>*,.eng>*,.why .cols>*,.aw>*,.hm>*,.collab>*,.about .wrap>*{min-width:0}
 .h-name h1 span,.p-hero h1 span{white-space:normal}
+.h-name,.p-hero .t,.why .wrap,.contact>div:first-child,.collab-h,.about .t{grid-template-columns:minmax(0,1fr)}
+
+/* Forms and lists shrink with their column when the text is enlarged. */
+form{grid-template-columns:repeat(2,minmax(0,1fr))}
+form>*,.f>*{min-width:0}
+.f input,.f textarea,.f select{width:100%;max-width:100%;min-width:0}
+.pr,.num,.cb,.about .wrap>div:first-child{grid-template-columns:minmax(0,1fr)}
+.cb>*{min-width:0}
+.cb .ph{grid-template-columns:auto minmax(0,1fr)}
+.num li{grid-template-columns:72px minmax(0,1fr)}
+@media (max-width:560px){.num li{grid-template-columns:52px minmax(0,1fr)}}
+@media (max-width:560px){form{grid-template-columns:minmax(0,1fr)}}
 
 /* Windows High Contrast: colour fields disappear, so draw their edges. */
 @media (forced-colors:active){
   .btn{border:2px solid ButtonText}
   .f{border:1px solid CanvasText}
-  .col,.fd,.pi,.pr,.cb,.sv,.oikos,.oikos-card,.row,.chips li,.num li{border:1px solid CanvasText}
+  .col,.fd,.pi,.pr,.cb,.sv,.oikos,.oikos-card,a.row,.chips li,.num li{border:1px solid CanvasText}
   #contact .contact{border:1px solid CanvasText}
 }
