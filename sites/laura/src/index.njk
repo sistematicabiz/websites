@@ -35,7 +35,7 @@ eleventyComputed:
 
 {%- set mr = p.moral_revolution %}
 <section id="mr" class="blue"><div class="wrap mr">
-  <h2>{% for line in mr.title_lines %}<span>{{ line | soft | safe }}</span>{% endfor %}</h2>
+  <h2 aria-label="{{ mr.title_lines | titleName }}">{% for line in mr.title_lines %}<span aria-hidden="true">{{ line | soft | safe }}</span>{% endfor %}</h2>
   <div class="txt">
     <img src="{{ mr.photo }}" alt="{{ mr.photo_alt }}"{{ mr.photo | imgSize | safe }}>
     <span class="lbl">{{ mr.eyebrow }}</span>

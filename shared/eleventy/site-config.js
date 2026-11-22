@@ -90,6 +90,14 @@ export function configureSite(eleventyConfig, site) {
   // Wrap the word "Sistematica" in the brand markup (Sistem<i>at</i>ica). Input is escaped first.
   eleventyConfig.addFilter("brand", brand);
 
+  // Spoken name of a title split over several lines: ["Revo&shy;", "lution"] -> "Revolution"
+  eleventyConfig.addFilter("titleName", (lines) =>
+    (lines || [])
+      .map((l) => String(l).replace(/\*/g, ""))
+      .reduce((out, l) => (/(&shy;|\u00AD|-)$/.test(out) ? out.replace(/(&shy;|\u00AD|-)$/, "") + l : out ? `${out} ${l}` : l), "")
+      .replace(/&shy;|\u00AD/g, "")
+  );
+
   // "2026-11-10" -> "November 10, 2026"
   eleventyConfig.addFilter("longDate", (d) =>
     new Date(d).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
