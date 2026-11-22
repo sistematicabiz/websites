@@ -6,3 +6,7 @@
 @media (max-width:1000px){
   [data-site="laura"] #contact .contact{grid-template-columns:minmax(0,1fr)}
 }
+
+/* Vertical photo captions: start a little above the bottom edge of their card.
+   A margin, because the label is rotated 180deg and its padding would end up at the top. */
+.vert{margin-bottom:18px}
