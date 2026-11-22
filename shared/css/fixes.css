@@ -32,3 +32,9 @@ footer{--at:var(--c2)}
 .col:nth-child(2){background:var(--c4);color:var(--on-c4)}
 .col:nth-child(4){background:var(--c2);color:var(--on-c2)}
 .h-cols .g{margin-top:4px}
+
+/* White display titles on red and blue. */
+[data-theme="primari"]{--accent-c1:#FFFFFF;--accent-c3:#FFFFFF}
+
+/* The current page in the menu is also underlined. */
+nav a[aria-current="page"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
