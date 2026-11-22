@@ -90,6 +90,37 @@ export function configureSite(eleventyConfig, site) {
   // Wrap the word "Sistematica" in the brand markup (Sistem<i>at</i>ica). Input is escaped first.
   eleventyConfig.addFilter("brand", brand);
 
+  // "2026-11-10" -> "November 10, 2026"
+  eleventyConfig.addFilter("longDate", (d) =>
+    new Date(d).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
+  );
+
+  // Absolute URL on this site, for canonical links, social tags and the sitemap
+  eleventyConfig.addFilter("absUrl", (p, base) => new URL(p, base).href);
+
+  // Pages every site gets from one shared definition
+  const utilityPage = (permalink, key) => ({
+    layout: `layouts/${site}.njk`,
+    permalink,
+    noindex: true,
+    eleventyExcludeFromCollections: true,
+    eleventyComputed: {
+      title: (d) => d.pages[key].title,
+      description: (d) => d.pages[key].description,
+    },
+  });
+  const statusPage = (key) => `{% set s = pages["${key}"] %}{% include "partials/status-page.njk" %}`;
+  eleventyConfig.addTemplate("404.njk", statusPage("not-found"), utilityPage("/404.html", "not-found"));
+  eleventyConfig.addTemplate("thanks.njk", statusPage("thanks"), utilityPage("/thanks/", "thanks"));
+  eleventyConfig.addTemplate("sitemap.njk", `{% include "partials/sitemap.njk" %}`, {
+    permalink: "/sitemap.xml",
+    eleventyExcludeFromCollections: true,
+  });
+  eleventyConfig.addTemplate("robots.njk", `{% include "partials/robots.njk" %}`, {
+    permalink: "/robots.txt",
+    eleventyExcludeFromCollections: true,
+  });
+
   // A link is external if it is absolute and does not point to one of our own sites.
   eleventyConfig.addFilter("isExternal", isExternal);
 
