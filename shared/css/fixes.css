@@ -1,0 +1,8 @@
+/* Fixes on top of the Campiture CSS, which stays as copied from the mockups. */
+
+/* Laura's contact title: keep the longest word ("interviews,") inside its column at every width. */
+[data-site="laura"] #contact .contact>div:first-child{container-type:inline-size}
+[data-site="laura"] #contact .contact h2{font-size:min(clamp(60px,7.4vw,118px),21cqw)}
+@media (max-width:1000px){
+  [data-site="laura"] #contact .contact{grid-template-columns:minmax(0,1fr)}
+}

@@ -16,6 +16,7 @@
 {%- for s in styles %}
 <link rel="stylesheet" href="/css/{{ s }}">
 {%- endfor %}
+<link rel="stylesheet" href="/css/fixes.css">
 </head>
 <body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
 {% include "partials/header.njk" %}
