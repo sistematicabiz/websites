@@ -6,7 +6,7 @@ link_url: https://sistematica.biz
 link_label: Visit Sistematica
 short_link_label: Visit
 group: Advisory & investment
-colour: c1
+colour: sistematica
 show_on_about: true
 show_on_finance: true
 show_on_sistematica: false

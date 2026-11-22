@@ -940,6 +940,8 @@ collections:
             value: c3
           - label: Colour 4 (yellow)
             value: c4
+          - label: Sistematica (deep green)
+            value: sistematica
       - label: Show on About page
         name: show_on_about
         widget: boolean

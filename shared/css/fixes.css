@@ -10,3 +10,6 @@
 /* Vertical photo captions: start a little above the bottom edge of their card.
    A margin, because the label is rotated 180deg and its padding would end up at the top. */
 .vert{margin-bottom:18px}
+
+/* Sistematica's card on Laura's Finance & Climate page: its own deep green, whatever Laura's theme is. */
+.fsis{background:#0B4A32;color:#FFFFFF;--at:#3DDC84}
