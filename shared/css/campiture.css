@@ -7,14 +7,14 @@
 body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.55 var(--sans);font-stretch:100%}
 a{color:inherit}
 .wrap{max-width:1360px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-.mockbar{background:var(--ink);color:var(--on-ink);font-size:0.8125rem}
+.mockbar{background:var(--ink);color:var(--on-ink);font-size:0.875rem}
 .mockbar .wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:space-between;padding-block:8px}
 .mockbar a{color:var(--c4)}
 :focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 h1,h2,h3{margin:0;font-weight:500;font-stretch:68%;text-transform:uppercase;letter-spacing:-.01em;line-height:.84}
 p{margin:0;max-width:60ch}
-.lbl{font-size:0.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-.vert{writing-mode:vertical-rl;transform:rotate(180deg);font-size:0.8125rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+.lbl{font-size:0.875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.vert{writing-mode:vertical-rl;transform:rotate(180deg);font-size:0.875rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
 
 header.site{position:sticky;top:0;z-index:5;background:var(--bg)}
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
@@ -86,7 +86,7 @@ nav a:hover{background:var(--off)}
 .press-wrap h2{font-size:clamp(64px,8vw,8rem)}
 .press{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
 .pr{background:var(--surface);padding:22px;display:grid;gap:10px;align-content:start;text-decoration:none;min-height:170px}
-.pr .src{font-size:0.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.pr .src{font-size:0.875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 .pr .t{font:500 1.625rem/1 var(--sans);font-stretch:75%;text-transform:uppercase}
 .pr:nth-child(1):hover{background:var(--c1);color:var(--on-c1)}
 .pr:nth-child(2):hover{background:var(--c2);color:var(--on-c2)}
@@ -102,7 +102,7 @@ nav a:hover{background:var(--off)}
 form{display:grid;grid-template-columns:1fr 1fr;gap:4px}
 .f{display:grid;gap:0;background:var(--surface);color:var(--ink);padding:12px 14px}
 .f.full{grid-column:1/-1}
-label{font-size:0.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+label{font-size:0.875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
 input,textarea{font:inherit;padding:6px 0;border:0;background:transparent}
 textarea{min-height:130px}
 form .btn{margin-top:12px}

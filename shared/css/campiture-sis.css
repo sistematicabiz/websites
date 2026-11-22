@@ -69,9 +69,9 @@ nav li a:hover{background:var(--soft)!important;color:var(--ink)!important}
 .about .t{display:grid;gap:18px;align-content:start}
 .about h2{font-size:clamp(56px,6vw,6rem)}
 .chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px}
-.chips li{background:var(--surface);padding:7px 12px;font-size:0.8125rem;font-weight:600}
+.chips li{background:var(--surface);padding:7px 12px;font-size:0.875rem;font-weight:600}
 .quote{background:var(--c4);color:var(--on-c4);padding:26px 28px;font:500 1.75rem/1.05 var(--sans);font-stretch:75%;text-transform:uppercase;margin:0}
-.quote cite{display:block;margin-top:12px;font:400 0.8125rem/1.4 var(--sans);text-transform:none;font-stretch:100%}
+.quote cite{display:block;margin-top:12px;font:400 0.875rem/1.4 var(--sans);text-transform:none;font-stretch:100%}
 
 /* contact */
 .deep{background:var(--c1);color:var(--on-c1)}
@@ -98,7 +98,7 @@ select{font:inherit;padding:6px 0;border:0;background:transparent}
 .aw-t{display:grid;gap:16px}
 .aw-big{font:500 clamp(48px,5.4vw,5.5rem)/.86 var(--sans);font-stretch:68%;text-transform:uppercase;color:var(--accent-c1)}
 .aw-big i{font-style:italic;color:var(--c2);padding-right:.05em}
-.aw-t small{font-size:0.75rem;opacity:.8}
+.aw-t small{font-size:0.875rem;opacity:.8}
 
 /* Rivera: the mural banner, full width, with the translation beneath */
 .harmony{background:var(--soft)}
@@ -106,5 +106,5 @@ select{font:inherit;padding:6px 0;border:0;background:transparent}
 .hm figure{margin:0;grid-column:1/-1}.hm img{display:block;width:100%;height:auto}
 .hm blockquote{margin:0;display:contents}
 .hm .tr{font:500 clamp(34px,3.6vw,3.625rem)/.95 var(--sans);font-stretch:68%;text-transform:uppercase;max-width:none}
-.hm cite{font-style:normal;font-size:0.8125rem;line-height:1.5}
+.hm cite{font-style:normal;font-size:0.875rem;line-height:1.5}
 @media (max-width:1000px){.aw,.hm{grid-template-columns:1fr}}

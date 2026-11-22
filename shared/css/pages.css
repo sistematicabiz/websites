@@ -55,7 +55,7 @@ a.row:hover{background:var(--pc);color:var(--on-pc)}
 
 .press-list{display:grid;gap:4px}
 .pi{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,6fr) minmax(0,3fr);gap:28px;padding:26px 24px;background:var(--off);text-decoration:none;align-items:start}
-.pi .src{font-size:0.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.pi .src{font-size:0.875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
 .pi h3{font-size:clamp(1.625rem,2.4vw,2.375rem);margin-bottom:10px}
 .pi p{font-size:1rem}
 .pi .go{font-weight:600;font-size:0.875rem;justify-self:end}
@@ -70,7 +70,7 @@ a.row:hover{background:var(--pc);color:var(--on-pc)}
 .names i{font-style:normal;color:var(--pc)}
 .photo-row{display:grid;grid-template-columns:repeat(var(--n,2),1fr);gap:4px}
 .photo-row img{width:100%;height:100%;object-fit:cover;display:block}
-.tag{display:inline-block;background:var(--off);padding:4px 10px;font-size:0.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.tag{display:inline-block;background:var(--off);padding:4px 10px;font-size:0.875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 
 /* land field on the teaching page */
 .landf{background:var(--c4);color:var(--on-c4)}
