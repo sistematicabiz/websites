@@ -121,6 +121,14 @@ export function configureSite(eleventyConfig, site) {
     eleventyExcludeFromCollections: true,
   });
 
+  // Links that open a new tab say so to screen readers; the arrows are not read aloud.
+  eleventyConfig.addTransform("new-tab-links", function (html) {
+    if (!(this.page.outputPath || "").endsWith(".html")) return html;
+    return html.replace(/(<a\b[^>]*\btarget="_blank"[^>]*>)([\s\S]*?)<\/a>/g, (all, open, inner) =>
+      `${open}${inner.replace(/[↗→]/g, '<span aria-hidden="true">$&</span>')}<span class="sr-only"> (opens in a new tab)</span></a>`
+    );
+  });
+
   // A link is external if it is absolute and does not point to one of our own sites.
   eleventyConfig.addFilter("isExternal", isExternal);
 
