@@ -27,7 +27,6 @@ areas:
     text: Essays and conversations on the moral imagination needed for a more just and sustainable economy.
     link_label: Read and listen
     link_url: /writing/
-    bookmark: true
   - eyebrow: Farminary · Oikos Lab
     title: Land & Regeneration
     text: Learning from soil, seasons, and the work of growing food, and exploring how land-based education can help us rethink value, community, and economic life.

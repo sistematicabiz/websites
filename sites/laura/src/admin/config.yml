@@ -105,12 +105,6 @@ collections:
                 name: link_url
                 widget: string
                 hint: A page of this site, e.g. /teaching/ or /teaching/#land
-              - label: Bookmark style
-                name: bookmark
-                widget: boolean
-                required: false
-                default: false
-                hint: Highlighted card (used for Moral Revolution).
           - label: Moral Revolution block
             name: moral_revolution
             widget: object
