@@ -25,10 +25,6 @@ questions:
     colour: c4
 substack:
   title: Latest from Substack
-  note: Filled in automatically from the Substack feed
-  # Placeholder cards until the Substack feed is connected
-  placeholders:
-    - { eyebrow: Essay · date, title: Latest essay title, text: "The first lines of the newest post appear here, pulled from the RSS feed when the site is rebuilt.", link_label: Read on Substack }
-    - { eyebrow: Podcast · date, title: Latest episode title, text: "Episodes appear here too, with a link to the full conversation.", link_label: Listen }
-    - { eyebrow: Essay · date, title: Earlier post title, text: Placeholder until the feed is connected., link_label: Read on Substack }
+  read_label: Read on Substack
+  listen_label: Listen
 ---

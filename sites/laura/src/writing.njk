@@ -22,11 +22,13 @@ eleventyComputed:
   <div class="fd f{{ q.colour | replace('c', '') if q.colour and q.colour != 'none' else '0' }}"><span class="lbl">{{ q.label }}</span><h3>{{ q.question | soft | safe }}</h3>{% if q.text %}<p>{{ q.text }}</p>{% endif %}</div>
   {%- endfor %}
 </div></section>
+{%- if substack.items.length %}
 <section class="wrap p-sec">
-  <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:28px"><h2 class="p-h2">{{ p.substack.title | soft | safe }}</h2><span class="tag">{{ p.substack.note }}</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:28px"><h2 class="p-h2">{{ p.substack.title | soft | safe }}</h2></div>
   <div class="fields" style="--n:3">
-    {%- for post in p.substack.placeholders %}
-    <a class="fd fs" {{ linkAttrs(site.links.substack) }}><span class="lbl">{{ post.eyebrow }}</span><h3>{{ post.title }}</h3><p>{{ post.text }}</p><span class="go">{{ post.link_label }} ↗</span></a>
+    {%- for post in substack.items %}
+    <a class="fd fs" {{ linkAttrs(post.link) }}><span class="lbl">{{ "Podcast" if post.type == "podcast" else "Essay" }}{% if post.date %} · {{ post.date | longDate }}{% endif %}</span><h3>{{ post.title }}</h3>{% if post.excerpt %}<p>{{ post.excerpt }}</p>{% endif %}<span class="go">{{ p.substack.listen_label if post.type == "podcast" else p.substack.read_label }} ↗</span></a>
     {%- endfor %}
   </div>
 </section>
+{%- endif %}
