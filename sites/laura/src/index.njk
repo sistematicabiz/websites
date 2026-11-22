@@ -26,6 +26,7 @@ eleventyComputed:
   </div>
 </section>
 
+<h2 class="sr-only">Areas of work</h2>
 <section id="areas" class="areas">
   {%- for a in p.areas %}
   <a class="col" {{ linkAttrs(a.link_url) }}><span class="lbl">{{ a.eyebrow | brand | safe }}</span><h3>{{ a.title | soft | safe }}</h3><p>{{ a.text }}</p><span class="go">{{ a.link_label }}{{ arrow(a.link_url) }}</span></a>

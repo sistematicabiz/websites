@@ -17,7 +17,7 @@ eleventyComputed:
     {{ p.project.body | md | safe }}
   </div>
 </div></section>
-<section class="wrap p-sec"><div class="fields" style="--n:{{ p.questions.length }}">
+<section class="wrap p-sec"><h2 class="sr-only">Questions</h2><div class="fields" style="--n:{{ p.questions.length }}">
   {%- for q in p.questions %}
   <div class="fd f{{ q.colour | replace('c', '') if q.colour and q.colour != 'none' else '0' }}"><span class="lbl">{{ q.label }}</span><h3>{{ q.question | soft | safe }}</h3>{% if q.text %}<p>{{ q.text }}</p>{% endif %}</div>
   {%- endfor %}

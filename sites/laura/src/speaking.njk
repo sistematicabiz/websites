@@ -8,7 +8,7 @@ eleventyComputed:
 ---
 {#- Opening text from content/laura/pages/speaking.md (CMS: Pages > Speaking & Press); items from content/laura/speaking. -#}
 {% set hero = pages.speaking.hero %}{% include "partials/page-hero.njk" %}
-<section class="wrap p-sec"><div class="press-list">
+<section class="wrap p-sec"><h2 class="sr-only">Press, conversations and speaking</h2><div class="press-list">
 {%- for item in speaking %}
 {% include "partials/speaking-item.njk" %}
 {%- endfor %}
