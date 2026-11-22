@@ -25,9 +25,9 @@ eleventyComputed:
 {%- if substack.items.length %}
 <section class="wrap p-sec">
   <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:28px"><h2 class="p-h2">{{ p.substack.title | soft | safe }}</h2></div>
-  <div class="fields" style="--n:3">
+  <div class="press-list">
     {%- for post in substack.items %}
-    <a class="fd fs" {{ linkAttrs(post.link) }}><span class="lbl">{{ "Podcast" if post.type == "podcast" else "Essay" }}{% if post.date %} · {{ post.date | longDate }}{% endif %}</span><h3>{{ post.title }}</h3>{% if post.excerpt %}<p>{{ post.excerpt }}</p>{% endif %}<span class="go">{{ p.substack.listen_label if post.type == "podcast" else p.substack.read_label }} ↗</span></a>
+    <a class="pi" {{ linkAttrs(post.link) }}><span class="src">{{ "Podcast" if post.type == "podcast" else "Essay" }}{% if post.date %} · {{ post.date | longDate }}{% endif %}</span><div><h3>{{ post.title }}</h3>{% if post.excerpt %}<p>{{ post.excerpt }}</p>{% endif %}</div><span class="go">{{ p.substack.listen_label if post.type == "podcast" else p.substack.read_label }} ↗</span></a>
     {%- endfor %}
   </div>
 </section>
