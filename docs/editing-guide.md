@@ -64,7 +64,7 @@ Try to keep uploads under about 1 MB. A photo with a similar shape to the old on
 
 ## Change the colour theme
 
-Open **Settings (Laura)** or **Settings (Sistematica)**, choose a **Colour theme**, then save and publish. The options are Primari, Terra, Verde and Notte. Only the colours change.
+Open **Settings (Laura)** or **Settings (Sistematica)**, choose a **Colour theme**, then save and publish. The options are Primari and Verde. Only the colours change.
 
 ## Links, footer and search text
 

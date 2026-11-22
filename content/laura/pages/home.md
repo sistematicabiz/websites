@@ -17,21 +17,21 @@ areas:
     text: Academic inquiry and teaching on sustainable finance, ecological economics, ethics and institutional change.
     link_label: Teaching and research
     link_url: /teaching/
-  - eyebrow: Sistematica · Universe Partners · All About Water
-    title: Finance & Climate
-    text: Advisory, investment, and research work on sustainable and values-aligned finance, with an eye for long-term value.
-    link_label: Advisory, fund and boards
-    link_url: /finance/
-  - eyebrow: Substack · Podcast
-    title: Moral Revolution
-    text: Essays and conversations on the moral imagination needed for a more just and sustainable economy.
-    link_label: Read and listen
-    link_url: /writing/
   - eyebrow: Farminary · Oikos Lab
     title: Land & Regeneration
     text: Learning from soil, seasons, and the work of growing food, and exploring how land-based education can help us rethink value, community, and economic life.
     link_label: From the field
     link_url: /teaching/#land
+  - eyebrow: Substack · Podcast
+    title: Moral Revolution
+    text: Essays and conversations on the moral imagination needed for a more just and sustainable economy.
+    link_label: Read and listen
+    link_url: /writing/
+  - eyebrow: Sistematica · Universe Partners · All About Water
+    title: Finance & Climate
+    text: Advisory, investment, and research work on sustainable and values-aligned finance, with an eye for long-term value.
+    link_label: Advisory, fund and boards
+    link_url: /finance/
   - eyebrow: Talks · Interviews · Workshops
     title: Public Work
     text: Talks, interviews, workshops, and collaborations for audiences working across finance, policy, academia, and civil society.

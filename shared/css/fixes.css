@@ -13,3 +13,37 @@
 
 /* Sistematica's card on Laura's Finance & Climate page: its own deep green, whatever Laura's theme is. */
 .fsis{background:#0B4A32;color:#FFFFFF;--at:#3DDC84}
+
+/* ---------- Colour accessibility ---------- */
+
+/* The "at" in Sistematica: a darker green for small text on light backgrounds,
+   the text colour on coloured fields (where green could vanish). */
+[data-theme="primari"],[data-theme="verde"]{--at:#007A3C}
+.brand .p{color:var(--at,var(--c2))}
+footer{--at:var(--c2)}
+.col,.why,a.row:hover,.pi:hover{--at:currentColor}
+
+/* Keyboard focus: a white ring inside a black ring, visible on any background. */
+:focus-visible{outline:3px solid #111;outline-offset:3px;box-shadow:0 0 0 3px #fff;position:relative;z-index:6}
+.btn.line:focus-visible{box-shadow:inset 0 0 0 2px currentColor,0 0 0 3px #fff}
+
+/* Home cards: red and green are never side by side. Each card keeps its colour;
+   Moral Revolution stays in the centre. */
+.col:nth-child(2){background:var(--c4);color:var(--on-c4)}
+.col:nth-child(4){background:var(--c2);color:var(--on-c2)}
+.h-cols .g{margin-top:4px}
+
+/* White display titles on red and blue. */
+[data-theme="primari"]{--accent-c1:#FFFFFF;--accent-c3:#FFFFFF}
+
+/* The current page in the menu is also underlined. */
+nav a[aria-current="page"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+
+/* Form button and text on the contact field, in the themes selectable in the CMS. */
+[data-site="laura"][data-theme="verde"] .red .btn,
+[data-site="sistematica"][data-theme="primari"] .deep .btn{background:#fff;color:#111}
+[data-site="laura"][data-theme="verde"] .red .btn:hover,
+[data-site="sistematica"][data-theme="primari"] .deep .btn:hover{background:#111;color:#fff}
+[data-site="sistematica"][data-theme="primari"] .deep .contact p,
+[data-site="sistematica"][data-theme="primari"] .atwork small{opacity:1}
+[data-site="sistematica"][data-theme="primari"] .aw-big i{color:inherit}
