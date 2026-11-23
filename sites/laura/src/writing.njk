@@ -12,7 +12,7 @@ eleventyComputed:
 {% set hero = p.hero %}{% include "partials/page-hero.njk" %}
 <section class="wrap p-sec"><div class="p-two">
   <div class="side"><span class="lbl">{{ p.project.eyebrow }}</span>
-    <div class="actions" style="margin-top:8px"><a class="btn" {{ linkAttrs(site.links.substack) }}>{{ p.project.substack_label }} ↗</a><a class="btn line" {{ linkAttrs(site.links.apple_podcasts) }}>{{ p.project.apple_label }} ↗</a><a class="btn line" {{ linkAttrs(site.links.spotify) }}>{{ p.project.spotify_label }} ↗</a></div></div>
+    <div class="actions" style="margin-top:8px"><a class="btn btn-substack" {{ linkAttrs(site.links.substack) }}>{{ p.project.substack_label }} ↗</a><a class="btn line btn-apple" {{ linkAttrs(site.links.apple_podcasts) }}>{{ p.project.apple_label }} ↗</a><a class="btn line btn-spotify" {{ linkAttrs(site.links.spotify) }}>{{ p.project.spotify_label }} ↗</a></div></div>
   <div class="main">
     {{ p.project.body | md | safe }}
   </div>

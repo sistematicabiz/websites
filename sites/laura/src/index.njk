@@ -44,7 +44,7 @@ eleventyComputed:
     {%- if episode %}
     <a class="mr-latest" {{ linkAttrs(episode.link) }}><span class="lbl">{{ mr.latest_label }}:</span> <span class="mr-latest-title">{{ episode.title }}</span></a>
     {%- endif %}
-    <div class="actions"><a class="btn" {{ linkAttrs(site.links.substack) }}>{{ mr.substack_label }} ↗</a><a class="btn line" {{ linkAttrs(site.links.apple_podcasts) }}>{{ mr.apple_label }} ↗</a><a class="btn line" {{ linkAttrs(site.links.spotify) }}>{{ mr.spotify_label }} ↗</a></div>
+    <div class="actions"><a class="btn btn-substack" {{ linkAttrs(site.links.substack) }}>{{ mr.substack_label }} ↗</a><a class="btn line btn-apple" {{ linkAttrs(site.links.apple_podcasts) }}>{{ mr.apple_label }} ↗</a><a class="btn line btn-spotify" {{ linkAttrs(site.links.spotify) }}>{{ mr.spotify_label }} ↗</a></div>
   </div>
 </div></section>
 

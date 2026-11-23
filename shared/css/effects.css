@@ -61,3 +61,10 @@ button.is-sending{cursor:progress}
 :is(.h-name,.p-two) .btn:not(.line):hover{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
 .about .btn:not(.line):hover{box-shadow:inset 0 0 0 2px var(--ink)}
 [data-site="laura"][data-theme="verde"] .red .btn:hover{box-shadow:inset 0 0 0 2px #fff}
+
+/* Substack, Apple and Spotify buttons take the colour of the service on hover and keyboard focus.
+   Dark text on all three: white would not be readable on the orange and the green. */
+.actions .btn.btn-substack:is(:hover,:focus-visible){background:#FF6719;background:color(display-p3 1 .404 .098);color:#111}
+.actions .btn.btn-apple:is(:hover,:focus-visible){background:#FA243C;color:#111}
+.actions .btn.btn-spotify:is(:hover,:focus-visible){background:#1ED760;color:#111}
+.actions .btn:is(.btn-substack,.btn-apple,.btn-spotify):hover:not(:focus-visible){box-shadow:none}
