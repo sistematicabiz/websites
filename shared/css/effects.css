@@ -80,3 +80,6 @@ button.is-sending{cursor:progress}
   .col{grid-row:span 4;grid-template-rows:subgrid}
 }
 @media (min-width:1001px){.areas{grid-template-rows:auto 1fr auto auto}}
+
+/* Inner pages: the title starts at the same height on every page, whatever the photo's size. */
+.p-hero .t{align-self:start}
