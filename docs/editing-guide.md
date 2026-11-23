@@ -33,7 +33,7 @@ To add a picture, use **Image** and fill in **Image description**, a short sente
 
 ## Show an entry on the home page
 
-Open the entry, turn on **Show on home**, then save and publish. It then appears in the "In conversation" block. The **Order** number sets the position on both pages: lower numbers come first.
+Open the entry, turn on **Show on home**, then save and publish. It then appears in the "In Dialogue" block. The **Order** number sets the position on both pages: lower numbers come first.
 
 ## Edit a page
 

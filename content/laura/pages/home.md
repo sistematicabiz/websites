@@ -58,7 +58,7 @@ land:
   oikos_text: Connecting land-based learning, ecological care, and new approaches to economic life.
 press:
   eyebrow: Selected press, conversations & speaking
-  title: In conver&shy;sation
+  title: In Dialogue
 contact:
   eyebrow: Get in touch
   title: Talks, interviews, collabo&shy;rations

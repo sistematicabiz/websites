@@ -177,7 +177,7 @@ collections:
               - label: Oikos Lab text
                 name: oikos_text
                 widget: text
-          - label: "\"In conversation\" block"
+          - label: "\"In Dialogue\" block"
             name: press
             widget: object
             hint: The cards come from Speaking & Press (items marked "Show on home").
@@ -778,7 +778,7 @@ collections:
     label_singular: Speaking or press item
     description: >-
       Talks, interviews, podcasts and articles. All items appear on the Speaking & Press page; items marked "Show on
-      home" also appear in the "In conversation" block on the home page.
+      home" also appear in the "In Dialogue" block on the home page.
     folder: content/laura/speaking
     create: true
     slug: "{{slug}}"
