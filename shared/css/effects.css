@@ -20,7 +20,7 @@ a.row:focus-visible{background:var(--pc);color:var(--on-pc);--at:currentColor}
 :is(.col,a.fd,.pi,a.row):focus-visible .go{text-decoration:underline;text-underline-offset:4px}
 .arr{display:inline-block}
 @media (prefers-reduced-motion:no-preference){
-  .col,a.fd,a.row,.pi,.pr{transition:background-color .16s ease,color .16s ease}
+  .col,a.fd,a.row,.pi,.pr,header.site nav a{transition:background-color .16s ease,color .16s ease}
   .arr{transition:transform .16s ease}
   :is(.col,a.fd,a.row,.pi):is(:hover,:focus-visible) .go .arr{transform:translateX(4px)}
 }
