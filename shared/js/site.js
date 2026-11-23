@@ -167,31 +167,3 @@
     if (event.matches) set(false);
   });
 })();
-
-// Touch screens have no hover, so home-page cards fade in as they come into view instead.
-// The cards are only hidden once this script has run, so without JavaScript nothing is lost.
-(() => {
-  if (!("IntersectionObserver" in window)) return;
-  if (!window.matchMedia("(hover:none)").matches) return;
-  if (window.matchMedia("(prefers-reduced-motion:reduce)").matches) return;
-  const cards = [...document.querySelectorAll(".areas .col, .press .pr, .svc > *, .collab .cb")];
-  if (!cards.length) return;
-  const seen = new Map();
-  for (const card of cards) {
-    const index = seen.get(card.parentElement) ?? 0;
-    seen.set(card.parentElement, index + 1);
-    card.style.setProperty("--reveal-delay", `${Math.min(index, 3) * 80}ms`);
-    card.classList.add("reveal");
-  }
-  const observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        entry.target.classList.add("is-in");
-        observer.unobserve(entry.target);
-      }
-    },
-    { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
-  );
-  cards.forEach((card) => observer.observe(card));
-})();

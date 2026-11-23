@@ -91,8 +91,11 @@ button.is-sending{cursor:progress}
 .pg-c3 .p-hero .t{container-type:inline-size}
 .pg-c3 .p-hero h1{font-size:min(clamp(68px,10.4vw,10.5rem),21cqw)}
 
-/* Touch screens: cards fade in (and rise a little) as they come into view. Hidden only once the script has marked them. */
-@media (hover:none) and (prefers-reduced-motion:no-preference){
-  .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease var(--reveal-delay,0ms),transform .5s ease var(--reveal-delay,0ms),background-color .16s ease,color .16s ease}
-  .reveal.is-in{opacity:1;transform:none}
+/* Touch screens: cards fade in (and rise a little) as they come into view.
+   Pure CSS (scroll-driven animation). Browsers without it just show the cards. */
+@supports (animation-timeline:view()){
+  @media (hover:none) and (prefers-reduced-motion:no-preference){
+    @keyframes card-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+    :is(.areas .col,.press .pr,.svc>*,.collab .cb){animation:card-in linear both;animation-timeline:view();animation-range:entry 0% entry 45%}
+  }
 }
