@@ -722,10 +722,6 @@ collections:
             name: share_image
             widget: image
             hint: Shown when a page is shared on social media. Use 1200 x 630 pixels.
-          - label: Contact email
-            name: contact_email
-            widget: string
-            hint: Where contact form messages should go. Set the same address in Netlify > Forms > notifications.
           - label: Links
             name: links
             widget: object
@@ -1325,10 +1321,6 @@ collections:
             name: share_image
             widget: image
             hint: Shown when a page is shared on social media. Use 1200 x 630 pixels.
-          - label: Contact email
-            name: contact_email
-            widget: string
-            hint: >-
               Where contact form messages should go. Set the same address in Netlify > Forms > notifications for the
               Sistematica site.
           - label: Links
