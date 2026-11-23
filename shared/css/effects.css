@@ -42,3 +42,13 @@ button.is-sending{cursor:progress}
 /* Latest episode in the Moral Revolution block */
 .mr-latest{display:grid;gap:4px;padding:12px 0 12px 16px;border-left:4px solid currentColor;text-decoration:none}
 .mr-latest-title{font-size:1.25rem;font-weight:600;line-height:1.2;text-decoration:underline;text-underline-offset:3px}
+
+/* Sistematica's bars grow once when the page opens (about 750ms in all). */
+@media (prefers-reduced-motion:no-preference){
+  .meter i{transform-origin:bottom;animation:grow .52s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--bar,0)*20ms)}
+  .meter i:nth-child(2){--bar:1}.meter i:nth-child(3){--bar:2}.meter i:nth-child(4){--bar:3}
+  .meter i:nth-child(5){--bar:4}.meter i:nth-child(6){--bar:5}.meter i:nth-child(7){--bar:6}
+  .meter i:nth-child(8){--bar:7}.meter i:nth-child(9){--bar:8}.meter i:nth-child(10){--bar:9}
+  .meter i:nth-child(11){--bar:10}.meter i:nth-child(12){--bar:11}
+  @keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+}
