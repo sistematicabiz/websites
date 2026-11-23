@@ -1,5 +1,6 @@
 ---
 title: Writing & Podcast
+description: "Moral Revolution: essays and a podcast with Laura Segafredo and Tony Annett on theology, ethics, political economy, ecology, and social justice."
 hero:
   kicker: Writing & podcast · with Tony Annett
   title_lines: [Moral, Revo&shy;lution]

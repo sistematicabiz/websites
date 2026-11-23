@@ -1,5 +1,6 @@
 ---
 title: Finance & Climate
+description: "Laura Segafredo's work in sustainable finance and climate: research, advisory, investment, and board roles focused on resilience and long-term value."
 hero:
   kicker: Finance & climate
   title_lines: [Finance &, Climate]

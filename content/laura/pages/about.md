@@ -1,5 +1,6 @@
 ---
 title: About
+description: "About Laura Segafredo, PhD: economist, climate-finance leader, educator, and writer exploring the moral and institutional foundations of economic life."
 hero:
   kicker: About · New York City
   title_lines: [About, Laura]

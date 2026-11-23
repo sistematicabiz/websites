@@ -1,5 +1,6 @@
 ---
 title: Home
+description: "Laura Segafredo is a researcher, investor, advisor, and educator working across finance, ecology, ethics, and political economy in New York City."
 hero:
   name_lines: [Laura, Segafredo]
   tagline: Researcher, investor, advisor, and educator. Lifelong student. Lover of beauty. Aspiring farmer.

@@ -1,5 +1,6 @@
 ---
 title: Speaking & Press
+description: "Selected press, interviews, and talks by Laura Segafredo on sustainable investing, climate resilience, faith-consistent finance, and economic life."
 hero:
   kicker: Selected press, conversations & speaking
   title_lines: [In, Dialogue]

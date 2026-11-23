@@ -1,5 +1,6 @@
 ---
 title: Teaching & Research
+description: "Laura Segafredo teaches sustainable finance at Columbia SIPA. Her research spans political economy, ethics, theology, ecology, and economic thought."
 hero:
   kicker: Columbia SIPA · research
   title_lines: [Teaching &, Research]
