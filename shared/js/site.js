@@ -98,6 +98,10 @@
     const fields = [...form.querySelectorAll(".f [required]")];
     const button = form.querySelector('button[type="submit"]');
     const label = button.textContent;
+    const status = document.createElement("p");
+    status.className = "sr-only";
+    status.setAttribute("role", "status");
+    form.append(status);
     form.noValidate = true;
     for (const field of fields) {
       field.addEventListener("input", () => {
@@ -122,12 +126,14 @@
       button.classList.add("is-sending");
       button.setAttribute("aria-disabled", "true");
       button.textContent = "Sending…";
+      status.textContent = "Sending your message…";
     });
     // Coming back with the browser's Back button: the form is usable again.
     window.addEventListener("pageshow", () => {
       button.classList.remove("is-sending");
       button.removeAttribute("aria-disabled");
       button.textContent = label;
+      status.textContent = "";
     });
   }
 })();
@@ -162,6 +168,10 @@
   });
   document.addEventListener("click", (event) => {
     if (header.classList.contains("menu-open") && !header.contains(event.target)) set(false);
+  });
+  // Tabbing out of the open menu closes it, so it never covers the focused element.
+  header.addEventListener("focusout", (event) => {
+    if (event.relatedTarget && !header.contains(event.relatedTarget)) set(false);
   });
   window.matchMedia("(min-width:1001px)").addEventListener("change", (event) => {
     if (event.matches) set(false);
