@@ -69,3 +69,4 @@ button.is-sending{cursor:progress}
 .actions .btn.btn-apple:is(:hover,:focus-visible){background:#E41E36;color:#fff}
 .actions .btn.btn-spotify:is(:hover,:focus-visible){background:#1ED760;color:#111}
 .actions .btn:is(.btn-substack,.btn-apple,.btn-spotify):hover:not(:focus-visible){box-shadow:none}
+.mr .actions .btn:is(.btn-substack,.btn-apple,.btn-spotify):hover:not(:focus-visible){box-shadow:inset 0 0 0 2px #fff}
