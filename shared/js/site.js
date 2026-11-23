@@ -2,23 +2,31 @@
 
 // Sistematica: mark the menu item of the section in view.
 (() => {
-  if (document.documentElement.dataset.site !== "sistematica" || !("IntersectionObserver" in window)) return;
-  const links = new Map();
-  for (const a of document.querySelectorAll('header nav a[href^="#"]')) {
-    const section = document.getElementById(a.hash.slice(1));
-    if (section) links.set(section, a);
-  }
-  const observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        const link = links.get(entry.target);
-        if (entry.isIntersecting) link.setAttribute("aria-current", "location");
-        else link.removeAttribute("aria-current");
-      }
-    },
-    { rootMargin: "-40% 0px -59% 0px" }
-  );
-  links.forEach((_, section) => observer.observe(section));
+  if (document.documentElement.dataset.site !== "sistematica") return;
+  const items = [...document.querySelectorAll('header nav a[href^="#"]')]
+    .map((link) => ({ link, section: document.getElementById(link.hash.slice(1)) }))
+    .filter((item) => item.section);
+  let queued = false;
+  const update = () => {
+    queued = false;
+    const ordered = [...items].sort((a, b) => a.section.getBoundingClientRect().top - b.section.getBoundingClientRect().top);
+    const atEnd = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+    const line = window.innerHeight * 0.4;
+    const reached = ordered.filter((item) => item.section.getBoundingClientRect().top <= line);
+    const active = atEnd ? ordered.at(-1) : reached.at(-1);
+    for (const item of items) {
+      if (item === active) item.link.setAttribute("aria-current", "location");
+      else item.link.removeAttribute("aria-current");
+    }
+  };
+  const queue = () => {
+    if (queued) return;
+    queued = true;
+    requestAnimationFrame(update);
+  };
+  window.addEventListener("scroll", queue, { passive: true });
+  window.addEventListener("resize", queue);
+  update();
 })();
 
 // Briefly outline the block reached from an in-page link.
