@@ -10,10 +10,10 @@ nav li a:hover{background:var(--soft)!important;color:var(--ink)!important}
 /* hero */
 .s-hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:0;min-height:calc(100vh - 110px)}
 .s-name{padding:36px 40px 40px 0;display:grid;align-content:space-between;gap:28px}
-.s-name h1{font-size:clamp(80px,12.4vw,196px)}
+.s-name h1{font-size:clamp(80px,12.4vw,12.25rem)}
 .s-name h1 span{display:block}
 .s-name h1 .g{color:var(--c2)}
-.s-name .tag{font:500 clamp(30px,3vw,44px)/1 var(--sans);font-stretch:68%;text-transform:uppercase}
+.s-name .tag{font:500 clamp(1.875rem,3vw,2.75rem)/1 var(--sans);font-stretch:68%;text-transform:uppercase}
 .s-name .row{display:grid;grid-template-columns:1fr 1fr;gap:28px}
 .s-side{display:grid;grid-template-rows:1fr auto}
 .s-side .m{background:var(--soft);padding:28px 28px 0;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:end}
@@ -26,26 +26,26 @@ nav li a:hover{background:var(--soft)!important;color:var(--ink)!important}
 /* what */
 .svc{display:grid;grid-template-columns:repeat(3,1fr)}
 .sv{padding:32px 28px 40px;display:grid;gap:16px;align-content:start;min-height:520px}
-.sv h3{font-size:clamp(40px,3.6vw,58px)}
-.sv .n{font:500 80px/.8 var(--sans);font-stretch:68%}
-.sv p{font-size:16px}
+.sv h3{font-size:clamp(40px,3.6vw,3.625rem)}
+.sv .n{font:500 5rem/.8 var(--sans);font-stretch:68%}
+.sv p{font-size:1rem}
 .sv:nth-child(1){background:var(--c1);color:var(--on-c1)}
 .sv:nth-child(2){background:var(--c2);color:var(--on-c2)}
 .sv:nth-child(3){background:var(--soft)}
 .eng-wrap{background:var(--off)}
 .eng{padding-block:56px;display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:32px}
-.eng h2{font-size:clamp(48px,5vw,80px)}
+.eng h2{font-size:clamp(48px,5vw,5rem)}
 .eng ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:4px;counter-reset:e}
-.eng li{background:var(--surface);padding:16px 18px 16px 58px;position:relative;font-size:16px;line-height:1.4;counter-increment:e}
-.eng li::before{content:counter(e,decimal-leading-zero);position:absolute;left:18px;top:13px;font:500 26px/1 var(--sans);font-stretch:68%;color:var(--c2)}
+.eng li{background:var(--surface);padding:16px 18px 16px 58px;position:relative;font-size:1rem;line-height:1.4;counter-increment:e}
+.eng li::before{content:counter(e,decimal-leading-zero);position:absolute;left:18px;top:13px;font:500 1.625rem/1 var(--sans);font-stretch:68%;color:var(--c2)}
 
 /* why */
 .why{background:var(--c2);color:var(--on-c2)}
 .why .wrap{padding-block:72px;display:grid;gap:40px}
-.why .big{font:500 clamp(84px,14vw,230px)/.82 var(--sans);font-stretch:62%;text-transform:uppercase;color:var(--on-c2)}
+.why .big{font:500 clamp(84px,14vw,14.375rem)/.82 var(--sans);font-stretch:62%;text-transform:uppercase;color:var(--on-c2)}
 .why .big span{color:var(--accent-c2)}
 .why .cols{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,4fr) minmax(0,4fr);gap:32px}
-.why h3{font-size:44px;margin-bottom:10px}
+.why h3{font-size:2.75rem;margin-bottom:10px}
 
 /* collaborations */
 .collab{display:grid;grid-template-columns:1fr 1fr}
@@ -57,21 +57,21 @@ nav li a:hover{background:var(--soft)!important;color:var(--ink)!important}
 .cb:nth-child(2) .ph{background:var(--c2)}
 .cb .b{padding:32px 28px 44px;display:grid;gap:14px;align-content:start;background:var(--surface)}
 .cb:nth-child(2) .b{background:var(--off)}
-.cb h3{font-size:clamp(40px,3.8vw,60px)}
-.cb .links{display:flex;gap:18px;flex-wrap:wrap;font-weight:600;font-size:14px}
+.cb h3{font-size:clamp(40px,3.8vw,3.75rem)}
+.cb .links{display:flex;gap:18px;flex-wrap:wrap;font-weight:600;font-size:0.875rem}
 .collab-h{padding-block:64px 28px;display:grid;gap:10px}
-.collab-h h2{font-size:clamp(64px,8vw,128px)}
+.collab-h h2{font-size:clamp(64px,8vw,8rem)}
 
 /* about */
 .about{background:var(--soft)}
 .about .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:48px;padding-block:72px}
 .about img{width:100%;height:auto;display:block}
 .about .t{display:grid;gap:18px;align-content:start}
-.about h2{font-size:clamp(56px,6vw,96px)}
+.about h2{font-size:clamp(56px,6vw,6rem)}
 .chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px}
-.chips li{background:var(--surface);padding:7px 12px;font-size:13px;font-weight:600}
-.quote{background:var(--c4);color:var(--on-c4);padding:26px 28px;font:500 28px/1.05 var(--sans);font-stretch:75%;text-transform:uppercase;margin:0}
-.quote cite{display:block;margin-top:12px;font:400 13px/1.4 var(--sans);text-transform:none;font-stretch:100%}
+.chips li{background:var(--surface);padding:7px 12px;font-size:0.875rem;font-weight:600}
+.quote{background:var(--c4);color:var(--on-c4);padding:26px 28px;font:500 1.75rem/1.05 var(--sans);font-stretch:75%;text-transform:uppercase;margin:0}
+.quote cite{display:block;margin-top:12px;font:400 0.875rem/1.4 var(--sans);text-transform:none;font-stretch:100%}
 
 /* contact */
 .deep{background:var(--c1);color:var(--on-c1)}
@@ -96,15 +96,15 @@ select{font:inherit;padding:6px 0;border:0;background:transparent}
 .aw{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:40px;padding-block:56px;align-items:end}
 .aw figure{margin:0}.aw img{display:block;width:100%;height:auto}
 .aw-t{display:grid;gap:16px}
-.aw-big{font:500 clamp(48px,5.4vw,88px)/.86 var(--sans);font-stretch:68%;text-transform:uppercase;color:var(--accent-c1)}
+.aw-big{font:500 clamp(48px,5.4vw,5.5rem)/.86 var(--sans);font-stretch:68%;text-transform:uppercase;color:var(--accent-c1)}
 .aw-big i{font-style:italic;color:var(--c2);padding-right:.05em}
-.aw-t small{font-size:12px;opacity:.8}
+.aw-t small{font-size:0.875rem;opacity:.8}
 
 /* Rivera: the mural banner, full width, with the translation beneath */
 .harmony{background:var(--soft)}
 .hm{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:28px 48px;padding-block:72px;align-items:end}
 .hm figure{margin:0;grid-column:1/-1}.hm img{display:block;width:100%;height:auto}
 .hm blockquote{margin:0;display:contents}
-.hm .tr{font:500 clamp(34px,3.6vw,58px)/.95 var(--sans);font-stretch:68%;text-transform:uppercase;max-width:none}
-.hm cite{font-style:normal;font-size:13px;line-height:1.5}
+.hm .tr{font:500 clamp(34px,3.6vw,3.625rem)/.95 var(--sans);font-stretch:68%;text-transform:uppercase;max-width:none}
+.hm cite{font-style:normal;font-size:0.875rem;line-height:1.5}
 @media (max-width:1000px){.aw,.hm{grid-template-columns:1fr}}

@@ -1,5 +1,6 @@
 ---
 title: Home
+description: "Laura Segafredo is a researcher, investor, advisor, and educator working across finance, ecology, ethics, and political economy in New York City."
 hero:
   name_lines: [Laura, Segafredo]
   tagline: Researcher, investor, advisor, and educator. Lifelong student. Lover of beauty. Aspiring farmer.
@@ -26,7 +27,7 @@ areas:
     title: Moral Revolution
     text: Essays and conversations on the moral imagination needed for a more just and sustainable economy.
     link_label: Read and listen
-    link_url: /writing/
+    link_url: /moral-revolution/
   - eyebrow: Sistematica · Universe Partners · All About Water
     title: Finance & Climate
     text: Advisory, investment, and research work on sustainable and values-aligned finance, with an eye for long-term value.
@@ -46,6 +47,7 @@ moral_revolution:
   substack_label: Substack
   apple_label: Apple
   spotify_label: Spotify
+  latest_label: Latest
 land:
   photo: /media/farminary.jpg
   photo_alt: Laura working a garden bed at the Farminary
@@ -57,7 +59,7 @@ land:
   oikos_text: Connecting land-based learning, ecological care, and new approaches to economic life.
 press:
   eyebrow: Selected press, conversations & speaking
-  title: In conver&shy;sation
+  title: In Dialogue
 contact:
   eyebrow: Get in touch
   title: Talks, interviews, collabo&shy;rations

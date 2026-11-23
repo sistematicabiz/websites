@@ -1,7 +1,7 @@
 ---
 layout: layouts/laura-page.njk
 bodyClass: pg-c3
-permalink: /writing/
+permalink: /moral-revolution/
 eleventyComputed:
   description: "{{ pages.writing.description | safe }}"
   title: "{{ pages.writing.title | safe }}"
@@ -12,12 +12,12 @@ eleventyComputed:
 {% set hero = p.hero %}{% include "partials/page-hero.njk" %}
 <section class="wrap p-sec"><div class="p-two">
   <div class="side"><span class="lbl">{{ p.project.eyebrow }}</span>
-    <div class="actions" style="margin-top:8px"><a class="btn" {{ linkAttrs(site.links.substack) }}>{{ p.project.substack_label }} ↗</a><a class="btn line" {{ linkAttrs(site.links.apple_podcasts) }}>{{ p.project.apple_label }} ↗</a><a class="btn line" {{ linkAttrs(site.links.spotify) }}>{{ p.project.spotify_label }} ↗</a></div></div>
+    <div class="actions" style="margin-top:8px"><a class="btn btn-substack" {{ linkAttrs(site.links.substack) }}>{{ p.project.substack_label }} ↗</a><a class="btn line btn-apple" {{ linkAttrs(site.links.apple_podcasts) }}>{{ p.project.apple_label }} ↗</a><a class="btn line btn-spotify" {{ linkAttrs(site.links.spotify) }}>{{ p.project.spotify_label }} ↗</a></div></div>
   <div class="main">
     {{ p.project.body | md | safe }}
   </div>
 </div></section>
-<section class="wrap p-sec"><div class="fields" style="--n:{{ p.questions.length }}">
+<section class="wrap p-sec"><h2 class="sr-only">Questions</h2><div class="fields" style="--n:{{ p.questions.length }}">
   {%- for q in p.questions %}
   <div class="fd f{{ q.colour | replace('c', '') if q.colour and q.colour != 'none' else '0' }}"><span class="lbl">{{ q.label }}</span><h3>{{ q.question | soft | safe }}</h3>{% if q.text %}<p>{{ q.text }}</p>{% endif %}</div>
   {%- endfor %}

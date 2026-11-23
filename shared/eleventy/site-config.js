@@ -90,6 +90,17 @@ export function configureSite(eleventyConfig, site) {
   // Wrap the word "Sistematica" in the brand markup (Sistem<i>at</i>ica). Input is escaped first.
   eleventyConfig.addFilter("brand", brand);
 
+  // Spoken name of a title split over several lines: ["Revo&shy;", "lution"] -> "Revolution"
+  eleventyConfig.addFilter("titleName", (lines) =>
+    (lines || [])
+      .map((l) => String(l).replace(/\*/g, ""))
+      .reduce((out, l) => (/(&shy;|\u00AD|-)$/.test(out) ? out.replace(/(&shy;|\u00AD|-)$/, "") + l : out ? `${out} ${l}` : l), "")
+      .replace(/&shy;|\u00AD/g, "")
+  );
+
+  // Newest podcast episode in the Substack data, if any
+  eleventyConfig.addFilter("latestEpisode", (items) => (items || []).find((i) => i.type === "podcast"));
+
   // "2026-11-10" -> "November 10, 2026"
   eleventyConfig.addFilter("longDate", (d) =>
     new Date(d).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })
@@ -119,6 +130,16 @@ export function configureSite(eleventyConfig, site) {
   eleventyConfig.addTemplate("robots.njk", `{% include "partials/robots.njk" %}`, {
     permalink: "/robots.txt",
     eleventyExcludeFromCollections: true,
+  });
+
+  // Links: arrows are decorative (and can move on hover); new tabs are announced to screen readers.
+  eleventyConfig.addTransform("link-details", function (html) {
+    if (!(this.page.outputPath || "").endsWith(".html")) return html;
+    return html.replace(/<a\b([^>]*)>([\s\S]*?)<\/a>/g, (all, attrs, inner) => {
+      const body = inner.replace(/[↗→]/g, '<span class="arr" aria-hidden="true">$&</span>');
+      const note = /\btarget="_blank"/.test(attrs) ? '<span class="sr-only"> (opens in a new tab)</span>' : "";
+      return `<a${attrs}>${body}${note}</a>`;
+    });
   });
 
   // A link is external if it is absolute and does not point to one of our own sites.

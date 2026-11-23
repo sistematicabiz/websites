@@ -26,6 +26,7 @@ eleventyComputed:
   </div>
 </section>
 
+<h2 class="sr-only">Areas of work</h2>
 <section id="areas" class="areas">
   {%- for a in p.areas %}
   <a class="col" {{ linkAttrs(a.link_url) }}><span class="lbl">{{ a.eyebrow | brand | safe }}</span><h3>{{ a.title | soft | safe }}</h3><p>{{ a.text }}</p><span class="go">{{ a.link_label }}{{ arrow(a.link_url) }}</span></a>
@@ -34,12 +35,16 @@ eleventyComputed:
 
 {%- set mr = p.moral_revolution %}
 <section id="mr" class="blue"><div class="wrap mr">
-  <h2>{% for line in mr.title_lines %}<span>{{ line | soft | safe }}</span>{% endfor %}</h2>
+  <h2 aria-label="{{ mr.title_lines | titleName }}">{% for line in mr.title_lines %}<span aria-hidden="true">{{ line | soft | safe }}</span>{% endfor %}</h2>
   <div class="txt">
     <img src="{{ mr.photo }}" alt="{{ mr.photo_alt }}"{{ mr.photo | imgSize | safe }}>
     <span class="lbl">{{ mr.eyebrow }}</span>
     {{ mr.text | md | safe }}
-    <div class="actions"><a class="btn" {{ linkAttrs(site.links.substack) }}>{{ mr.substack_label }} ↗</a><a class="btn line" {{ linkAttrs(site.links.apple_podcasts) }}>{{ mr.apple_label }} ↗</a><a class="btn line" {{ linkAttrs(site.links.spotify) }}>{{ mr.spotify_label }} ↗</a></div>
+    {%- set episode = substack.items | latestEpisode %}
+    {%- if episode %}
+    <a class="mr-latest" {{ linkAttrs(episode.link) }}><span class="lbl">{{ mr.latest_label }}:</span> <span class="mr-latest-title">{{ episode.title }}</span></a>
+    {%- endif %}
+    <div class="actions"><a class="btn btn-substack" {{ linkAttrs(site.links.substack) }}>{{ mr.substack_label }} ↗</a><a class="btn line btn-apple" {{ linkAttrs(site.links.apple_podcasts) }}>{{ mr.apple_label }} ↗</a><a class="btn line btn-spotify" {{ linkAttrs(site.links.spotify) }}>{{ mr.spotify_label }} ↗</a></div>
   </div>
 </div></section>
 

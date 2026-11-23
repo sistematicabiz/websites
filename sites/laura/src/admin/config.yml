@@ -66,7 +66,7 @@ collections:
                   - label: Link
                     name: url
                     widget: string
-                    hint: A page (/writing/), a section of this page (#areas) or a full address (https://…).
+                    hint: A page (/moral-revolution/), a section of this page (#areas) or a full address (https://…).
               - label: Photo
                 name: photo
                 widget: image
@@ -139,6 +139,10 @@ collections:
               - label: Spotify button text
                 name: spotify_label
                 widget: string
+              - label: Latest episode label
+                name: latest_label
+                widget: string
+                hint: Shown before the newest podcast episode, which is added automatically from Substack.
           - label: Land & Oikos Lab block
             name: land
             widget: object
@@ -173,7 +177,7 @@ collections:
               - label: Oikos Lab text
                 name: oikos_text
                 widget: text
-          - label: "\"In conversation\" block"
+          - label: "\"In Dialogue\" block"
             name: press
             widget: object
             hint: The cards come from Speaking & Press (items marked "Show on home").
@@ -401,7 +405,7 @@ collections:
               - label: Link text for podcast episodes
                 name: listen_label
                 widget: string
-        preview_path: writing/
+        preview_path: moral-revolution/
       - name: finance
         label: Finance & Climate
         file: content/laura/pages/finance.md
@@ -718,10 +722,6 @@ collections:
             name: share_image
             widget: image
             hint: Shown when a page is shared on social media. Use 1200 x 630 pixels.
-          - label: Contact email
-            name: contact_email
-            widget: string
-            hint: Where contact form messages should go. Set the same address in Netlify > Forms > notifications.
           - label: Links
             name: links
             widget: object
@@ -774,7 +774,7 @@ collections:
     label_singular: Speaking or press item
     description: >-
       Talks, interviews, podcasts and articles. All items appear on the Speaking & Press page; items marked "Show on
-      home" also appear in the "In conversation" block on the home page.
+      home" also appear in the "In Dialogue" block on the home page.
     folder: content/laura/speaking
     create: true
     slug: "{{slug}}"
@@ -901,7 +901,7 @@ collections:
       - label: Link URL
         name: link_url
         widget: string
-        hint: Full address (https://…) or a page of this site such as /writing/.
+        hint: Full address (https://…) or a page of this site such as /moral-revolution/.
       - label: Link text (Finance & Climate)
         name: link_label
         widget: string
@@ -1321,10 +1321,6 @@ collections:
             name: share_image
             widget: image
             hint: Shown when a page is shared on social media. Use 1200 x 630 pixels.
-          - label: Contact email
-            name: contact_email
-            widget: string
-            hint: >-
               Where contact form messages should go. Set the same address in Netlify > Forms > notifications for the
               Sistematica site.
           - label: Links

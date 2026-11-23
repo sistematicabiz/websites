@@ -36,6 +36,7 @@ eleventyComputed:
   </div>
 </div></section>
 
+<h2 class="sr-only">What I do</h2>
 <section id="what" class="svc">
   {%- for a in p.practice_areas %}
   <article class="sv"><span class="n">{{ "0" if loop.index < 10 }}{{ loop.index }}</span><h3>{{ a.title | soft | safe }}</h3>{{ a.text | md | replace("\n", "") | safe }}</article>
@@ -51,7 +52,7 @@ eleventyComputed:
 </div></section>
 
 <section class="why"><div class="wrap">
-  <span class="lbl">{{ p.why.eyebrow }}</span>
+  <h2 class="lbl">{{ p.why.eyebrow }}</h2>
   <div class="big">{% for line in p.why.title_lines %}{% if loop.first %}{{ line | soft | safe }}{% else %}<br><span>{{ line | soft | safe }}</span>{% endif %}{% endfor %}</div>
   <div class="cols">
     {%- for c in p.why.commitments %}

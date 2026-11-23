@@ -35,7 +35,7 @@ Create two sites with **Add new project > Import an existing project > GitHub > 
 
 - [ ] In **Forms** on each site, enable form detection, then redeploy so the form is registered.
 - [ ] Check that the forms appear as `contact-laura` and `contact-sistematica`.
-- [ ] Add an email notification to `laura.segafredo@gmail.com` on each site: **Project configuration > Notifications > Emails and webhooks > Form submission notifications**.
+- [ ] Add an email notification to the dedicated contact address (to be created) on each site: **Project configuration > Notifications > Emails and webhooks > Form submission notifications**.
 - [ ] Send a test message from each site. It should land on the thank-you page and reach the inbox.
 
 **Spam:** both forms have a hidden honeypot field (`company-website`), and Netlify also filters submissions automatically. Check the **Spam** tab under Forms now and then, since real messages are occasionally caught. If spam becomes a problem, turn on reCAPTCHA for the form.

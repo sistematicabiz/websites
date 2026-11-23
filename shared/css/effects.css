@@ -1,0 +1,89 @@
+/* Small interface effects. All movement is inside prefers-reduced-motion: no-preference. */
+
+/* In-page navigation */
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+@media (min-width:1001px) and (min-height:601px){section[id]{scroll-margin-top:72px}}
+nav a[aria-current="location"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+
+/* Clickable cards: the same state for mouse and keyboard */
+.col:is(:hover,:focus-visible),a.fd:is(:hover,:focus-visible){background:var(--ink);color:var(--on-ink);--at:currentColor}
+a.row:focus-visible{background:var(--pc);color:var(--on-pc);--at:currentColor}
+.pi:nth-child(4n+1):focus-visible{background:var(--c1);color:var(--on-c1);--at:currentColor}
+.pi:nth-child(4n+2):focus-visible{background:var(--c2);color:var(--on-c2);--at:currentColor}
+.pi:nth-child(4n+3):focus-visible{background:var(--c3);color:var(--on-c3);--at:currentColor}
+.pi:nth-child(4n+4):focus-visible{background:var(--c4);color:var(--on-c4);--at:currentColor}
+.pr:is(:nth-child(1),:nth-child(5)):focus-visible{background:var(--c1);color:var(--on-c1)}
+.pr:is(:nth-child(2),:nth-child(6)):focus-visible{background:var(--c2);color:var(--on-c2)}
+.pr:nth-child(3):focus-visible{background:var(--c3);color:var(--on-c3)}
+.pr:nth-child(4):focus-visible{background:var(--c4);color:var(--on-c4)}
+.pr:is(:hover,:focus-visible){--at:currentColor}
+:is(.col,a.fd,.pi,a.row):focus-visible .go{text-decoration:underline;text-underline-offset:4px}
+.arr{display:inline-block}
+@media (prefers-reduced-motion:no-preference){
+  .col,a.fd,a.row,.pi,.pr,header.site nav a{transition:background-color .16s ease,color .16s ease}
+  .btn{transition:background-color .16s ease,color .16s ease,box-shadow .16s ease}
+  .btn:focus-visible{transition-property:background-color,color}
+  .arr{transition:transform .16s ease}
+  :is(.col,a.fd,a.row,.pi):is(:hover,:focus-visible) .go .arr{transform:translateX(4px)}
+}
+
+/* Arrival: the block reached from an in-page link is outlined once. */
+.arrived{position:relative}
+.arrived::after{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;border:4px solid #fff;outline:4px solid #111;outline-offset:-8px}
+@media (prefers-reduced-motion:no-preference){
+  .arrived::after{animation:arrive 1.2s ease both}
+  @keyframes arrive{0%,100%{opacity:0}18%,62%{opacity:1}}
+}
+
+/* Form messages */
+.field-error{margin:6px 0 2px;color:#A8140C;font-size:.875rem;font-weight:600;line-height:1.3}
+.f.has-error{box-shadow:inset 0 0 0 3px #A8140C}
+.f:focus-within{outline:3px solid #111;outline-offset:-3px}
+.f :is(input,textarea,select):focus-visible{outline:0;box-shadow:none}
+@media (forced-colors:active){.f.has-error{border:3px solid Highlight}}
+button.is-sending{cursor:progress}
+
+/* Latest episode in the Moral Revolution block */
+.mr-latest{display:grid;gap:4px;padding:12px 16px;border-left:4px solid currentColor;text-decoration:none}
+.mr-latest-title{font-size:1.25rem;font-weight:600;line-height:1.2;text-decoration:underline;text-underline-offset:3px}
+.mr-latest:is(:hover,:focus-visible){background:var(--on-c3);color:var(--c3)}
+@media (prefers-reduced-motion:no-preference){.mr-latest{transition:background-color .16s ease,color .16s ease}}
+
+/* Sistematica's bars grow once when the page opens (about 750ms in all). */
+@media (prefers-reduced-motion:no-preference){
+  .meter i{transform-origin:bottom;animation:grow .52s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--bar,0)*20ms)}
+  .meter i:nth-child(2){--bar:1}.meter i:nth-child(3){--bar:2}.meter i:nth-child(4){--bar:3}
+  .meter i:nth-child(5){--bar:4}.meter i:nth-child(6){--bar:5}.meter i:nth-child(7){--bar:6}
+  .meter i:nth-child(8){--bar:7}.meter i:nth-child(9){--bar:8}.meter i:nth-child(10){--bar:9}
+  .meter i:nth-child(11){--bar:10}.meter i:nth-child(12){--bar:11}
+  @keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+}
+
+/* Filled buttons on a light background: on hover they keep a visible edge. */
+:is(.h-name,.p-two) .btn:not(.line):hover{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.about .btn:not(.line):hover{box-shadow:inset 0 0 0 2px var(--ink)}
+[data-site="laura"][data-theme="verde"] .red .btn:hover{box-shadow:inset 0 0 0 2px #fff}
+
+/* Substack, Apple and Spotify buttons take the colour of the service on hover and keyboard focus.
+   Apple: white on a slightly deeper red, more readable with colour blindness.
+   Substack and Spotify: dark text, because white is not readable on the orange and the green. */
+.actions .btn.btn-substack:is(:hover,:focus-visible){background:#FF6719;background:color(display-p3 1 .404 .098);color:#111}
+.actions .btn.btn-apple:is(:hover,:focus-visible){background:#E41E36;color:#fff}
+.actions .btn.btn-spotify:is(:hover,:focus-visible){background:#1ED760;color:#111}
+.actions .btn:is(.btn-substack,.btn-apple,.btn-spotify):hover:not(:focus-visible){box-shadow:none}
+.mr .actions .btn:is(.btn-substack,.btn-apple,.btn-spotify):hover:not(:focus-visible){box-shadow:inset 0 0 0 2px #fff}
+
+/* Home cards: vertical titles on at most two lines, whole words, lined up across the cards. */
+@media (min-width:561px){
+  .col h3{max-height:6em}
+  .areas{grid-template-rows:repeat(3,auto 1fr auto auto)}
+  .col{grid-row:span 4;grid-template-rows:subgrid}
+}
+@media (min-width:1001px){.areas{grid-template-rows:auto 1fr auto auto}}
+
+/* Inner pages: the title starts at the same height on every page, whatever the photo's size. */
+.p-hero .t{align-self:start}
+
+/* Moral Revolution page: "Revolution" always fits on one line. */
+.pg-c3 .p-hero .t{container-type:inline-size}
+.pg-c3 .p-hero h1{font-size:min(clamp(68px,10.4vw,10.5rem),21cqw)}

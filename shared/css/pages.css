@@ -12,9 +12,9 @@ nav a[aria-current="page"]{background:var(--pc);color:var(--on-pc)}
 .p-hero{background:var(--pc);color:var(--on-pc)}
 .p-hero .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px;padding-top:48px;align-items:end}
 .p-hero .t{display:grid;gap:28px;padding-bottom:56px}
-.p-hero h1{font-size:clamp(68px,10.4vw,168px);color:var(--pt)}
+.p-hero h1{font-size:clamp(68px,10.4vw,10.5rem);color:var(--pt)}
 .p-hero h1 span{display:block;white-space:nowrap}
-.p-hero .lede{font-size:clamp(20px,1.9vw,25px);line-height:1.35;font-weight:500;max-width:44ch}
+.p-hero .lede{font-size:clamp(1.25rem,1.9vw,1.5625rem);line-height:1.35;font-weight:500;max-width:44ch}
 .p-hero figure{margin:0;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:end}
 .p-hero figure img{width:100%;height:auto;display:block}
 
@@ -23,17 +23,17 @@ nav a[aria-current="page"]{background:var(--pc);color:var(--on-pc)}
 .p-sec+.p-sec{padding-top:0}
 .p-two{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:48px}
 .p-two .side{display:grid;gap:12px;align-content:start}
-.p-two .main{display:grid;gap:18px;font-size:19px;line-height:1.6}
+.p-two .main{display:grid;gap:18px;font-size:1.1875rem;line-height:1.6}
 .p-two .main p{max-width:64ch}
-.p-h2{font-size:clamp(48px,5.6vw,92px)}
-.pull{font:500 clamp(30px,3.4vw,52px)/1.02 var(--sans);font-stretch:72%;text-transform:uppercase;max-width:22ch}
+.p-h2{font-size:clamp(48px,5.6vw,5.75rem)}
+.pull{font:500 clamp(1.875rem,3.4vw,3.25rem)/1.02 var(--sans);font-stretch:72%;text-transform:uppercase;max-width:22ch}
 
 /* fields: a row of solid cards */
 .fields{display:grid;grid-template-columns:repeat(var(--n,2),1fr)}
 .fd{padding:32px 28px 36px;display:grid;gap:14px;align-content:start;min-height:320px;text-decoration:none}
-.fd h3{font-size:clamp(36px,3.4vw,56px)}
-.fd p{font-size:16px}
-.fd .go{font-weight:600;font-size:14px;margin-top:auto}
+.fd h3{font-size:clamp(36px,3.4vw,3.5rem)}
+.fd p{font-size:1rem}
+.fd .go{font-weight:600;font-size:0.875rem;margin-top:auto}
 .fd:hover .go{text-decoration:underline;text-underline-offset:4px}
 .f1{background:var(--c1);color:var(--on-c1)}
 .f2{background:var(--c2);color:var(--on-c2)}
@@ -45,20 +45,20 @@ nav a[aria-current="page"]{background:var(--pc);color:var(--on-pc)}
 /* rows: roles, research interests, press */
 .rows{list-style:none;margin:0;padding:0;display:grid;gap:4px}
 .row{background:var(--off);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,5fr) 170px;gap:24px;align-items:baseline;padding:18px 22px;text-decoration:none}
-.row b{font:500 26px/1 var(--sans);font-stretch:72%;text-transform:uppercase}
-.row span{font-size:15px}
-.row .go{font-weight:600;font-size:14px;white-space:nowrap;justify-self:end}
+.row b{font:500 1.625rem/1 var(--sans);font-stretch:72%;text-transform:uppercase}
+.row span{font-size:0.9375rem}
+.row .go{font-weight:600;font-size:0.875rem;white-space:nowrap;justify-self:end}
 a.row:hover{background:var(--pc);color:var(--on-pc)}
 .num{list-style:none;margin:0;padding:0;counter-reset:n;display:grid;gap:4px}
-.num li{counter-increment:n;display:grid;grid-template-columns:72px 1fr;align-items:baseline;padding:16px 22px;background:var(--off);font:500 clamp(22px,2.2vw,32px)/1.05 var(--sans);font-stretch:72%;text-transform:uppercase}
+.num li{counter-increment:n;display:grid;grid-template-columns:72px 1fr;align-items:baseline;padding:16px 22px;background:var(--off);font:500 clamp(1.375rem,2.2vw,2rem)/1.05 var(--sans);font-stretch:72%;text-transform:uppercase}
 .num li::before{content:counter(n,decimal-leading-zero);color:var(--pc);font-size:1.4em}
 
 .press-list{display:grid;gap:4px}
 .pi{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,6fr) minmax(0,3fr);gap:28px;padding:26px 24px;background:var(--off);text-decoration:none;align-items:start}
-.pi .src{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
-.pi h3{font-size:clamp(26px,2.4vw,38px);margin-bottom:10px}
-.pi p{font-size:16px}
-.pi .go{font-weight:600;font-size:14px;justify-self:end}
+.pi .src{font-size:0.875rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.pi h3{font-size:clamp(1.625rem,2.4vw,2.375rem);margin-bottom:10px}
+.pi p{font-size:1rem}
+.pi .go{font-weight:600;font-size:0.875rem;justify-self:end}
 .pi:nth-child(4n+1):hover{background:var(--c1);color:var(--on-c1)}
 .pi:nth-child(4n+2):hover{background:var(--c2);color:var(--on-c2)}
 .pi:nth-child(4n+3):hover{background:var(--c3);color:var(--on-c3)}
@@ -66,24 +66,24 @@ a.row:hover{background:var(--pc);color:var(--on-pc)}
 .pi:hover .go{text-decoration:underline;text-underline-offset:4px}
 .pi .pimg{display:block;width:100%;height:auto;max-height:380px;object-fit:cover;margin-top:18px}
 
-.names{font:500 clamp(28px,3vw,46px)/1.12 var(--sans);font-stretch:68%;text-transform:uppercase}
+.names{font:500 clamp(1.75rem,3vw,2.875rem)/1.12 var(--sans);font-stretch:68%;text-transform:uppercase}
 .names i{font-style:normal;color:var(--pc)}
 .photo-row{display:grid;grid-template-columns:repeat(var(--n,2),1fr);gap:4px}
 .photo-row img{width:100%;height:100%;object-fit:cover;display:block}
-.tag{display:inline-block;background:var(--off);padding:4px 10px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.tag{display:inline-block;background:var(--off);padding:4px 10px;font-size:0.875rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 
 /* land field on the teaching page */
 .landf{background:var(--c4);color:var(--on-c4)}
 .landf .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;padding-block:72px}
 .landf img{width:100%;height:auto;display:block}
-.landf .main{display:grid;gap:18px;font-size:18px;line-height:1.6;align-content:start}
+.landf .main{display:grid;gap:18px;font-size:1.125rem;line-height:1.6;align-content:start}
 .oikos-card{background:var(--c2);color:var(--on-c2);padding:28px;display:grid;gap:12px}
-.oikos-card h3{font-size:clamp(40px,4vw,64px)}
+.oikos-card h3{font-size:clamp(40px,4vw,4rem)}
 
 /* ending band */
 .endband{background:var(--ink);color:var(--on-ink)}
 .endband .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;padding-block:44px}
-.endband b{font:500 clamp(36px,4.6vw,72px)/.9 var(--sans);font-stretch:68%;text-transform:uppercase}
+.endband b{font:500 clamp(36px,4.6vw,4.5rem)/.9 var(--sans);font-stretch:68%;text-transform:uppercase}
 .endband .btn{background:var(--c4);color:var(--on-c4)}
 
 @media (max-width:1000px){

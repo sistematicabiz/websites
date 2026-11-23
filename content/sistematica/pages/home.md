@@ -1,5 +1,6 @@
 ---
 title: Home
+description: "Sistematica: independent research and advisory on sustainable finance, social and ecological systems, and long-term value, led by Laura Segafredo, PhD."
 hero:
   eyebrow: Sistematica Research & Advisory
   subtitle: Systematic insight, systems thinking.
