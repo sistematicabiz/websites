@@ -1,0 +1,30 @@
+# Checks the Moral Revolution feed once a day. Only when something changed does it commit the new
+# data, and that commit makes Netlify publish Laura's site. Days without new posts cost no credits.
+name: Update Substack posts
+
+on:
+  schedule:
+    - cron: "15 6 * * *" # 06:15 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-substack
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Fetch the feed and commit any change
+        run: bash scripts/update-substack.sh
