@@ -2,6 +2,6 @@
 <section class="p-hero"><div class="wrap">
   <div class="t"><span class="lbl">{{ hero.kicker | soft | safe }}</span><h1 aria-label="{{ hero.title_lines | titleName }}">{% for line in hero.title_lines %}<span aria-hidden="true">{{ line | soft | safe }}</span>{% endfor %}</h1><p class="lede">{{ hero.intro }}</p></div>
   {%- if hero.photo %}
-  <figure>{% if hero.photo_caption %}<span class="vert">{{ hero.photo_caption }}</span>{% endif %}<img src="{{ hero.photo }}" alt="{{ hero.photo_alt }}"{{ hero.photo | imgSize | safe }}></figure>
+  <figure>{% if hero.photo_caption %}<figcaption class="vert">{{ hero.photo_caption }}</figcaption>{% endif %}<img src="{{ hero.photo }}" alt="{{ hero.photo_alt }}"{{ hero.photo | imgSize | safe }}></figure>
   {%- endif %}
 </div></section>

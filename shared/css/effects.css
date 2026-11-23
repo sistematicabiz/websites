@@ -2,7 +2,8 @@
 
 /* In-page navigation */
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-@media (min-height:601px){section[id]{scroll-margin-top:72px}}
+/* Keeps anchors and keyboard focus clear of the sticky header. */
+@media (min-height:601px){html{scroll-padding-top:72px}}
 nav a[aria-current="location"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
 
 /* Clickable cards: the same state for mouse and keyboard */
