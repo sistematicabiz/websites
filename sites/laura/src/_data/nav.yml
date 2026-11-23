@@ -1,7 +1,7 @@
 # Main navigation. Inner pages arrive in Phase 2.
 - { label: Home, url: / }
 - { label: About, url: /about/ }
-- { label: Writing & Podcast, url: /writing/ }
+- { label: Writing & Podcast, url: /moral-revolution/ }
 - { label: Finance & Climate, url: /finance/ }
 - { label: Teaching, url: /teaching/ }
 - { label: Speaking & Press, url: /speaking/ }

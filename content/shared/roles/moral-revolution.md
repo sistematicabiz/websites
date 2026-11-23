@@ -2,7 +2,7 @@
 organization: Moral Revolution
 role: Co-host and writer
 short_line: Co-host and writer · Substack, Apple Podcasts, Spotify
-link_url: /writing/
+link_url: /moral-revolution/
 link_label: Read and listen
 short_link_label: Read and listen
 group: Other

@@ -66,7 +66,7 @@ collections:
                   - label: Link
                     name: url
                     widget: string
-                    hint: A page (/writing/), a section of this page (#areas) or a full address (https://…).
+                    hint: A page (/moral-revolution/), a section of this page (#areas) or a full address (https://…).
               - label: Photo
                 name: photo
                 widget: image
@@ -405,7 +405,7 @@ collections:
               - label: Link text for podcast episodes
                 name: listen_label
                 widget: string
-        preview_path: writing/
+        preview_path: moral-revolution/
       - name: finance
         label: Finance & Climate
         file: content/laura/pages/finance.md
@@ -905,7 +905,7 @@ collections:
       - label: Link URL
         name: link_url
         widget: string
-        hint: Full address (https://…) or a page of this site such as /writing/.
+        hint: Full address (https://…) or a page of this site such as /moral-revolution/.
       - label: Link text (Finance & Climate)
         name: link_label
         widget: string

@@ -26,7 +26,7 @@ areas:
     title: Moral Revolution
     text: Essays and conversations on the moral imagination needed for a more just and sustainable economy.
     link_label: Read and listen
-    link_url: /writing/
+    link_url: /moral-revolution/
   - eyebrow: Sistematica · Universe Partners · All About Water
     title: Finance & Climate
     text: Advisory, investment, and research work on sustainable and values-aligned finance, with an eye for long-term value.
