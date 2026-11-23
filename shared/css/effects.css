@@ -54,3 +54,8 @@ button.is-sending{cursor:progress}
   .meter i:nth-child(11){--bar:10}.meter i:nth-child(12){--bar:11}
   @keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
 }
+
+/* Filled buttons on a light background: on hover they keep a visible edge. */
+:is(.h-name,.p-two) .btn:not(.line):hover{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.about .btn:not(.line):hover{box-shadow:inset 0 0 0 2px var(--ink)}
+[data-site="laura"][data-theme="verde"] .red .btn:hover{box-shadow:inset 0 0 0 2px #fff}
