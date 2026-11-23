@@ -131,3 +131,67 @@
     });
   }
 })();
+
+// Small screens: the menu folds into a burger button. Without JavaScript the menu stays visible as a list.
+(() => {
+  const header = document.querySelector("header.site");
+  const nav = header?.querySelector("nav");
+  const bar = header?.querySelector(".wrap");
+  if (!nav || !bar) return;
+  if (!nav.id) nav.id = "site-menu";
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "menu-toggle";
+  button.setAttribute("aria-controls", nav.id);
+  button.setAttribute("aria-expanded", "false");
+  button.innerHTML =
+    '<span class="sr-only">Menu</span><svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path class="b1" d="M3 6h18"/><path class="b2" d="M3 12h18"/><path class="b3" d="M3 18h18"/></svg>';
+  bar.insertBefore(button, nav);
+  header.classList.add("has-menu");
+  const set = (open, refocus) => {
+    header.classList.toggle("menu-open", open);
+    button.setAttribute("aria-expanded", String(open));
+    if (!open && refocus) button.focus();
+  };
+  button.addEventListener("click", () => set(!header.classList.contains("menu-open")));
+  nav.addEventListener("click", (event) => {
+    if (event.target.closest("a")) set(false);
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && header.classList.contains("menu-open")) set(false, true);
+  });
+  document.addEventListener("click", (event) => {
+    if (header.classList.contains("menu-open") && !header.contains(event.target)) set(false);
+  });
+  window.matchMedia("(min-width:1001px)").addEventListener("change", (event) => {
+    if (event.matches) set(false);
+  });
+})();
+
+// Touch screens have no hover, so home-page cards fade in as they come into view instead.
+// The cards are only hidden once this script has run, so without JavaScript nothing is lost.
+(() => {
+  if (!("IntersectionObserver" in window)) return;
+  if (!window.matchMedia("(hover:none)").matches) return;
+  if (window.matchMedia("(prefers-reduced-motion:reduce)").matches) return;
+  const cards = [...document.querySelectorAll(".areas .col, .press .pr, .svc > *, .collab .cb, .press-list > .pi")];
+  if (!cards.length) return;
+  const seen = new Map();
+  for (const card of cards) {
+    const index = seen.get(card.parentElement) ?? 0;
+    seen.set(card.parentElement, index + 1);
+    card.style.setProperty("--reveal-delay", `${Math.min(index, 3) * 50}ms`);
+    card.classList.add("reveal");
+  }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add("is-in");
+        observer.unobserve(entry.target);
+      }
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+  );
+  cards.forEach((card) => observer.observe(card));
+})();
