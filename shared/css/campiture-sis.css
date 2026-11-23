@@ -70,6 +70,9 @@ nav li a:hover{background:var(--soft)!important;color:var(--ink)!important}
 .about h2{font-size:clamp(56px,6vw,6rem)}
 .chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px}
 .chips li{background:var(--surface);padding:7px 12px;font-size:0.875rem;font-weight:600}
+.chips li:has(a){padding:0}
+.chips a{display:block;padding:7px 12px;text-decoration:none;transition:background-color .16s ease,color .16s ease}
+.chips a:is(:hover,:focus-visible){background:var(--ink);color:var(--surface)}
 .quote{background:var(--c4);color:var(--on-c4);padding:26px 28px;font:500 1.75rem/1.05 var(--sans);font-stretch:75%;text-transform:uppercase;margin:0}
 .quote cite{display:block;margin-top:12px;font:400 0.875rem/1.4 var(--sans);text-transform:none;font-stretch:100%}
 
@@ -88,6 +91,13 @@ select{font:inherit;padding:6px 0;border:0;background:transparent}
   .svc{grid-template-columns:1fr}
   .sv{min-height:0}
   .why .cols{grid-template-columns:1fr}
+}
+/* side-by-side cards share their rows, so photos and text line up whatever the label or copy length */
+@media (min-width:1001px){
+  .collab{grid-template-rows:auto 1fr}
+  .cb{grid-row:span 2;grid-template-rows:subgrid}
+  .cb .ph img{height:100%;min-height:300px;aspect-ratio:auto;contain:size}
+  .cb .b{grid-template-rows:auto 1fr auto;align-content:stretch}
 }
 @media (max-width:560px){.eng ol{grid-template-columns:1fr}}
 
