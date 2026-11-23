@@ -12,7 +12,7 @@
 .vert{margin-bottom:18px}
 
 /* One rule for every vertical caption: 16px between caption and photo. */
-.h-cols .y,.land .y,.p-hero figure,.s-side .m,.cb .ph{gap:16px}
+.h-cols .y,.land .y,.p-hero figure,.p-photo,.s-side .m,.cb .ph{gap:16px}
 
 /* Land photo on Laura's home: the caption stays beside the photo at every screen width. */
 .land .y{grid-template-columns:auto minmax(0,440px);justify-content:end}
@@ -119,3 +119,8 @@ form>*,.f>*{min-width:0}
   .col,.fd,.pi,.pr,.cb,.sv,.oikos,.oikos-card,a.row,.chips li,.num li{border:1px solid CanvasText}
   #contact .contact{border:1px solid CanvasText}
 }
+
+/* Inner pages: a captioned photo beside a text block. On small screens it follows the text. */
+.p-photo{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:end;align-self:start;max-width:520px}
+.p-photo img{display:block;width:100%;height:auto}
+@media (min-width:1001px){.p-with-photo{grid-template-columns:minmax(0,8fr) minmax(0,4fr)}}

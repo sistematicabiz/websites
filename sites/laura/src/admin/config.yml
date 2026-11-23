@@ -281,17 +281,20 @@ collections:
                 name: names
                 widget: list
                 hint: One name per item. Drag to reorder.
-          - label: Photos at the bottom
-            name: gallery
-            widget: list
-            summary: "{{alt}}"
-            fields:
-              - label: Photo
-                name: image
+              - label: Photo beside the appearances
+                name: photo
                 widget: image
+                required: false
               - label: Photo description (alt text)
-                name: alt
+                name: photo_alt
                 widget: string
+                required: false
+                hint: Describe the picture for people who cannot see it. Required if there is a photo.
+              - label: Photo caption
+                name: photo_caption
+                widget: string
+                required: false
+                hint: Short vertical label next to the photo.
         preview_path: about/
       - name: writing
         label: Writing & Podcast
@@ -471,6 +474,20 @@ collections:
             name: boards_heading
             widget: string
             hint: "Cards come from Roles (group: Boards & other initiatives)."
+          - label: Photo beside boards & other initiatives
+            name: boards_photo
+            widget: image
+            required: false
+          - label: Photo description (alt text)
+            name: boards_photo_alt
+            widget: string
+            required: false
+            hint: Describe the picture for people who cannot see it. Required if there is a photo.
+          - label: Photo caption
+            name: boards_photo_caption
+            widget: string
+            required: false
+            hint: Short vertical label next to the photo.
         preview_path: finance/
       - name: teaching
         label: Teaching & Research

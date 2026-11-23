@@ -13,4 +13,7 @@ work:
   body: My work in finance and climate focuses on the relationship between rigorous analysis, long-term value creation, resilience, and the broader social and ecological systems within which markets operate.
 advisory_heading: Advisory and investment
 boards_heading: Boards & other initiatives
+boards_photo: /media/nasdaq.jpg
+boards_photo_alt: Laura speaking at the Economic Club of New York at Nasdaq
+boards_photo_caption: Caption to come
 ---
