@@ -24,3 +24,11 @@ a.row:focus-visible{background:var(--pc);color:var(--on-pc);--at:currentColor}
   .arr{transition:transform .16s ease}
   :is(.col,a.fd,a.row,.pi):is(:hover,:focus-visible) .go .arr{transform:translateX(4px)}
 }
+
+/* Arrival: the block reached from an in-page link is outlined once. */
+.arrived{position:relative}
+.arrived::after{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;border:4px solid #fff;outline:4px solid #111;outline-offset:-8px}
+@media (prefers-reduced-motion:no-preference){
+  .arrived::after{animation:arrive 1.2s ease both}
+  @keyframes arrive{0%,100%{opacity:0}18%,62%{opacity:1}}
+}

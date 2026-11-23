@@ -20,3 +20,29 @@
   );
   links.forEach((_, section) => observer.observe(section));
 })();
+
+// Briefly outline the block reached from an in-page link.
+(() => {
+  const DURATION = 1200;
+  const highlight = (hash) => {
+    if (!hash || hash === "#top") return;
+    const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+    if (!target) return;
+    let started = false;
+    const start = () => {
+      if (started) return;
+      started = true;
+      target.classList.remove("arrived");
+      void target.offsetWidth;
+      target.classList.add("arrived");
+      setTimeout(() => target.classList.remove("arrived"), DURATION);
+    };
+    window.addEventListener("scrollend", start, { once: true });
+    setTimeout(start, 750);
+  };
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest?.('a[href*="#"]');
+    if (link && link.pathname === location.pathname && link.origin === location.origin) highlight(link.hash);
+  });
+  if (location.hash) highlight(location.hash);
+})();
