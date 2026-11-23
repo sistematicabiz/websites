@@ -90,3 +90,9 @@ button.is-sending{cursor:progress}
 /* Moral Revolution page: "Revolution" always fits on one line. */
 .pg-c3 .p-hero .t{container-type:inline-size}
 .pg-c3 .p-hero h1{font-size:min(clamp(68px,10.4vw,10.5rem),21cqw)}
+
+/* Touch screens: cards fade in (and rise a little) as they come into view. Hidden only once the script has marked them. */
+@media (hover:none) and (prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease var(--reveal-delay,0ms),transform .5s ease var(--reveal-delay,0ms),background-color .16s ease,color .16s ease}
+  .reveal.is-in{opacity:1;transform:none}
+}
