@@ -11,6 +11,9 @@
    A margin, because the label is rotated 180deg and its padding would end up at the top. */
 .vert{margin-bottom:18px}
 
+/* One rule for every vertical caption: 16px between caption and photo. */
+.h-cols .y,.land .y,.p-hero figure,.s-side .m,.cb .ph{gap:16px}
+
 /* Land photo on Laura's home: the caption stays beside the photo at every screen width. */
 .land .y{grid-template-columns:auto minmax(0,440px);justify-content:end}
 
