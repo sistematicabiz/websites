@@ -34,7 +34,7 @@ appearances:
     - Columbia University
     - Cornell University
     - Duke University
-gallery:
-  - { image: /media/about-event.jpg, alt: Laura greeting a guest at a conference dinner }
-  - { image: /media/nasdaq.jpg, alt: Laura speaking at the Economic Club of New York at Nasdaq }
+  photo: /media/about-event.jpg
+  photo_alt: Laura greeting a guest at a conference dinner
+  photo_caption: Caption to come
 ---

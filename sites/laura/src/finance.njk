@@ -26,7 +26,9 @@ eleventyComputed:
   <div style="display:grid;gap:12px;margin-bottom:28px"><h2 class="lbl">{{ p.advisory_heading }}</h2></div>
   {{ roleCards("Advisory & investment") }}
 </section>
-<section class="wrap p-sec">
-  <div style="display:grid;gap:12px;margin-bottom:28px"><h2 class="p-h2">{{ p.boards_heading | soft | safe }}</h2></div>
-  {{ roleCards("Boards & other initiatives") }}
-</section>
+<section class="wrap p-sec"><div class="p-two p-with-photo">
+  <div class="side" style="gap:28px"><h2 class="p-h2">{{ p.boards_heading | soft | safe }}</h2>{{ roleCards("Boards & other initiatives") }}</div>
+  {%- if p.boards_photo %}
+  <figure class="p-photo"><figcaption class="vert">{{ p.boards_photo_caption }}</figcaption><img src="{{ p.boards_photo }}" alt="{{ p.boards_photo_alt }}" loading="lazy"{{ p.boards_photo | imgSize | safe }}></figure>
+  {%- endif %}
+</div></section>

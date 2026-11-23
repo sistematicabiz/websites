@@ -24,10 +24,9 @@ eleventyComputed:
     {%- endif %}{% endfor %}
   </div>
 </section>
-<section class="wrap p-sec"><div class="p-two">
-  <div class="side"><span class="lbl">{{ p.appearances.eyebrow }}</span><a class="btn line" {{ linkAttrs(site.links.linkedin) }} style="justify-self:start">{{ p.appearances.linkedin_label }} ↗</a></div>
-  <p class="names">{% for n in p.appearances.names %}{{ n }}{% if not loop.last %} <i>·</i> {% endif %}{% endfor %}</p>
+<section class="wrap p-sec"><div class="p-two p-with-photo">
+  <div class="side"><span class="lbl">{{ p.appearances.eyebrow }}</span><p class="names">{% for n in p.appearances.names %}{{ n }}{% if not loop.last %} <i>·</i> {% endif %}{% endfor %}</p><a class="btn line" {{ linkAttrs(site.links.linkedin) }} style="justify-self:start">{{ p.appearances.linkedin_label }} ↗</a></div>
+  {%- if p.appearances.photo %}
+  <figure class="p-photo"><figcaption class="vert">{{ p.appearances.photo_caption }}</figcaption><img src="{{ p.appearances.photo }}" alt="{{ p.appearances.photo_alt }}" loading="lazy"{{ p.appearances.photo | imgSize | safe }}></figure>
+  {%- endif %}
 </div></section>
-{%- if p.gallery and p.gallery.length %}
-<section class="wrap p-sec"><div class="photo-row" style="--n:{{ p.gallery.length }}">{% for g in p.gallery %}<img src="{{ g.image }}" alt="{{ g.alt }}"{{ g.image | imgSize | safe }}>{% endfor %}</div></section>
-{%- endif %}
