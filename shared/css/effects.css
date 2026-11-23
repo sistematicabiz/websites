@@ -36,6 +36,8 @@ a.row:focus-visible{background:var(--pc);color:var(--on-pc);--at:currentColor}
 /* Form messages */
 .field-error{margin:6px 0 2px;color:#A8140C;font-size:.875rem;font-weight:600;line-height:1.3}
 .f.has-error{box-shadow:inset 0 0 0 3px #A8140C}
+.f:focus-within{outline:3px solid #111;outline-offset:-3px}
+.f :is(input,textarea,select):focus-visible{outline:0;box-shadow:none}
 @media (forced-colors:active){.f.has-error{border:3px solid Highlight}}
 button.is-sending{cursor:progress}
 
