@@ -11,6 +11,9 @@
    A margin, because the label is rotated 180deg and its padding would end up at the top. */
 .vert{margin-bottom:18px}
 
+/* Land photo on Laura's home: the caption stays beside the photo at every screen width. */
+.land .y{grid-template-columns:auto minmax(0,440px);justify-content:end}
+
 /* Sistematica's card on Laura's Finance & Climate page: its own deep green, whatever Laura's theme is. */
 .fsis{background:#0B4A32;color:#FFFFFF;--at:#3DDC84}
 
