@@ -1,5 +1,5 @@
-# Checks the Moral Revolution feed once a day. Only when something changed does it commit the new
-# data, and that commit makes Netlify publish Laura's site. Days without new posts cost no credits.
+# Checks the Moral Revolution feed once a day. When the latest posts change it opens one pull request.
+# Merging it makes Netlify publish Laura's site. Days without new posts cost no credits.
 name: Update Substack posts
 
 on:
@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: update-substack
@@ -26,5 +27,7 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
-      - name: Fetch the feed and commit any change
+      - name: Fetch the feed and open a pull request if it changed
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: bash scripts/update-substack.sh

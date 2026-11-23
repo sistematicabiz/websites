@@ -42,11 +42,11 @@ Create two sites with **Add new project > Import an existing project > GitHub > 
 
 ## 4. Daily Substack update
 
-No build hook or secret is needed. A GitHub Action checks the feed every day and commits only when the latest posts change. That commit makes Netlify publish Laura's site.
+No build hook or secret is needed. A GitHub Action checks the feed every day. When the latest posts change it opens one pull request, **Update latest Substack posts**. Merging it publishes Laura's site.
 
-- [ ] In the **Actions** tab, run **Update Substack posts** by hand. With no new posts it should end with "nothing to publish" and start no Netlify deploy.
-- [ ] If it fails on `git push`, open **Settings > Actions > General > Workflow permissions** and choose **Read and write permissions**.
-- [ ] After the next new post, check that a commit "Update latest Substack posts" appears and Laura's site is published.
+- [ ] In GitHub, open **Settings > Actions > General > Workflow permissions**, choose **Read and write permissions** and tick **Allow GitHub Actions to create and approve pull requests**.
+- [ ] In the **Actions** tab, run **Update Substack posts** by hand. With no new posts it should end with "nothing to publish".
+- [ ] After the next new post, check that the pull request appears, merge it, and check that Laura's site is published.
 
 **Netlify credits:** the Free plan has 300 credits a month and each published deploy uses 15, so about 20 publishes a month, including every **Publish** from the CMS. Check the usage in Netlify in the first weeks. If credits run out, the sites go offline until the next month.
 
