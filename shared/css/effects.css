@@ -21,6 +21,8 @@ a.row:focus-visible{background:var(--pc);color:var(--on-pc);--at:currentColor}
 .arr{display:inline-block}
 @media (prefers-reduced-motion:no-preference){
   .col,a.fd,a.row,.pi,.pr,header.site nav a{transition:background-color .16s ease,color .16s ease}
+  .btn{transition:background-color .16s ease,color .16s ease,box-shadow .16s ease}
+  .btn:focus-visible{transition-property:background-color,color}
   .arr{transition:transform .16s ease}
   :is(.col,a.fd,a.row,.pi):is(:hover,:focus-visible) .go .arr{transform:translateX(4px)}
 }
