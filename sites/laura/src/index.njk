@@ -10,7 +10,7 @@ eleventyComputed:
 {%- set p = pages.home -%}
 <section class="wrap hero">
   <div class="h-name">
-    <h1>{% for line in p.hero.name_lines %}<span>{{ line | soft | safe }}</span>{% endfor %}</h1>
+    <h1>{% for line in p.hero.name_lines %}<span>{{ line | soft | safe }}</span>{% if not loop.last %} {% endif %}{% endfor %}</h1>
     <div class="row">
       <p class="descr">{{ p.hero.tagline }}</p>
       <div style="display:grid;gap:18px">
