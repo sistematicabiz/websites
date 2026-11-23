@@ -40,11 +40,15 @@ Create two sites with **Add new project > Import an existing project > GitHub > 
 
 **Spam:** both forms have a hidden honeypot field (`company-website`), and Netlify also filters submissions automatically. Check the **Spam** tab under Forms now and then, since real messages are occasionally caught. If spam becomes a problem, turn on reCAPTCHA for the form.
 
-## 4. Daily Substack rebuild
+## 4. Daily Substack update
 
-- [ ] On the Laura site, open **Project configuration > Developer settings > Continuous deployment > Build hooks** and add a hook named `Daily rebuild` for branch `main`.
-- [ ] In GitHub, open **Settings > Secrets and variables > Actions** and add the secret `NETLIFY_BUILD_HOOK_LAURA` with the hook URL.
-- [ ] In the **Actions** tab, run **Daily rebuild (Laura)** by hand and check that a new Netlify deploy starts.
+No build hook or secret is needed. A GitHub Action checks the feed every day. When the latest posts change it opens one pull request, **Update latest Substack posts**. Merging it publishes Laura's site.
+
+- [ ] In GitHub, open **Settings > Actions > General > Workflow permissions**, choose **Read and write permissions** and tick **Allow GitHub Actions to create and approve pull requests**.
+- [ ] In the **Actions** tab, run **Update Substack posts** by hand. With no new posts it should end with "nothing to publish".
+- [ ] After the next new post, check that the pull request appears, merge it, and check that Laura's site is published.
+
+**Netlify credits:** the Free plan has 300 credits a month and each published deploy uses 15, so about 20 publishes a month, including every **Publish** from the CMS. Check the usage in Netlify in the first weeks. If credits run out, the sites go offline until the next month.
 
 GitHub pauses scheduled workflows after 60 days without repository activity on public repositories. If the list stops updating, re-enable the workflow in the Actions tab.
 

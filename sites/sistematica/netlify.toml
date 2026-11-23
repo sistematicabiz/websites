@@ -6,7 +6,6 @@
   command = "npm run build:sistematica"
   publish = "sites/sistematica/_site"
   # Skip the build (exit 0) unless something this site depends on changed.
-  # Netlify never applies this rule to build hooks, so the daily rebuild always runs.
   ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- sites/sistematica shared content/sistematica content/shared content/media package.json package-lock.json .nvmrc"
 
 [build.environment]

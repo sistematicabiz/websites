@@ -72,7 +72,7 @@ The same **Settings** entries hold the social links, the footer text, the defaul
 
 ## The Substack list
 
-"Latest from Substack" on Writing & Podcast updates itself once a day, so there is nothing to edit. A new post can take up to a day to appear.
+The site checks Substack once a day. When there is a new post, GitHub opens a pull request called "Update latest Substack posts". The new post appears on the site, in "Latest from Substack" and on the home page, once that pull request is merged.
 
 ## If something looks wrong
 

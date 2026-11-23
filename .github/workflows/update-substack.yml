@@ -1,0 +1,33 @@
+# Checks the Moral Revolution feed once a day. When the latest posts change it opens one pull request.
+# Merging it makes Netlify publish Laura's site. Days without new posts cost no credits.
+name: Update Substack posts
+
+on:
+  schedule:
+    - cron: "15 6 * * *" # 06:15 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-substack
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Fetch the feed and open a pull request if it changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash scripts/update-substack.sh
