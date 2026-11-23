@@ -1,0 +1,6 @@
+/* Small interface effects. All movement is inside prefers-reduced-motion: no-preference. */
+
+/* In-page navigation */
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+@media (min-width:1001px) and (min-height:601px){section[id]{scroll-margin-top:72px}}
+nav a[aria-current="location"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
