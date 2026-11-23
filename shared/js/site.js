@@ -180,7 +180,7 @@
   for (const card of cards) {
     const index = seen.get(card.parentElement) ?? 0;
     seen.set(card.parentElement, index + 1);
-    card.style.setProperty("--reveal-delay", `${Math.min(index, 3) * 80}ms`);
+    card.style.setProperty("--reveal-delay", `${Math.min(index, 3) * 50}ms`);
     card.classList.add("reveal");
   }
   const observer = new IntersectionObserver(
