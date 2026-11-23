@@ -46,6 +46,7 @@ moral_revolution:
   substack_label: Substack
   apple_label: Apple
   spotify_label: Spotify
+  latest_label: Latest
 land:
   photo: /media/farminary.jpg
   photo_alt: Laura working a garden bed at the Farminary

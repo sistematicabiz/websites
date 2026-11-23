@@ -98,6 +98,9 @@ export function configureSite(eleventyConfig, site) {
       .replace(/&shy;|\u00AD/g, "")
   );
 
+  // Newest podcast episode in the Substack data, if any
+  eleventyConfig.addFilter("latestEpisode", (items) => (items || []).find((i) => i.type === "podcast"));
+
   // "2026-11-10" -> "November 10, 2026"
   eleventyConfig.addFilter("longDate", (d) =>
     new Date(d).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" })

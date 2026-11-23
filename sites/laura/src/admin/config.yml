@@ -139,6 +139,10 @@ collections:
               - label: Spotify button text
                 name: spotify_label
                 widget: string
+              - label: Latest episode label
+                name: latest_label
+                widget: string
+                hint: Shown before the newest podcast episode, which is added automatically from Substack.
           - label: Land & Oikos Lab block
             name: land
             widget: object
