@@ -93,6 +93,6 @@ button.is-sending{cursor:progress}
 
 /* Touch screens: cards fade in (and rise a little) as they come into view. Hidden only once the script has marked them. */
 @media (hover:none) and (prefers-reduced-motion:no-preference){
-  .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease var(--reveal-delay,0ms),transform .5s ease var(--reveal-delay,0ms),background-color .16s ease,color .16s ease}
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .3s ease var(--reveal-delay,0ms),transform .3s ease var(--reveal-delay,0ms),background-color .16s ease,color .16s ease}
   .reveal.is-in{opacity:1;transform:none}
 }

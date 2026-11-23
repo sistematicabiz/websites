@@ -174,7 +174,7 @@
   if (!("IntersectionObserver" in window)) return;
   if (!window.matchMedia("(hover:none)").matches) return;
   if (window.matchMedia("(prefers-reduced-motion:reduce)").matches) return;
-  const cards = [...document.querySelectorAll(".areas .col, .press .pr, .svc > *, .collab .cb")];
+  const cards = [...document.querySelectorAll(".areas .col, .press .pr, .svc > *, .collab .cb, .press-list > .pi")];
   if (!cards.length) return;
   const seen = new Map();
   for (const card of cards) {
