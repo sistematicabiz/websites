@@ -59,6 +59,3 @@ button.is-sending{cursor:progress}
 :is(.h-name,.p-two) .btn:not(.line):hover{background:var(--surface);color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
 .about .btn:not(.line):hover{box-shadow:inset 0 0 0 2px var(--ink)}
 [data-site="laura"][data-theme="verde"] .red .btn:hover{box-shadow:inset 0 0 0 2px #fff}
-
-/* Menu items use the same hover as the buttons. (!important: Sistematica's CSS sets its hover that way.) */
-header.site nav li a:hover{background:var(--surface)!important;color:var(--ink)!important;box-shadow:inset 0 0 0 2px var(--ink)}
