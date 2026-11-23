@@ -4,3 +4,23 @@
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 @media (min-width:1001px) and (min-height:601px){section[id]{scroll-margin-top:72px}}
 nav a[aria-current="location"]{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:4px}
+
+/* Clickable cards: the same state for mouse and keyboard */
+.col:is(:hover,:focus-visible),a.fd:is(:hover,:focus-visible){background:var(--ink);color:var(--on-ink);--at:currentColor}
+a.row:focus-visible{background:var(--pc);color:var(--on-pc);--at:currentColor}
+.pi:nth-child(4n+1):focus-visible{background:var(--c1);color:var(--on-c1);--at:currentColor}
+.pi:nth-child(4n+2):focus-visible{background:var(--c2);color:var(--on-c2);--at:currentColor}
+.pi:nth-child(4n+3):focus-visible{background:var(--c3);color:var(--on-c3);--at:currentColor}
+.pi:nth-child(4n+4):focus-visible{background:var(--c4);color:var(--on-c4);--at:currentColor}
+.pr:is(:nth-child(1),:nth-child(5)):focus-visible{background:var(--c1);color:var(--on-c1)}
+.pr:is(:nth-child(2),:nth-child(6)):focus-visible{background:var(--c2);color:var(--on-c2)}
+.pr:nth-child(3):focus-visible{background:var(--c3);color:var(--on-c3)}
+.pr:nth-child(4):focus-visible{background:var(--c4);color:var(--on-c4)}
+.pr:is(:hover,:focus-visible){--at:currentColor}
+:is(.col,a.fd,.pi,a.row):focus-visible .go{text-decoration:underline;text-underline-offset:4px}
+.arr{display:inline-block}
+@media (prefers-reduced-motion:no-preference){
+  .col,a.fd,a.row,.pi,.pr{transition:background-color .16s ease,color .16s ease}
+  .arr{transition:transform .16s ease}
+  :is(.col,a.fd,a.row,.pi):is(:hover,:focus-visible) .go .arr{transform:translateX(4px)}
+}

@@ -129,12 +129,14 @@ export function configureSite(eleventyConfig, site) {
     eleventyExcludeFromCollections: true,
   });
 
-  // Links that open a new tab say so to screen readers; the arrows are not read aloud.
-  eleventyConfig.addTransform("new-tab-links", function (html) {
+  // Links: arrows are decorative (and can move on hover); new tabs are announced to screen readers.
+  eleventyConfig.addTransform("link-details", function (html) {
     if (!(this.page.outputPath || "").endsWith(".html")) return html;
-    return html.replace(/(<a\b[^>]*\btarget="_blank"[^>]*>)([\s\S]*?)<\/a>/g, (all, open, inner) =>
-      `${open}${inner.replace(/[↗→]/g, '<span aria-hidden="true">$&</span>')}<span class="sr-only"> (opens in a new tab)</span></a>`
-    );
+    return html.replace(/<a\b([^>]*)>([\s\S]*?)<\/a>/g, (all, attrs, inner) => {
+      const body = inner.replace(/[↗→]/g, '<span class="arr" aria-hidden="true">$&</span>');
+      const note = /\btarget="_blank"/.test(attrs) ? '<span class="sr-only"> (opens in a new tab)</span>' : "";
+      return `<a${attrs}>${body}${note}</a>`;
+    });
   });
 
   // A link is external if it is absolute and does not point to one of our own sites.
