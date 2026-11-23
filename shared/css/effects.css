@@ -46,6 +46,8 @@ button.is-sending{cursor:progress}
 /* Latest episode in the Moral Revolution block */
 .mr-latest{display:grid;gap:4px;padding:12px 16px;border-left:4px solid currentColor;text-decoration:none}
 .mr-latest-title{font-size:1.25rem;font-weight:600;line-height:1.2;text-decoration:underline;text-underline-offset:3px}
+/* The arrow stays inline so it never drops alone onto a second line. */
+.mr-latest-title .arr{display:inline}
 /* Hover: a soft tint of the text colour, and the bar grows. The bar never disappears, in any theme. */
 .mr-latest:is(:hover,:focus-visible){background:color-mix(in srgb,currentColor 14%,transparent);box-shadow:inset 4px 0 0 currentColor}
 @media (prefers-reduced-motion:no-preference){.mr-latest{transition:background-color .16s ease,box-shadow .16s ease}}
