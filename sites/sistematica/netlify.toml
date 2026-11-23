@@ -10,3 +10,17 @@
 
 [build.environment]
   NODE_VERSION = "22"
+
+# Files whose names change with their content can be cached for a year.
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/media/opt/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

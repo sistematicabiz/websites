@@ -5,6 +5,7 @@ import fs from "node:fs";
 import yaml from "js-yaml";
 import path from "node:path";
 import { imageSize } from "image-size";
+import { configurePerformance } from "./performance.js";
 import { loadFolder, loadFiles, md, setOwnUrls, isExternal } from "./content-collections.js";
 
 const SM = '<span class="sm">Sistem<i>at</i>ica</span>';
@@ -44,8 +45,7 @@ export function configureSite(eleventyConfig, site) {
 
   // Shared static assets
   eleventyConfig.addPassthroughCopy({
-    "shared/css": "css",
-    "shared/js": "js",
+    "shared/fonts": "fonts",
     // Images uploaded through the CMS (media_folder in sites/laura/src/admin/config.yml)
     "content/media": "media",
   });
@@ -141,6 +141,9 @@ export function configureSite(eleventyConfig, site) {
       return `<a${attrs}>${body}${note}</a>`;
     });
   });
+
+  // Runs after the link transform: responsive images, bundled CSS and JS.
+  configurePerformance(eleventyConfig, site);
 
   // A link is external if it is absolute and does not point to one of our own sites.
   eleventyConfig.addFilter("isExternal", isExternal);

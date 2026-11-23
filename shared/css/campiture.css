@@ -2,7 +2,7 @@
    Based on direction K: flat, full-bleed fields of saturated primaries, no shadows, no rules.
    Huge condensed uppercase that breaks words across lines, photographs cut into the colour fields,
    labels set vertically like the spine of a printed piece. Archivo at a narrow width, regular weight. */
-:root{--sans:"Archivo","Helvetica Neue",Arial,sans-serif}
+:root{--sans:"Archivo","Archivo Fallback","Helvetica Neue",Arial,sans-serif}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.55 var(--sans);font-stretch:100%}
 a{color:inherit}

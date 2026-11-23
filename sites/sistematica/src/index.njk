@@ -28,7 +28,7 @@ eleventyComputed:
 
 {%- set aw = p.at_work %}
 <section class="atwork" aria-label="{{ aw.title | replace('*', '') }}"><div class="wrap aw">
-  <figure><img src="{{ aw.photo }}" alt="{{ aw.photo_alt }}"{{ aw.photo | imgSize | safe }}></figure>
+  <figure><img data-sizes="(max-width:1000px) 95vw, (min-width:1440px) 860px, 62vw" src="{{ aw.photo }}" alt="{{ aw.photo_alt }}"{{ aw.photo | imgSize | safe }}></figure>
   <div class="aw-t">
     <p class="aw-big">{{ aw.title | soft | safe }}</p>
     <p>{{ aw.text }}</p>
@@ -64,7 +64,7 @@ eleventyComputed:
 
 {%- set q = p.quote_block %}
 <section class="harmony"><div class="wrap hm">
-  <figure><img src="{{ q.photo }}" alt="{{ q.photo_alt }}"{{ q.photo | imgSize | safe }}></figure>
+  <figure><img data-sizes="(max-width:1000px) 95vw, (min-width:1440px) 1320px, 96vw" src="{{ q.photo }}" alt="{{ q.photo_alt }}"{{ q.photo | imgSize | safe }}></figure>
   <blockquote>
     <p class="tr">{{ q.quote }}</p>
     <cite>{{ q.source }}{% if q.original %} · <span lang="{{ q.original_lang or 'es' }}">{{ q.original }}</span>{% endif %}{% if q.credit %} · {{ q.credit }}{% endif %}</cite>

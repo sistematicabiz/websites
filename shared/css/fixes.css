@@ -59,7 +59,13 @@ nav a[aria-current="page"]{text-decoration:underline;text-decoration-thickness:2
 /* The header only stays fixed when there is room for it (not when zoomed in). */
 @media (max-height:600px){header.site{position:static}}
 /* Without the burger button (no JavaScript) the wrapped menu is too tall to keep fixed. */
-@media (max-width:1000px){header.site:not(.has-menu){position:static}}
+@media (max-width:1000px){html:not(.js) header.site:not(.has-menu){position:static}}
+/* While site.js loads, keep the burger's place and hide the list, so the page does not jump. */
+@media (max-width:1000px){
+  .js header.site:not(.has-menu) nav{display:none}
+  .js header.site:not(.has-menu) .wrap{flex-wrap:nowrap}
+  .js header.site:not(.has-menu) .wrap::after{content:"";width:44px;height:44px;margin:-6px -8px -6px 0}
+}
 
 /* Burger menu on small screens: one row, always reachable. */
 .menu-toggle{display:none}
