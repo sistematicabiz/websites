@@ -121,6 +121,6 @@ form>*,.f>*{min-width:0}
 }
 
 /* Inner pages: a captioned photo beside a text block. On small screens it follows the text. */
-.p-photo{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:end;align-self:start;max-width:520px}
+.p-photo{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:end;align-self:end;max-width:520px}
 .p-photo img{display:block;width:100%;height:auto}
 @media (min-width:1001px){.p-with-photo{grid-template-columns:minmax(0,8fr) minmax(0,4fr)}}
