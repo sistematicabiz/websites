@@ -10,8 +10,9 @@ share_image: /media/share-sistematica.png
 links:
   linkedin: https://www.linkedin.com/in/lsegafredo
   laura: https://laurasegafredo.com
-# Main menu: one-page site, so links point to sections (#about, #what, #collaborations, #contact)
+# Main menu: one-page site, so links point to sections (#home, #about, #what, #collaborations, #contact)
 nav:
+  - { label: Home, url: "#home" }
   - { label: About, url: "#about" }
   - { label: What We Do, url: "#what" }
   - { label: Collaborations, url: "#collaborations" }

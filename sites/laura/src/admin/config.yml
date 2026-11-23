@@ -1344,7 +1344,7 @@ collections:
               - label: Link
                 name: url
                 widget: string
-                hint: "A section of the page: #about, #what, #collaborations or #contact."
+                hint: "A section of the page: #home, #about, #what, #collaborations or #contact."
           - label: Footer
             name: footer
             widget: object

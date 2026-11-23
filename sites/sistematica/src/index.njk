@@ -9,7 +9,7 @@ eleventyComputed:
 {% from "macros/contact.njk" import contactCard with context %}
 {% from "macros/links.njk" import linkAttrs, arrow %}
 {%- set p = pages.home -%}
-<section class="wrap s-hero">
+<section id="home" class="wrap s-hero">
   <div class="s-name">
     <span class="lbl">{{ p.hero.eyebrow | soft | safe }}</span>
     <h1 aria-label="Sistematica"><span>Sistem</span><span><i class="g">at</i></span><span>ica</span></h1>
@@ -91,7 +91,7 @@ eleventyComputed:
     <h2>{{ ab.name | soft | safe }}</h2>
     <p style="font-size:21px;font-weight:500">{{ ab.title_line }}</p>
     {{ ab.bio | md | safe }}
-    <ul class="chips">{% for r in roles %}{% if r.show_on_sistematica %}<li>{{ r.sistematica_chip or (r.role + ", " + r.organization) }}</li>{% endif %}{% endfor %}</ul>
+    <ul class="chips">{% for r in roles %}{% if r.show_on_sistematica %}{% set chip = r.sistematica_chip or (r.role + ", " + r.organization) %}{% set u = ((site.links.laura | replace("https://", "https://") ) + r.link_url) if (r.link_url and (r.link_url | string).startsWith("/")) else r.link_url %}<li>{% if u %}<a {{ linkAttrs(u) }}>{{ chip }}{{ arrow(u) }}</a>{% else %}{{ chip }}{% endif %}</li>{% endif %}{% endfor %}</ul>
     <div class="actions"><a class="btn" {{ linkAttrs(site.links.laura) }}>{{ ab.profile_label }}</a><a class="btn line" {{ linkAttrs(site.links.linkedin) }}>{{ ab.linkedin_label }} ↗</a></div>
   </div>
 </div></section>
