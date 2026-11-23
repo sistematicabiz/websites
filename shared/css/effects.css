@@ -83,3 +83,7 @@ button.is-sending{cursor:progress}
 
 /* Inner pages: the title starts at the same height on every page, whatever the photo's size. */
 .p-hero .t{align-self:start}
+
+/* Moral Revolution page: "Revolution" always fits on one line. */
+.pg-c3 .p-hero .t{container-type:inline-size}
+.pg-c3 .p-hero h1{font-size:min(clamp(68px,10.4vw,10.5rem),21cqw)}
