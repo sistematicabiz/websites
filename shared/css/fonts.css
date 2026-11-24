@@ -15,7 +15,12 @@
 picture{display:contents}
 picture>source{display:none}
 /* While a photo downloads, its box shows a light streak in the colours of the section around it.
-   It stops when the photo arrives, and after a few seconds at most if JavaScript is off. */
-picture>img:not([data-loaded]){background-color:color-mix(in srgb,currentColor 7%,transparent);background-image:linear-gradient(100deg,transparent 30%,color-mix(in srgb,currentColor 12%,transparent) 50%,transparent 70%);background-size:250% 100%;background-repeat:no-repeat;animation:img-loading 1.4s linear 12}
-@keyframes img-loading{from{background-position:120% 0}to{background-position:-120% 0}}
-@media (prefers-reduced-motion:reduce){picture>img:not([data-loaded]){animation:none;background-image:none}}
+   It appears only if the photo is not there after 0.3s (so cached photos never flash it), stops
+   when the photo arrives, and after about 17s at most if JavaScript is off. */
+picture>img:not([data-loaded]){background-repeat:no-repeat;background-size:250% 100%;animation:img-loading 1.4s linear .3s 12}
+@keyframes img-loading{
+  from,to{background-color:color-mix(in srgb,currentColor 7%,transparent);background-image:linear-gradient(100deg,transparent 30%,color-mix(in srgb,currentColor 12%,transparent) 50%,transparent 70%)}
+  from{background-position:120% 0}to{background-position:-120% 0}
+}
+@keyframes img-waiting{from,to{background-color:color-mix(in srgb,currentColor 7%,transparent)}}
+@media (prefers-reduced-motion:reduce){picture>img:not([data-loaded]){animation:img-waiting 17s linear .3s}}
