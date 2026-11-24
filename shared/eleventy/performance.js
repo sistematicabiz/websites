@@ -53,7 +53,9 @@ export function configurePerformance(eleventyConfig, site) {
     );
     let img = without(without(without(tag, "data-sizes"), "loading"), "decoding");
     const loading = isFirst ? ' fetchpriority="high" decoding="async"' : ' loading="lazy" decoding="async"';
-    img = img.replace(/\s*\/?>$/, `${loading}>`);
+    // Marks the photo as arrived, which stops the loading shimmer (see fonts.css).
+    const arrived = ` onload="this.dataset.loaded=''"`;
+    img = img.replace(/\s*\/?>$/, `${loading}${arrived}>`);
     return `<picture>${sources.join("")}${img}</picture>`;
   };
 
